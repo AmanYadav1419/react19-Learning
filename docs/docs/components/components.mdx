@@ -1,0 +1,56 @@
+## Components
+
+- Components are independent & **reusable** bits of code.
+- They serve the same purpose as JS function but work in isolation and return HTML (or return jsx to be precised).
+
+- here are some key takeways to always remeber
+
+  - here are the set of rules need to follow to write **components**
+
+  1. every component should always return some sort of HTML or to be precisly jsx.
+  2. the first letter for writing component name should be **Uppercase**, and remaining letter are **lowercase**
+
+  the below code 👇 for writing component is bad practise or wrong way ❌
+
+  ```jsx
+  function app() {
+    return <h1>Hello from app</h1>;
+  }
+  ```
+
+  the good practise of correct way this 👇✅
+
+  ```jsx
+  function App() {
+    return <h1>Hello from App</h1>;
+  }
+  ```
+
+here are two ways to create components in react
+
+1. by using function reserve keyword
+
+```jsx
+function App() {
+  return <h1>Hello from app reserve keyword function component.</h1>;
+}
+```
+
+2. by using arrow function
+
+```jsx
+const App = () => {
+  return <h1>Hello from arrow function component.</h1>;
+};
+```
+
+now we created components successfully , now we need to tell react to render the component to ui,
+for that we use **export** keyword, here is how it works
+
+```jsx
+const App = () => {
+  return <h1>Hello from arrow function component.</h1>;
+};
+
+export default App;
+```
