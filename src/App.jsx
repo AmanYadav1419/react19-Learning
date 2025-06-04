@@ -5,6 +5,7 @@ import MainContent from "./components/MainContent";
 import Footer from "./components/Footer";
 import WelcomeMessage from "./components/WelcomeMessage";
 import JSXRules from "./components/JSXRules";
+import JSXexpression from "./components/JSXexpression";
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
 
       {/* importing JSXRules component for the JSX Rules Excercise task */}
       <JSXRules />
+
+      {/* importing JSXexpression component for the JSX Expression theory */}
+      <JSXexpression />
     </div>
   );
 };
