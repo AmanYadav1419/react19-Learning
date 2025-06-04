@@ -1,0 +1,55 @@
+## JSX
+
+- it is basically Javascript and Xml .
+
+JSX allows us to write HTML in React.
+JSX makes it easier to write & add HTML in React.
+
+This how our looks like :
+
+- first of all we have our component
+
+```jsx
+const Component = () => {};
+```
+
+- and inside our component , we are now returning some HTML
+
+```jsx
+const Component = () => {
+  return (
+    <section id="section">
+      <h1>My Website</h1>
+
+      <article>
+        <h2>Welcome to React.</h2>
+        <p className="text">Here is Paragraph Content</p>
+      </article>
+    </section>
+  );
+};
+```
+
+so why we called it as jsx not html :-
+- this is just of illusion of html code , this is not html code.
+- behind the scene React will compile the code into Pure Javascript.
+
+
+# JSX Excercise :- 
+In this excercise, you will practice writing basic JSX code and rendering into React app.
+
+Step 1 : Create a new Component
+    1. Create a new file called WelcomeMessage.jsx
+    2. Inside this file write a functional component called WelcomeMessage.
+    3. The component should return a <div> that contains:
+        - A <h1> element that displays the message:  "Hello, World!"
+        - A <p> element that displays the message: "Welcome to learning JSX!!"
+
+Step 2 : Render the component in App.jsx 
+    1. Open the App.jsx file.
+    2. Import the WelcomeMessage component at the top of the file.
+    3. Inside the App component's return statment, render the
+
+Step 3 : Run the Application
+    1. Run the app in your development environment.
+    2. You should see the "Hello, World!" message along with the "Welcome to learning JSX!!" displayed in your browser.
