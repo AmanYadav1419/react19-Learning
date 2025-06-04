@@ -98,3 +98,47 @@ Step 3 : Run the Application
 or any other valid Javascript expression. JSX will excute the expression and return result.
 
 here is the example present in JSXexpression.jsx
+
+## Excercise :Using dynamic Content with {} JSX
+- in this excercise, you will learn how to inject dynamic data using curly braces {}.
+
+Step 1 : Create a Greeting Component
+    1. Create a new file called Greeting.jsx 
+    2. Inside this file, Create a functional component named Greeting.
+    3. The Greeting component should return a <div> containing:
+        - A <h1> element that dynamically displays a greeting message.
+        - A <p> element that dynamically displays current date.
+    4. Use Javascript expression inside {} to dynamically render the following:
+        - A name variable containing a name, such as "John".
+        - A new Date() object to displays current date.
+
+Step 2 : Create a ProductInfo Component
+    1. Create a new file called ProductInfo.jsx.
+    2. Inside this file, creaate a functional component named ProductInfo.
+    3. The ProductInfo component should return a <div> that dynamically displays Product details:
+        - Use the Product object that contains following properties:
+            - name:"Laptop",
+            - price:"$1200",
+            - availbility:"In Stock"
+    4. Display the Product name , price and availbility using {}.
+
+Step 3 : Render Components in App.jsx 
+    1. In your App.jsx file, import the Greeting and ProductInfo Components:
+
+    ```jsx
+    import Greeting from "./components/Greeting";
+    import ProductInfo from "./components/ProductInfo";
+    ```
+
+    2. Inside the App component's return statment, render both the component.
+    ```jsx
+    function App(){
+        return (
+        <div>
+            <Greeting />
+            <ProductInfo />
+        </div>
+        );
+    }
+    export default App
+    ```
