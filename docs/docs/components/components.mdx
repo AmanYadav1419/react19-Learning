@@ -62,3 +62,56 @@ here is the first task:-
 - create a new file called Greet.jsx and inside that file write Greet using function declartion syntax.
 - afterward refactor the Greet component to use the arrow function syntax.
 - Finally, register the Greet component in your App.jsx file so that you can see the result when running the app.
+
+
+## Excercise : Rendering Multiple Components and Nesting Components
+ - in this excercise, you will learn how to create multiple components and render one component inside another.
+
+ Step 1 : Create a Header Component.
+    1. Create a new file called Header.jsx.
+    2. Inside this file, create a functional component named Header.
+    3. The Header component should return <header> element with the following:
+      - A <h1> element with the text "Welcome to My Website!"
+      - A <nav> element containing three links (<a>) with the text "Home", "About" and "Contact".
+
+  Step 2 : Create a Footer Component.
+    1. Create a new file called Footer.jsx.
+    2. Inside this file, create a functional component named Header.
+    3. The Footer component should return <footer> element with a <p> containing the text "Website By Aman Yadav"
+    
+  Step 3 : Create a MainContent Component.
+    1. Create a new file called MainContent.jsx.
+    2. Inside this file, create a functional component named MainContent.
+    3. The MainContent component should return a <main> element containing:
+      - A <h2> element with the text "Main Content"
+      - A <p> element with the any text of your choice. e.g "This is coming from Main content."
+
+  Step 4 : Render Components Inside App.jsx
+  1. In your App.jsx file, import the Header, MainContent, Footer components.
+    
+    ```jsx
+      import Header from "./components/Header";
+      import MainContent from "./components/MainContent";
+      import Footer from "./components/Footer";
+    ```
+
+  2. Inside the App component's return statment render the three components inside a single <div>, in the following order:
+      - Header
+      - MainContent
+      - Footer
+
+  Your App.jsx should look like this :-
+  
+  ```jsx
+  const App = () => {
+  return (
+    <div>
+      {/* importing all the components for the Excercise task, in an correct order */}
+      <Header />
+      <MainContent />
+      <Footer />
+    </div>
+  );
+};
+export default App;
+```
