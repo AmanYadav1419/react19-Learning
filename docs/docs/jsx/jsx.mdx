@@ -35,7 +35,7 @@ so why we called it as jsx not html :-
 - behind the scene React will compile the code into Pure Javascript.
 
 
-# JSX Excercise :- 
+## JSX Excercise :- 
 In this excercise, you will practice writing basic JSX code and rendering into React app.
 
 Step 1 : Create a new Component
@@ -53,3 +53,42 @@ Step 2 : Render the component in App.jsx
 Step 3 : Run the Application
     1. Run the app in your development environment.
     2. You should see the "Hello, World!" message along with the "Welcome to learning JSX!!" displayed in your browser.
+
+
+## Rules to Write JSX :-
+1. From a single component you are allowed to return only one Parent element e.g <div> or <section>.
+    - and inside that Parent element you can create multiple child elements nested
+2. In JSX you have to close all of your HTML tags.
+3. You are not allowed to Provide class by using class keyword, instead of class you have to provide className.
+4. anytime you are working with the forms in some situation we also want to provide some label for our input feilds
+    - in <form> tag we are creating <label />,
+    - and in that label instead of write for="" property present in HTML
+    - we write like this :- htmlFor=""
+    - so here is with example :- 
+        <form>
+            <label htmlFor="name">Name : </label>
+            <input type="text" placeholder="Enter Your Name" />
+        </form>
+
+
+## JSX Rules Excercise :- 
+
+Step 1 : Create a new Component
+    1. Create a new file called JSXRules.jsx
+    2. Inside this file, write a functional component called JSXRules.
+
+    The component should return a <div> containing the following
+    - A <h1> element with the text "JSX Rules"
+    - A Paragraph (<p>) that lists at least three rules of JSX:
+        - JSX must return a single parent element.
+        - JSX element must be properly closed.
+        - JSX attributes are written using camelCase (e.g. className instead of class). 
+
+Step 2 : Render the component in App.jsx 
+    1. Open the App.jsx file.
+    2. Import the JSXRules component at the top of the file.
+    3. Inside the App component's return statment, render the
+
+Step 3 : Run the Application
+    1. Run the app in your development environment.
+    2. You should see the "JSX Rules" message along with all that three rules of JSX.
