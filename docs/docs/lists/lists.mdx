@@ -1,0 +1,25 @@
+## Lists
+
+- In React, you will render lists with some type of loop.
+- The Javascript map() array method is generally the preferred method.
+
+Here is the example of the Map method used in jsx 👇
+
+```jsx
+const ListExample = () => {
+  const numbers = [1, 2, 3, 4, 5];
+  return (
+    <main>
+      {numbers.map((number) => (
+        <ul key={number}>
+          <li>{number}</li>
+        </ul>
+      ))}
+    </main>
+  );
+};
+
+export default ListExample;
+```
+
+- remember the point each child in a list should have unique "key" prop.
