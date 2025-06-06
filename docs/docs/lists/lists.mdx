@@ -23,3 +23,44 @@ export default ListExample;
 ```
 
 - remember the point each child in a list should have unique "key" prop.
+
+Second Example of the Map method used in jsx 👇
+
+- now we want to iterate all the user details in the userInfo array so,
+  in this we are mapping an array of objects
+
+```jsx
+const ListExample1 = () => {
+  const userInfo = [
+    {
+      username: "Aman",
+      email: "aman@gmail.com",
+      location: "India",
+    },
+    {
+      username: "Yadav",
+      email: "yadav@gmail.com",
+      location: "Bharat",
+    },
+    {
+      username: "Trion",
+      email: "trion@gmail.com",
+      location: "Hindustan",
+    },
+  ];
+
+  return (
+    <main>
+      {userInfo.map((user) => (
+        <ul key={user.email}>
+          <li>{user.username}</li>
+          <li>{user.location}</li>
+          <li>{user.email}</li>
+        </ul>
+      ))}
+    </main>
+  );
+};
+
+export default ListExample1
+```
