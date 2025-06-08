@@ -8,6 +8,8 @@ import JSXRules from "./components/JSXRules";
 import JSXexpression from "./components/JSXexpression";
 import Greeting from "./components/Greeting";
 import ProductInfo from "./components/ProductInfo";
+import UserList from "./components/UserList";
+import ProductList from "./components/ProductList";
 
 const App = () => {
   return (
@@ -34,6 +36,12 @@ const App = () => {
 
       {/* importing JSXRules component for the JSX Rules Excercise task */}
       <ProductInfo />
+
+      {/* importing UserList component for the Rendering a List Data with .map() Excercise task */}
+      <UserList />
+
+      {/* importing ProductList component for the Rendering a List Data with .map() Excercise task */}
+      <ProductList />
     </div>
   );
 };
