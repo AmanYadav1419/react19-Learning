@@ -1,0 +1,42 @@
+## Props
+
+    - Props / Properties are arguments passed into React components.
+    - Props allows us to pass data from parent component to a child component.
+    - Props are passed to components via HTML attributes.
+
+### 1. for example here is below code shows that what are props and how they work. this is just for understanding try to do it own with exporting the component and using it.
+
+- so basically the App component is parent component , and we are passing data like image, name, age etc.
+
+```jsx
+const App = () => {
+  return (
+    <User
+      img="https://avatars.githubusercontent.com/u/85052811?v=4"
+      name="Aman Yadav"
+      age={21}
+      isMarried={false}
+      hobbies={["Coding", "Cricket", "Reading"]}
+    />
+  );
+};
+```
+
+- here is the User component code to recieve this above data coming from parent component.
+  - first of all we are taking props as parameter
+  - and then we are accessing the data using dot(.) notations
+  - here is how we can do this 👇.
+
+```jsx
+const User = (props) => {
+  return (
+    <section>
+      <img src={props.img} alt={props.name} width={200} />
+      <h1>Name :- {props.name}</h1>
+      <h2>Age :- {props.age}</h2>
+      <h3>Is Married :- {props.isMarried}</h3>
+      <h4>Hobbies :- {props.hobbies}</h4>
+    </section>
+  );
+};
+```
