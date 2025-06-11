@@ -40,3 +40,23 @@ const User = (props) => {
   );
 };
 ```
+
+- here is the another version with having props destructuring , and making code more clear and easy readable.
+  - for that in params we write the names of parameters passed instead writing props
+  - and still all the code works correctly.
+  - here is how we can do this 👇.
+
+```jsx
+const User = ({ img, name, age, isMarried, hobbies }) => {
+  return (
+    <section>
+      <img src={img} alt={name} width={200} />
+      <h1>Name :- {name}</h1>
+      <h2>Age :- {age}</h2>
+      <h3>Is Married :- {isMarried}</h3>
+      <h4>Hobbies :- {hobbies}</h4>
+    </section>
+  );
+};
+```
+
