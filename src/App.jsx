@@ -10,6 +10,8 @@ import Greeting from "./components/Greeting";
 import ProductInfo from "./components/ProductInfo";
 import UserList from "./components/UserList";
 import ProductList from "./components/ProductList";
+import Person from "./components/Person";
+import Product from "./components/Product";
 
 const App = () => {
   return (
@@ -42,6 +44,12 @@ const App = () => {
 
       {/* importing ProductList component for the Rendering a List Data with .map() Excercise task */}
       <ProductList />
+
+      {/* importing Person component for the Using Props in React Components Excercise task */}
+      <Person name="Aman" age={21}/>
+
+      {/* importing Product component for the Using Props in React Components Excercise task */}
+      <Product name="Iphone" price={1500}/>
     </div>
   );
 };
