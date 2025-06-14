@@ -61,32 +61,90 @@ const User = ({ img, name, age, isMarried, hobbies }) => {
 ```
 
 ## Excercise : Using Props in React Components
+
 - in this excercise, you will learn how to pass and use props in React components to make them dynamic and reusable.
 
 Step 1 : Create a Person Component
-  1. Create a new file called Person.jsx.
-  2. Inside this file, create a functional component called Person.
-  3. This component should accept props and render:
-    - A <h2> element that displays the person's name.
-    - A <p> element that displays the person's age.
-  4. Use props.name and props.age to display the dynamic values passed from the parent component.
 
-Step 2 : Create a Product Component 
-  1. Create a new file called Product.jsx.
-  2. Inside this file, create a functional component called Product.
-  3. This component should accept props and render:
-    - A <h2> element that displays the product's name.
-    - A <p> element that displays the product's price.
-  4. Use props.name and props.price to display the dynamic values passed from the parent component.
+1. Create a new file called Person.jsx.
+2. Inside this file, create a functional component called Person.
+3. This component should accept props and render:
+
+   - A <h2> element that displays the person's name.
+   - A <p> element that displays the person's age.
+
+4. Use props.name and props.age to display the dynamic values passed from the parent component.
+
+Step 2 : Create a Product Component
+
+1. Create a new file called Product.jsx.
+2. Inside this file, create a functional component called Product.
+3. This component should accept props and render:
+
+   - A <h2> element that displays the product's name.
+   - A <p> element that displays the product's price.
+
+4. Use props.name and props.price to display the dynamic values passed from the parent component.
 
 Step 3 : Pass Props from App.jsx
-  1. In Your App.jsx file, import the Person and Product components: 
- 
-  ```jsx 
-  import Person from "./components/Person";
-  import Product from "./components/Product";
-  ```
 
-  2. Inside the App component, pass dynamic data as props to both Person and Product components:
-    - Pass name and age as props to the Person component.
-    - Pass name and price as props to the Product component.
+1. In Your App.jsx file, import the Person and Product components:
+
+```jsx
+import Person from "./components/Person";
+import Product from "./components/Product";
+```
+
+2. Inside the App component, pass dynamic data as props to both Person and Product components:
+
+   - Pass name and age as props to the Person component.
+   - Pass name and price as props to the Product component.
+
+- now in some situations , we gonna pass our data from our parent component to child component by closing them.
+
+  - so what do i mean that , here is the example code to understand it 👇
+
+```jsx
+import Card from "../components/Card.jsx";
+
+const App = () => {
+  return (
+    <div>
+      <Card>
+        <h1>My card</h1>
+        <p>This is some content for card 1</p>
+      </Card>
+    </div>
+  );
+};
+
+export default App;
+```
+
+- so in that we are passing the data from app to card component i.e passing <h1> and <p> data to Card component by closing them.
+- so the question is how we are gonna accessing this data.
+- so to access that data, there is something called `children` which will allows us to access that data from the parent component to child component.
+
+- here is the example of it , with writing Card.jsx component code 👇. here is one method
+
+```jsx
+const Card = (props) => {
+  return <div>{props.children}</div>;
+};
+
+export default Card;
+```
+
+- here is the second method with destructuring the props 👇
+- instead of writing props and then using dot(.) operator to access children
+- we can simply write `{children}` to destructur the props and simply write it in curly brackets `{}` to use it and render it as jsx.
+
+```jsx
+const Card = ({ children }) => {
+  return <div>{children}</div>;
+};
+
+export default Card;
+```
+
+- it can use it for if multiple card components had present and multiple data like <h1> and <p> that passed , this children method can very efficient for this.
