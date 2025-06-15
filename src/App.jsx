@@ -11,11 +11,14 @@ import UserList from "./components/03.lists/UserList";
 import ProductList from "./components/03.lists/ProductList";
 import Person from "./components/04.props/Person";
 import Product from "./components/04.props/Product";
+import Weather from "./components/05.conditionalRendering/Weather";
+import UserStatus from "./components/05.conditionalRendering/UserStatus";
+import ConditionalGreeting from "./components/05.conditionalRendering/ConditionalGreeting";
 
 const App = () => {
   return (
     <div>
-      {/* importing Greet component for the Component Excercise task */}
+      {/* importing Greet component for the Component Excercise task
       <Greet />
 
       {/* importing all the components for the Excercise task, in an correct order */}
@@ -49,6 +52,18 @@ const App = () => {
 
       {/* importing Product component for the Using Props in React Components Excercise task */}
       <Product name="Iphone" price={1500}/>
+
+      {/* importing Weather component for the Conditional Rendering in React Excercise task Step 1 */}
+      <Weather temperature={10}/>
+      <Weather temperature={20}/>
+      <Weather temperature={30}/>
+      
+      {/* importing UserStatus component for the Conditional Rendering in React Excercise task Step 2 */}
+      <UserStatus loggedIn={true} isAdmin={false}/>
+      
+      {/* importing Greeting component for the Conditional Rendering in React Excercise task Step 3 */}
+      <ConditionalGreeting timeOfDay="morning"/>
+      <ConditionalGreeting timeOfDay="afternoon"/>
     </div>
   );
 };
