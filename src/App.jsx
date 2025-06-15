@@ -1,17 +1,16 @@
-import React from "react";
-import Greet from "./components/Greet";
-import Header from "./components/Header";
-import MainContent from "./components/MainContent";
-import Footer from "./components/Footer";
-import WelcomeMessage from "./components/WelcomeMessage";
-import JSXRules from "./components/JSXRules";
-import JSXexpression from "./components/JSXexpression";
-import Greeting from "./components/Greeting";
-import ProductInfo from "./components/ProductInfo";
-import UserList from "./components/UserList";
-import ProductList from "./components/ProductList";
-import Person from "./components/Person";
-import Product from "./components/Product";
+import Greet from "./components/01.components/Greet";
+import Header from "./components/01.components/Header";
+import MainContent from "./components/01.components/MainContent";
+import Footer from "./components/01.components/Footer";
+import WelcomeMessage from "./components/02.jsx/WelcomeMessage";
+import JSXRules from "./components/02.jsx/JSXRules";
+import JSXexpression from "./components/02.jsx/JSXexpression";
+import Greeting from "./components/02.jsx/Greeting";
+import ProductInfo from "./components/02.jsx/ProductInfo";
+import UserList from "./components/03.lists/UserList";
+import ProductList from "./components/03.lists/ProductList";
+import Person from "./components/04.props/Person";
+import Product from "./components/04.props/Product";
 
 const App = () => {
   return (
