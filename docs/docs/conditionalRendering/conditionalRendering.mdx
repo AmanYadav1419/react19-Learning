@@ -1,0 +1,92 @@
+## ConditionalRendering
+
+- Conditional rendering allows us to `dynamically display` different UI Components or content based on specific conditions.
+- This enables us to create more interactive and responsive user experiences.
+
+- There are few ways to Conditionally render our UI 👇
+
+- 1st way :-
+  To use `if` and `else` statement.
+- 2nd way :-
+  To use `Ternary` operator.
+- 3rd way :-
+  To use `&&` (and) operator.
+
+- so now talk about the 1st one, which is `if and else statement` with example code :-
+
+- here is the code :-
+- so at first we have two Components / functions named as ValidPassword and InValidPassword 👇.
+
+  ```jsx
+  const ValidPassword = () => <h1>Valid Password</h1>;
+  const InValidPassword = () => <h1>InValid Password</h1>;
+  ```
+
+- and now we are gonna create yet another Password Component. 👇
+
+- and so we are reciveing the isValid prop to inside Password Component.
+- and then we are gona provide our check.
+
+- if the isValid prop value is true , then we are gona return ValidPassword Component.
+- and if that not gonna the case then we return InValidPassword Component.
+
+```jsx
+const Password = ({ isValid }) => {
+  if (isValid) {
+    return <ValidPassword />;
+  } else {
+    return <InValidPassword />;
+  }
+};
+```
+
+- here is the more better and refactor version , to don't use if and else statement.
+- so we use javascript Ternary 👇
+
+- if the isValid prop value is true , then we are gona return ValidPassword Component.
+- and if that not gonna the case then we return InValidPassword Component.
+
+```jsx
+const Password = ({ isValid }) => {
+  return isValid ? <ValidPassword /> : <InValidPassword />;
+};
+```
+
+- and then we are gona calling that to our `App.jsx` Component. 👇
+- and now inside that App Component we are passing isValid prop to it and that gonna set to be true.
+
+```jsx
+const App = () => {
+  return <Password isValid={true} />;
+};
+```
+
+- here is another example
+
+- i have a Cart Component, inside that i had items
+- and then now i am checking if the length of items is greater than 0 , then we are gonna display the ui.
+- and if that is not the case , like if we don't have any item inside the items array that's not gona show us anything.
+
+```jsx
+const Cart = () => {
+  const items = ["Wireless earbuds", "Power bank", "New SSD", "Hoddie"];
+
+  return (
+    <>
+    {
+      items.length > 0 && <h2>You have {items.length} items in your cart. </h2>
+    }
+
+    <ul>
+    <h4>Products 👇<h4>
+    {
+      items.map((item) => {
+        return <li key={Math.random()}>{item}</li>
+      })}
+    </ul>
+    </>
+  );
+}
+
+export default Cart;
+```
