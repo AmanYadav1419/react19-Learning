@@ -90,3 +90,82 @@ const Cart = () => {
 
 export default Cart;
 ```
+
+## Excercise :- Conditional Rendering in React.
+
+- in this excercise, you will practise different ways to render JSX Conditionally in React Components.
+
+Step 1 : Create a `Weather` Component with if, else if and else.
+
+1. Create a new file called `Weather.jsx`.
+2. Inside this file create a functional component called Weather.
+3. The component should:
+
+   - The temperature prop
+   - Use if, else if and else statements to Conditionally render different messages based on the temperature values:
+     - if the temperature is below 15, display: "it's cold outside!"
+     - if the temperature is between 15 and 25, display: "it's nice outside!"
+     - if the temperature is above 25, display: "it's hot outside!"
+
+Step 2 : Create a `UserStatus` Component with the `&&` Operator
+
+1. Create a new file called `UserStatus.jsx`.
+2. Inside this file create a functional component called UserStatus.
+3. The Component should:
+
+   - Take two boolean props loggedIn, isAdmin.
+   - Use the && operator to display a message for Admin & Normal User:
+     - if loggedIn is true and isAdmin display: "Welcome Admin!".
+     - if it's just loggedIn and not admin then display: "Welcome User!".
+
+Step 3 : Create a `ConditionalGreeting` Component with a Ternary Operator
+
+1. Create a new file called ConditionalGreeting.jsx.
+2. Inside this file create a functional component called ConditionalGreeting.
+3. The Component should:
+
+   - Take a timeOfDay prop (e.g "morning", "afternoon")
+   - Use the ternary operator to ConditionalRendering display different greetings based on the time of day:
+     - if timeOfDay is "morning", display: "Good morning!"
+     - if timeOfDay is "afternoon", display: "Good afternoon!"
+
+Step 4 : Render the Components in `App.jsx`
+
+1. In your App.jsx file, import the Weather, UserStatus and ConditionalGreeting components:
+
+- (note that this import statements are according to my folder structure , it can be change according to your folder structure. )
+
+```jsx
+import Weather from "./components/05.conditionalRendering/Weather";
+import UserStatus from "./components/05.conditionalRendering/UserStatus";
+import ConditionalGreeting from "./components/05.conditionalRendering/ConditionalGreeting";
+```
+
+2. Inside the App component's return statement, render each component with different props to test the conditional rendering logic.
+
+Example :
+
+```jsx
+function App() {
+  return (
+    <div>
+      <h1>Conditional Rendering in React</h1>
+      {/* Weather component */}
+      <Weather temperature={10} />
+      <Weather temperature={20} />
+      <Weather temperature={30} />
+
+      {/* UserStatus component */}
+      <UserStatus loggedIn={true}/>
+      <UserStatus loggedIn={false}/>
+
+      {/* ConditionalGreeting component */}
+      <ConditionalGreeting timeOfDay="morning"/>
+      <ConditionalGreeting timeOfDay="afternoon"/>
+      <ConditionalGreeting />
+    </div>
+  );
+}
+
+export default App;
+```
