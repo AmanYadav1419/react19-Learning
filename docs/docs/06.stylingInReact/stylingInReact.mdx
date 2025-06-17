@@ -35,7 +35,7 @@ const InlineStyling = () => {
 export default InlineStyling;
 ```
 
-### Styling Passing As Object 
+### Styling Passing As Object
 
 - now let's talk about the second way
 
@@ -47,12 +47,16 @@ export default InlineStyling;
 - and then copy the variable name and then we have to just place in style attribute,
 - but in this case we are not gonna to write double curly brackets `{{}}` ,
 - instead we are gonne to be write or working with the single curly brackets `{}`
-- so now we are rendering our styling totally dynamically 
+- so now we are rendering our styling totally dynamically
 - here is how we can do this 👇
 
 ```jsx
 const StylingPassingAsObject = () => {
-  const styles = { color: "black", backgroundColor: "crimson", padding: "2rem" };
+  const styles = {
+    color: "black",
+    backgroundColor: "crimson",
+    padding: "2rem",
+  };
   return (
     <section>
       <h1 style={styles}>Styling Passing As Object</h1>
@@ -61,6 +65,23 @@ const StylingPassingAsObject = () => {
 };
 
 export default StylingPassingAsObject;
-
 ```
- 
+
+### External CSS file.
+
+- now let me show you one more way using external css file that will be responsible for styling the component.
+
+- for that we are creating a new css file named as `index.css`.
+- and now inside this file we are gonna write some css code.
+- so we write some code , you check the code in `index.css` file
+- after that now we want to use this css code in our react component for that we can use `import` keyword.
+- for that where we want to use this css code , we will simply go to the component and on the top
+- we will simply import the css file for the component so for that we are importing this css code to `ExternalCSSfile.jsx` component to test it.
+
+- here is code of ExternalCSSfile.jsx component to import css file
+- it totally depend on where is your css file is located and what is your folder structure
+- in my case css file and component file are in same folder.
+
+```jsx
+import "./index.css";
+```
