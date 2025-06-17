@@ -1,0 +1,35 @@
+## Styling in React
+
+### 1) Providing Styling in Component `Inline`.
+
+- There are alot ways to style our react component , but in this specific section we are only learn about the basics ,
+- But Later in this course we are gonna also learning about popular libraries like radix, daisy ui and tailwindcss , shadcn ui and stuff like that.
+- But for now we are only learning about the basics of Styling
+
+- here is one example of method or way to apply styling to react component.
+
+- if i want to apply some sort of `styling` to the `h1`, 
+- so i will use a `style` attribute and then `=` and then `{{}}` (double curly brackets). you have to keep that mind.
+- and inside the opening double curly brackets now you can write all of your css or styling which is present in css.
+
+- one thing you have to `remember that is you cannot write your normal css in react` i.e `background-color` like this 
+- this is not a css this is react js , so you need to write the background-color property in react like this `backgroundColor`
+
+- anytime we have some sort of property have two name like `background` and also the `color` so we are not gonna provide `spaces` and `dashes` and also we are not allowed to write in `lowercase` or in totally `uppercase`.
+- we have to write that as a `one word` and also we have to write that as a `camalCase`.
+- and by using comma(,) we can seperate the css properties so that multiple css properties can apply to single element.
+
+- here is how we can do this 👇. an example code snippet to understand.
+
+
+```jsx
+const InlineStyling = () => {
+  return (
+    <section>
+      <h1 style={{color:'white', backgroundColor:'teal', padding:'2rem' }}>Inline Styles</h1>
+    </section>
+  );
+};
+
+export default InlineStyling;
+```
