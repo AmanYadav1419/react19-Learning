@@ -14,6 +14,9 @@ import Product from "./components/04.props/Product";
 import Weather from "./components/05.conditionalRendering/Weather";
 import UserStatus from "./components/05.conditionalRendering/UserStatus";
 import ConditionalGreeting from "./components/05.conditionalRendering/ConditionalGreeting";
+import StyledCard from "./components/06.stylingInReact/StyledCard";
+import ProfileCard from "./components/06.stylingInReact/ProfileCard";
+import IconComponent from "./components/06.stylingInReact/IconComponent";
 
 const App = () => {
   return (
@@ -64,6 +67,14 @@ const App = () => {
       {/* importing Greeting component for the Conditional Rendering in React Excercise task Step 3 */}
       <ConditionalGreeting timeOfDay="morning"/>
       <ConditionalGreeting timeOfDay="afternoon"/>
+
+      {/* importing IconComponent component for the Styling Components in React Excercise task Step 3 */}
+        <IconComponent />
+
+      {/* importing StyledCard component for the Styling Components in React Excercise task Step 1 */}
+        <StyledCard />
+      {/* importing ProfileCard component for the Styling Components in React Excercise task Step 2 */}
+        <ProfileCard />
     </div>
   );
 };
