@@ -52,33 +52,33 @@ const App = () => {
       <ProductList />
 
       {/* importing Person component for the Using Props in React Components Excercise task */}
-      <Person name="Aman" age={21}/>
+      <Person name="Aman" age={21} />
 
       {/* importing Product component for the Using Props in React Components Excercise task */}
-      <Product name="Iphone" price={1500}/>
+      <Product name="Iphone" price={1500} />
 
       {/* importing Weather component for the Conditional Rendering in React Excercise task Step 1 */}
-      <Weather temperature={10}/>
-      <Weather temperature={20}/>
-      <Weather temperature={30}/>
-      
+      <Weather temperature={10} />
+      <Weather temperature={20} />
+      <Weather temperature={30} />
+
       {/* importing UserStatus component for the Conditional Rendering in React Excercise task Step 2 */}
-      <UserStatus loggedIn={true} isAdmin={false}/>
-      
+      <UserStatus loggedIn={true} isAdmin={false} />
+
       {/* importing Greeting component for the Conditional Rendering in React Excercise task Step 3 */}
-      <ConditionalGreeting timeOfDay="morning"/>
-      <ConditionalGreeting timeOfDay="afternoon"/>
+      <ConditionalGreeting timeOfDay="morning" />
+      <ConditionalGreeting timeOfDay="afternoon" />
 
       {/* importing IconComponent component for the Styling Components in React Excercise task Step 3 */}
-        <IconComponent />
+      <IconComponent />
 
       {/* importing StyledCard component for the Styling Components in React Excercise task Step 1 */}
-        <StyledCard />
+      <StyledCard />
       {/* importing ProfileCard component for the Styling Components in React Excercise task Step 2 */}
-        <ProfileCard />
+      <ProfileCard />
 
-        {/* importing StateAndHooks component for understanding how usestate hook is working */}
-        <StateAndHooks />
+      {/* importing StateAndHooks component for understanding how usestate hook is working */}
+      <StateAndHooks />
     </div>
   );
 };
