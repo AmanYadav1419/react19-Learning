@@ -1,0 +1,28 @@
+## STATE
+
+- State is a way to store and manage data that can change over time and affects how the component renders.
+- We define state using `useState` Hook, which allows you to set an initial value and provides a way to update that state.
+
+- this says the word `Hook` , so what are hooks and why should we care about that.
+
+## HOOKS
+
+- Hooks are a new addition in React 16.8.
+- They let you use state and other React features without writing a class (or to be specific `class based component`).
+- Hooks are allowed to manage our state inside the functional component.
+- and there are alot of `Hooks` in React, but for now we are now covering about `useState` Hook.
+
+## useState() Hook :-
+
+- useState Hook allows us to track state in a functional component.
+- State generally refers to data or properties that need to be tracking in an application.
+- So for using Hook in our functional component we need to import the hook from react.
+
+- here how the syntax will look like 👇
+
+```jsx
+const [data, changeData] = useState();
+```
+
+
+- note :- anytime we change the value of our state by using the setCount method or any set method, it's gonna re-render our application.

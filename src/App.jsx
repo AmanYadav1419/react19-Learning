@@ -17,6 +17,7 @@ import ConditionalGreeting from "./components/05.conditionalRendering/Conditiona
 import StyledCard from "./components/06.stylingInReact/StyledCard";
 import ProfileCard from "./components/06.stylingInReact/ProfileCard";
 import IconComponent from "./components/06.stylingInReact/IconComponent";
+import StateAndHooks from "./components/07.StateAndHooks/StateAndHooks";
 
 const App = () => {
   return (
@@ -75,6 +76,9 @@ const App = () => {
         <StyledCard />
       {/* importing ProfileCard component for the Styling Components in React Excercise task Step 2 */}
         <ProfileCard />
+
+        {/* importing StateAndHooks component for understanding how usestate hook is working */}
+        <StateAndHooks />
     </div>
   );
 };
