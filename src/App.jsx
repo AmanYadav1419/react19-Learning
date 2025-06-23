@@ -18,6 +18,8 @@ import StyledCard from "./components/06.stylingInReact/StyledCard";
 import ProfileCard from "./components/06.stylingInReact/ProfileCard";
 import IconComponent from "./components/06.stylingInReact/IconComponent";
 import StateAndHooks from "./components/07.StateAndHooks/StateAndHooks";
+import UpdateArrayWithUseState from "./components/07.StateAndHooks/UpdateArrayWithUseState";
+import UpdateObjectWithUseState from "./components/07.StateAndHooks/UpdateObjectWithUseState";
 
 const App = () => {
   return (
@@ -79,6 +81,12 @@ const App = () => {
 
       {/* importing StateAndHooks component for understanding how usestate hook is working */}
       <StateAndHooks />
+
+      {/* importing  UpdateArrayWithUseState component for understanding how useState hook is working for array */}
+      <UpdateArrayWithUseState />
+
+      {/* importing  UpdateArrayWithUseState component for understanding how useState hook is working for objects */}
+      <UpdateObjectWithUseState />
     </div>
   );
 };
