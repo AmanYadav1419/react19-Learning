@@ -20,6 +20,7 @@ import IconComponent from "./components/06.stylingInReact/IconComponent";
 import StateAndHooks from "./components/07.StateAndHooks/StateAndHooks";
 import UpdateArrayWithUseState from "./components/07.StateAndHooks/UpdateArrayWithUseState";
 import UpdateObjectWithUseState from "./components/07.StateAndHooks/UpdateObjectWithUseState";
+import UpdateArrayOfObjectsWithUseState from "./components/07.StateAndHooks/UpdateArrayOfObjectsWithUseState";
 
 const App = () => {
   return (
@@ -87,6 +88,9 @@ const App = () => {
 
       {/* importing  UpdateArrayWithUseState component for understanding how useState hook is working for objects */}
       <UpdateObjectWithUseState />
+
+      {/* importing  UpdateArrayOfObjectsWithUseState component for understanding how useState hook is working for array of objects */}
+      <UpdateArrayOfObjectsWithUseState />
     </div>
   );
 };
