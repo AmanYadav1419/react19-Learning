@@ -162,7 +162,7 @@ const UpdateArrayWithUseState = () => {
 export default UpdateArrayWithUseState;
 ```
 
-- now in some situations we have array of objects for that  i will give you one more example how we can update the object of content with useState.
+- now in some situations we have array of objects for that i will give you one more example how we can update the object of content with useState.
 
 - here is the code for it 👇
 
@@ -175,7 +175,7 @@ const UpdateObjectWithUseState = () => {
   // by following all the naming convention for using useState Hook.
   // here we are using object to update the movie details.
   // and for the object we are passing title and rating to it.
-  
+
   const [movie, setMovie] = useState({
     title: "Inception",
     ratings: 6,
@@ -207,6 +207,7 @@ const UpdateObjectWithUseState = () => {
 
 export default UpdateObjectWithUseState;
 ```
+
 - now i will give you one more example how we can update the array of objects with useState.
 
 ```jsx
@@ -257,5 +258,52 @@ const UpdateArrayOfObjectsWithUseState = () => {
 };
 
 export default UpdateArrayOfObjectsWithUseState;
+```
 
+- but now in some situations we need to pass the function or arrow function to our state as initial value.
+- now i will give you one more example how we can pass the function or arrow function to our state with useState as initial value.
+
+- here is the code 👇
+
+```jsx
+// to use this component , import the `PassArrowFunctionToUseState` component to `App.jsx` file.
+// in this i am not writings more comments anymore now you are matured enough and now you can understand the useState better.
+// just writing some comments where it is necessary.
+
+import { useState } from "react";
+
+const PassArrowFunctionToUseState = () => {
+  // in that usestate we are passing the callback function.
+  // below is the code 👇
+
+  // this callback function only runs when our component first renders.
+  // so all the logic i write inside the callback function , it only runs for the first renders.
+  // and then returning the initialCount
+  const [count, setCount] = useState(() => {
+    const initialCount = 10;
+    return initialCount;
+  });
+
+  // now we are creating function that will increment the count.
+  const handleIncrementOfInitialCount = () => {
+    // and now inside that we are using our setCount function to update the state
+    // by passing and updating the , here is how we can do it 👇
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  // now we have to render it.
+  return (
+    <div>
+      <h1>Initial Count :- {count}</h1>
+
+      {/* now we have to create a button , which will allows us to increment the count */}
+      {/* for that we are using onClick on button and passing a function to it, the function will do the task. */}
+      <button onClick={handleIncrementOfInitialCount}>
+        Increment of InitialCount
+      </button>
+    </div>
+  );
+};
+
+export default PassArrowFunctionToUseState;
 ```
