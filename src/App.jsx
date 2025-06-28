@@ -21,6 +21,10 @@ import StateAndHooks from "./components/07.StateAndHooks/StateAndHooks";
 import UpdateArrayWithUseState from "./components/07.StateAndHooks/UpdateArrayWithUseState";
 import UpdateObjectWithUseState from "./components/07.StateAndHooks/UpdateObjectWithUseState";
 import UpdateArrayOfObjectsWithUseState from "./components/07.StateAndHooks/UpdateArrayOfObjectsWithUseState";
+import Counter from "./components/07.StateAndHooks/Counter";
+import TodoList from "./components/07.StateAndHooks/TodoList";
+import Profile from "./components/07.StateAndHooks/Profile";
+import ShoppingList from "./components/07.StateAndHooks/ShoppingList";
 
 const App = () => {
   return (
@@ -91,6 +95,18 @@ const App = () => {
 
       {/* importing  UpdateArrayOfObjectsWithUseState component for understanding how useState hook is working for array of objects */}
       <UpdateArrayOfObjectsWithUseState />
+
+      {/* importing Counter component for the Mastering `useState` in React Excercise task Step 1 */}
+      <Counter />
+
+      {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 2 */}
+      <TodoList />
+
+      {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 3 */}
+      <Profile />
+
+      {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 4 */}
+      <ShoppingList />
     </div>
   );
 };
