@@ -1,5 +1,5 @@
 // to use this component , import the `CopyInput` component to `App.jsx` file.
-// this file is for to understand the portals concept.
+// this file is for to understand the portals concept by example number 1.
 // in this i am not writings more comments anymore now you are matured enough and now you can understand the useState better.
 // just writing some comments where it is necessary.
 
@@ -18,14 +18,11 @@ const CopyInput = () => {
     navigator.clipboard.writeText(inputValue).then(() => {
       setCopied(true);
 
-      // now after copy we want to show some alert message , to know that the text is copied or not
-      alert("text copied succesfully");
-
       // after that we have to set the value of copied state to false to copy the text again or upadating the ui
       // and we have provided 2 seconds delay , so after 2 seconds it will make the setCopied state false
       setTimeout(() => {
         setCopied(false);
-      }, 2000);
+      }, 5000);
     });
   };
 
@@ -39,6 +36,9 @@ const CopyInput = () => {
       />
 
       <button onClick={handleCopy}>Copy</button>
+
+      {/* passing copied prop as copied to PopupContent */}
+      <PopupContent copied={copied} />
     </div>
   );
 };

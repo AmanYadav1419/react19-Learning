@@ -25,6 +25,7 @@ import Counter from "./components/07.StateAndHooks/Counter";
 import TodoList from "./components/07.StateAndHooks/TodoList";
 import Profile from "./components/07.StateAndHooks/Profile";
 import ShoppingList from "./components/07.StateAndHooks/ShoppingList";
+import CopyInput from "./components/08.portals/CopyInput";
 
 const App = () => {
   return (
@@ -107,6 +108,9 @@ const App = () => {
 
       {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 4 */}
       <ShoppingList />
+
+      {/* importing CopyInput component for understanding Portal concept how it is working */}
+      <CopyInput />
     </div>
   );
 };

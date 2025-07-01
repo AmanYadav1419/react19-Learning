@@ -3,14 +3,14 @@
 - Portal is a feature that allows you to render a child component into a DOM node that exists outside the hierarchy of parent componet.
 - This can be useful for scenarios like `modals`, `tooltips`, or `dropdowns`, where you want to break out of the ususal parent-child structure and render in a different part of the DOM.
 
-- for the code part to understand it better 
-- here is the first example of portals to understand , 
-- code is present of `CopyInput.jsx` file inside `8.Portal` folder. 
+- for the code part to understand it better
+- here is the first example of portals to understand ,
+- code is present of `CopyInput.jsx` file inside `8.Portal` folder.
 - still here is the code for better understanding 👇
 
 ```jsx
 // to use this component , import the `CopyInput` component to `App.jsx` file.
-// this file is for to understand the portals concept by example 1.
+// this file is for to understand the portals concept by example number 1.
 // in this i am not writings more comments anymore now you are matured enough and now you can understand the useState better.
 // just writing some comments where it is necessary.
 
@@ -29,14 +29,11 @@ const CopyInput = () => {
     navigator.clipboard.writeText(inputValue).then(() => {
       setCopied(true);
 
-      // now after copy we want to show some alert message , to know that the text is copied or not
-      alert("text copied succesfully");
-
       // after that we have to set the value of copied state to false to copy the text again or upadating the ui
       // and we have provided 2 seconds delay , so after 2 seconds it will make the setCopied state false
       setTimeout(() => {
         setCopied(false);
-      }, 2000);
+      }, 5000);
     });
   };
 
@@ -50,10 +47,58 @@ const CopyInput = () => {
       />
 
       <button onClick={handleCopy}>Copy</button>
+
+      {/* passing copied prop as copied to PopupContent */}
+      <PopupContent copied={copied} />
     </div>
   );
 };
 
 export default CopyInput;
-
 ```
+
+- and here is the `PopupContent.jsx` file code with comments explanation 👇
+
+```jsx
+// in this i am not writings more comments anymore now you are matured enough and now you can understand the useState better.
+// just writing some comments where it is necessary.
+
+// so if we don't want to add this component to dom tree how we can do that
+// so by importing react portals and we are getting this from react-dom
+import { createPortal } from "react-dom";
+
+// in that we are accepting `copied` prop and destrcuture it , it is coming from `CopyInput.jsx` file
+const PopupContent = ({ copied }) => {
+  // so to use portal we write createPortal and it has two parameters
+  // first one is the content that we want to render and second one is the target where we want to render that content
+  // so we are using `document.getElementById("portal-root")` as target
+  // so we are sepreateing by using comma so that we can write the content in next line
+
+  return createPortal(
+    <section>
+      {/* if the copied is true then we just want to display the below ui */}
+      {copied && (
+        // with that i also want to add some styling to this div
+        <div
+          style={{
+            position: "absolute",
+            bottom: "3rem",
+            color: "aliceblue",
+          }}
+        >
+          Copied to Clipboard
+        </div>
+      )}
+    </section>,
+    // this is the target where we want to render the content
+    document.querySelector("#popup-content-root")
+  );
+};
+
+export default PopupContent;
+```
+
+- so to use portal we write createPortal and it has two parameters
+- first one is the content that we want to render and second one is the target where we want to render that content
+- so we are using `document.getElementById("portal-root")` as target
+- so we are sepreateing by using comma so that we can write the content in next line
