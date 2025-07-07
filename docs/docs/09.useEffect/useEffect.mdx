@@ -1,0 +1,69 @@
+## useEffect
+
+- useEffect Hook allows you to perform `side effects` in your components.
+- Some examples of side effects are : fetching data, directly updating DOM etc.
+
+- here is the syntax will look like 👇
+
+  - for that first we are using useEffect hook name.
+  - then passing the callback function to it.
+  - and inside that callback function you can do anything you want.
+
+```jsx
+useEffect(() => {
+  // Do your magic
+}, []);
+```
+
+- but there are few things you need to keep it in your mind when working with useEffect Hook.
+
+  - 1. Without the array ➡ on every single render
+       (whenevery we don't specifcy the dependency array , then the callback function will call on every single render).
+  - 2. let's talk about useEffect with conditionals so, you can't wrapp your hook inside the conditionals statement for e.g
+
+  ```jsx
+  // ❌❌❌
+  if (value > 0) {
+    useEffect(() => {
+      console.log("call useEffect");
+      document.title = `Increment (${value})`;
+    });
+  }
+  ```
+
+  - so if you want to use conditionals statement , you need to use inside the useEffect Hook for e.g 👇
+
+  ```jsx
+  // ✅✅✅
+  useEffect(() => {
+    if (value > 0) {
+      console.log("call useEffect");
+      document.title = `Increment (${value})`;
+    }
+  });
+  ```
+
+  - 3. now the final things you need to keep in mind is that :-
+  - anytime we specifcy the empty dependency array for our useEffect it will only fired that function which is available inside our useEffect hook for the initial render like when our component first render it will call the function.
+  - here is the example code ✅
+
+  ```jsx
+  useEffect(() => {
+    console.log("call useEffect");
+    if (value > 0) {
+      document.title = `Increment (${value})`;
+    }
+  }, []);
+  ```
+
+  - but if create some sort of state and we provided that value of the state to dependency array, so anytime that state changes , that component will re-render and that callback function excute.
+  - here is the example code ✅
+
+  ```jsx
+  useEffect(() => {
+    console.log("call useEffect");
+    if (value > 0) {
+      document.title = `Increment (${value})`;
+    }
+  }, [value]);
+  ```
