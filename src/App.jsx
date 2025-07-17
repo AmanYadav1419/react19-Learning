@@ -26,6 +26,10 @@ import TodoList from "./components/07.StateAndHooks/TodoList";
 import Profile from "./components/07.StateAndHooks/Profile";
 import ShoppingList from "./components/07.StateAndHooks/ShoppingList";
 import CopyInput from "./components/08.portals/CopyInput";
+import DataFetching from "./components/09.useEffect/DataFetching";
+import BasicEffect from "./components/09.useEffect/BasicEffect";
+import CounterEffect from "./components/09.useEffect/CounterEffect";
+import FetchDataEffect from "./components/09.useEffect/FetchDataEffect";
 
 const App = () => {
   return (
@@ -111,6 +115,18 @@ const App = () => {
 
       {/* importing CopyInput component for understanding Portal concept how it is working */}
       <CopyInput />
+
+      {/* importing DataFetching component for understanding how useEffect hook is working for fetching data i.e side effects */}
+      <DataFetching />
+
+      {/* importing BasicEffect component for Excercise :- Understanding useEffect in React task Step 1 */}
+      <BasicEffect />
+
+      {/* importing CounterEffect component for Excercise :- Understanding useEffect in React task Step 2 */}
+      <CounterEffect />
+
+      {/* importing FetchDataEffect component for Excercise :- Understanding useEffect in React task Step 3 */}
+      <FetchDataEffect />
     </div>
   );
 };
