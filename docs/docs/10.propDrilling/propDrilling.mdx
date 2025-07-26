@@ -2,3 +2,78 @@
 
 - this is the most famous problem in ReactJS
 - so what is prop drilling and why should we care about that.
+
+- To avoid the heavy prop drilling we will learning throughout the course and using it , the names are :-
+
+  - Redux Toolkit, Zustand, Context API , there are alot ways.
+
+- but now let's talk about prop drilling :-
+
+  - we are getting data to the `App` component and passing this data to every single component via `prop`.
+  - here is how the data will pass component by component (component names are written) :-
+    ` `App`=>`Card`=>`Users`=>`Date` `
+
+- so imagine you're working in a mnc company or the big project , in that project you have alot, alot components for example say thousand components.
+- so did you think that drilling prop data to every single prop is good practise or it is even possible to do that.
+- now there is solution for that , i will show that solution after some time in this project only.
+- but first of all i wana show you prop drilling in action, before going to solution :-
+
+- here is the code of the prop drilling so you understand better 👇
+
+- ComponentA code :-
+
+```jsx
+import ComponentB from "./ComponentB";
+
+// now inside ComponentA , accepting the name prop with destructring getting it from App Component.
+const ComponentA = ({ name }) => {
+  return (
+    // and then we are just passing the name prop to the ComponentB
+    <div>
+      <ComponentB name={name} />
+    </div>
+  );
+};
+
+export default ComponentA;
+```
+
+- ComponentB code :-
+
+```jsx
+import ComponentC from "./ComponentC";
+
+// now inside ComponentB , accepting the name prop with destructring getting it from ComponentA.
+const ComponentB = ({ name }) => {
+  return (
+    // and then we are just passing the name prop to the ComponentC
+    <div>
+      <ComponentC name={name} />
+    </div>
+  );
+};
+
+export default ComponentB;
+```
+
+- ComponentC code :-
+
+```jsx
+// now inside ComponentC , accepting the name prop with destructring getting it from ComponentB.
+const ComponentC = ({ name }) => {
+  return (
+    // and then finally we are rendering name prop to the ComponentC
+    <div>
+      <h1>Getting My {name} by Prop Drilling.</h1>
+    </div>
+  );
+};
+
+export default ComponentC;
+```
+
+- so just passing a name to the componentC , where it acutally used we have to pass the prop on other components as well
+- so just imagine if we have thousands of components , so how much it is heavy to just drill the prop to every single component
+- and still it doesn't need to pass to un-neccessary component.
+
+- so to solve this problem we are gonna learning next is `ContextAPI` in React.

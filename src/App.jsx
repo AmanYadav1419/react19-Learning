@@ -30,8 +30,12 @@ import DataFetching from "./components/09.useEffect/DataFetching";
 import BasicEffect from "./components/09.useEffect/BasicEffect";
 import CounterEffect from "./components/09.useEffect/CounterEffect";
 import FetchDataEffect from "./components/09.useEffect/FetchDataEffect";
+import ComponentA from "./components/10.propDrilling/ComponentA";
 
 const App = () => {
+  // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
+  const name = "AmanYadav";
+
   return (
     <div>
       {/* importing Greet component for the Component Excercise task
@@ -127,6 +131,9 @@ const App = () => {
 
       {/* importing FetchDataEffect component for Excercise :- Understanding useEffect in React task Step 3 */}
       <FetchDataEffect />
+
+      {/* importing ComponentA component for understanding how the prop drilling works and passing name as prop to the component */}
+      <ComponentA name={name} />
     </div>
   );
 };
