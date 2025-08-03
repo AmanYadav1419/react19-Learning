@@ -91,3 +91,70 @@
 
     export default ComponentA;
     ```
+
+- so now what if we have more than one context present and more than one data to send
+- here is the previous code but with upgraded code for the more than one context and more than one data to send.
+
+- here is the code :- 👇
+
+  - ParentComponent.jsx
+
+  ```jsx
+  import { createContext } from "react";
+  import ComponentA from "./ComponentA";
+
+  // this is for the name data context
+  export const Data = createContext();
+
+  /** what if we had more than one context and data to send,
+   * here we are creating one more context to understand the concept. **/
+  export const Data1 = createContext();
+
+  const ParentComponent = () => {
+    const name = "Aman Yadav From ContextAPI";
+    const age = 22;
+
+    return (
+      <Data.Provider value={name}>
+        {/* here we have another Context nested to the Context */}
+        <Data1.Provider value={age}>
+          <ComponentA />
+        </Data1.Provider>
+      </Data.Provider>
+    );
+  };
+
+  export default ParentComponent;
+  ```
+
+  - ComponentA.jsx
+
+  ```jsx
+  import { Data, Data1 } from "./ParentComponent";
+  const ComponentA = () => {
+    return (
+      // so to recive that data from ParentComponent we have to do like this.
+      <Data.Consumer>
+        {(name) => {
+          // return <h1>My name is :- {name}</h1>;
+          return (
+            <Data1.Consumer>
+              {/* now insie that we have to pass the callback function again */}
+              {(age) => {
+                return (
+                  <h1>
+                    My name is: {name} and I'm {age} years old.
+                  </h1>
+                );
+              }}
+            </Data1.Consumer>
+          );
+        }}
+      </Data.Consumer>
+    );
+  };
+
+  export default ComponentA;
+  ```
+
+`- note :- again this is not the good way, to pass the data , but ya better than prop drilling.`
