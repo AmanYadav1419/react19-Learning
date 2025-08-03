@@ -3,3 +3,91 @@
 - to solve the Problem of `prop drilling` we used `Context API`.
 - Context API is a feature that allows you to `manage and share state` across your component tree without having to pass props down manually at every level.
 - It's useful for scenarios where you need to share data or functions across many components, especially when these component are deeply nested.
+
+- steps to Create and use Context in react js :-
+
+  1. first import the `createContext` from react.
+
+     ```jsx
+     import { createContext } from "react";
+     ```
+
+  2. now we have to store this `createContext` to a variable and export that so that i can use this Context anywhere inside my project.
+
+     ```jsx
+     export const Data = createContext();
+     ```
+
+  3. so now i need to wrap my entire application to use this Context
+
+     - then we have to property's :- `.Provider` that means it's gonna allows us to provide our value or our data to multiple components.
+     - and then we have to use `value={}` and inside our `value={}` we have to pass data , that need to pass inside our component or application.
+
+       ```jsx
+       return (
+         <Data.Provider value={name}>
+           <ComponentA />
+         </Data.Provider>
+       );
+       ```
+
+  4. now how we are gonna reciving the data coming from Context.
+     - so for that , where we want to recvie the data we have to import the Context whether we declare the context.
+     ```jsx
+     import { Data } from "./componentName";
+     ```
+
+  - so now wrap up with the Data component in the reciving component.
+
+        - and passing the property :- `Consumer` to the Data Component, `Consumer` is used to consume the data or recvie the data.
+        - now this Consumer will take a callback function so now we are passing a function inside that to get our data.
+
+        ```jsx
+        return (
+          <Data.Consumer>
+            {(name) => {
+              return <h1>My Name is :- {name}</h1>;
+            }}
+          </Data.Consumer>
+        );
+        ```
+
+        - here is the live code example of the ContextAPI code :- 👇
+            - first file i.e ParentComponent.jsx i.e for the creating context and sending Data to the reciver component.
+
+            ```jsx
+        import { createContext } from "react";
+        import ComponentA from "./ComponentA";
+
+        export const Data = createContext();
+
+            const ParentComponent = () => {
+            const name = "Aman Yadav From ContextAPI";
+
+                return (
+                    <Data.Provider value={name}>
+                        <ComponentA />
+                    </Data.Provider>
+                );
+            };
+
+        export default ParentComponent;
+        ```
+
+    - second file i.e ComponentA.jsx i.e for the reciving context to the component and rendering to the UI.
+
+    ```jsx
+    import { Data } from "./ParentComponent";
+
+    const ComponentA = () => {
+      return (
+        <Data.Consumer>
+          {(name) => {
+            return <h1>My name is :- {name}</h1>;
+          }}
+        </Data.Consumer>
+      );
+    };
+
+    export default ComponentA;
+    ```
