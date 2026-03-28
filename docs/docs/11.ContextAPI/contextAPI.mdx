@@ -5,7 +5,6 @@
 - It's useful for scenarios where you need to share data or functions across many components, especially when these component are deeply nested.
 
 - steps to Create and use Context in react js :-
-
   1. first import the `createContext` from react.
 
      ```jsx
@@ -19,7 +18,6 @@
      ```
 
   3. so now i need to wrap my entire application to use this Context
-
      - then we have to property's :- `.Provider` that means it's gonna allows us to provide our value or our data to multiple components.
      - and then we have to use `value={}` and inside our `value={}` we have to pass data , that need to pass inside our component or application.
 
@@ -36,7 +34,6 @@
      ```jsx
      import { Data } from "./componentName";
      ```
-
   - so now wrap up with the Data component in the reciving component.
 
         - and passing the property :- `Consumer` to the Data Component, `Consumer` is used to consume the data or recvie the data.
@@ -96,7 +93,6 @@
 - here is the previous code but with upgraded code for the more than one context and more than one data to send.
 
 - here is the code :- 👇
-
   - ParentComponent.jsx
 
   ```jsx
@@ -158,3 +154,39 @@
   ```
 
 `- note :- again this is not the good way, to pass the data , but ya better than prop drilling.`
+
+- now here is the next part , as the above is not a good way to write the code, so for that we will start using `useContext` hook.
+
+## useContext Hook :-
+
+1. useContext hook allows us to access the context values provided by Context object directly within a functional component.
+2. Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+- now here is the above code that is being updated with using `useContext` hook
+
+```jsx
+import React, { useContext } from "react";
+import { Data, Data1 } from "./ParentComponent";
+// import { Data, Data1 } from "./ParentComponent";
+const useContextHookCode = () => {
+  // now here in the hook , we have to tell that from where data is coming.
+  // so that to recive the data and then store in the variable
+  const userName = useContext(Data);
+
+  // and same we will do it for the age data i.e Data1
+  const userAge = useContext(Data1);
+  return (
+    // now instead of using the callback functions and writing bad code , we can do like this.
+    <div>
+      <h1>
+        My Name is :- {userName} and my Age is :- {userAge}. <br />
+        This data is coming from implementation of the useContext Hook.
+      </h1>
+    </div>
+  );
+};
+
+export default useContextHookCode;
+```
+
+- for better understanding refer file `UseContextHookCode.tsx` file.
