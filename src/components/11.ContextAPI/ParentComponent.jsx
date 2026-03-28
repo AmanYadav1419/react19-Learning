@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import ComponentA from "./ComponentA";
+import UseContextHookCode from "./UseContextHookCode";
 
 // this is for the name data context
 export const Data = createContext();
@@ -13,10 +14,12 @@ const ParentComponent = () => {
   const age = 22;
 
   return (
-      <Data.Provider value={name}>
-        {/* here we have another Context nested to the Context */}
+    <Data.Provider value={name}>
+      {/* here we have another Context nested to the Context */}
       <Data1.Provider value={age}>
         <ComponentA />
+
+        <UseContextHookCode />
       </Data1.Provider>
     </Data.Provider>
   );

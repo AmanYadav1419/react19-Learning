@@ -29,7 +29,7 @@ const PopupContent = ({ copied }) => {
       )}
     </section>,
     // this is the target where we want to render the content
-    document.querySelector("#popup-content-root")
+    document.querySelector("#popup-content")
   );
 };
 

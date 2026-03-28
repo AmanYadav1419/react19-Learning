@@ -4,6 +4,7 @@
 // just writing some comments where it is necessary.
 
 import { useState } from "react";
+import PopupContent from "./PopupContent";
 
 // so for starting i am creating the basic component
 

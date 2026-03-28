@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Data, Data1 } from "./ParentComponent";
 // import { Data, Data1 } from "./ParentComponent";
-const useContextHookCode = () => {
+const UseContextHookCode = () => {
   // now here in the hook , we have to tell that from where data is coming.
   // so that to recive the data and then store in the variable
   const userName = useContext(Data);
@@ -19,4 +19,4 @@ const useContextHookCode = () => {
   );
 };
 
-export default useContextHookCode;
+export default UseContextHookCode;
