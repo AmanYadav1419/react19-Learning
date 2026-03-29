@@ -32,6 +32,10 @@ import CounterEffect from "./components/09.useEffect/CounterEffect";
 import FetchDataEffect from "./components/09.useEffect/FetchDataEffect";
 import ComponentA from "./components/10.propDrilling/ComponentA";
 import ParentComponent from "./components/11.ContextAPI/ParentComponent";
+import UserProfile from "./components/11.ContextAPI/UserProfile";
+import { UserProvider } from "./components/11.ContextAPI/UserContext";
+import UpdateUser from "./components/11.ContextAPI/UpdateUser";
+import UpdateUserComponent from "./components/11.ContextAPI/UpdateUser";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -138,6 +142,12 @@ const App = () => {
 
       {/* importing ParentComponent component for understanding how the ContextAPi works in React. */}
       <ParentComponent />
+
+      {/* importing UserProfile and UpdateUserComponent, component for the Mastering `useContext` in React Excercise */}
+      <UserProvider>
+        <UserProfile />
+        <UpdateUserComponent />
+      </UserProvider>
     </div>
   );
 };
