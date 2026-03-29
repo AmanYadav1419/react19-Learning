@@ -34,7 +34,6 @@ import ComponentA from "./components/10.propDrilling/ComponentA";
 import ParentComponent from "./components/11.ContextAPI/ParentComponent";
 import UserProfile from "./components/11.ContextAPI/UserProfile";
 import { UserProvider } from "./components/11.ContextAPI/UserContext";
-import UpdateUser from "./components/11.ContextAPI/UpdateUser";
 import UpdateUserComponent from "./components/11.ContextAPI/UpdateUser";
 
 const App = () => {
