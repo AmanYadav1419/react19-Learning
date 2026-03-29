@@ -163,3 +163,119 @@ export default App;
 ```
 
 - not this code is just an example to understand how to import the component in `App.jsx` file.
+
+- Solution :-
+
+file `counterReducer.jsx` code :-
+
+```jsx
+// step 1 : to create a reducer file
+// 2. Inside this file, define a reducer function that will manage a simple counter's state.
+
+// now define initial state for the componet, here it is 0 as for the counter.
+const InitialState = { count: 0 };
+
+// now will define the reducer function to update the state
+const counterReducer = (state, action) => {
+  switch (action.type) {
+    // case to increment the count we will do like this
+    /**
+     * first we will copy the state data and then update the count
+     */
+    case "increment":
+      return { ...state, count: state.count + 1 };
+
+    /**
+     * first we will copy the state data and then update the count
+     */
+    case "decrement":
+      return { ...state, count: state.count - 1 };
+
+    /**
+     * now here is the next case increment the count by some user input
+     */
+    case "incrementByAmount":
+      return { ...state, count: state.count + action.payload };
+    /**
+     * now here is the next case decrement the count by some user input
+     */
+    case "decrementByAmount":
+      return { ...state, count: state.count - action.payload };
+
+    // and for the default case we are returning the state.
+    default:
+      return state;
+  }
+};
+
+// now we are exporting the InitialState and counterReducer to use the functionality.
+export { InitialState, counterReducer };
+```
+
+file `CounterUi.jsx` code :-
+
+```jsx
+// step 2 :- creating a CounterUI file , and importing useReducer Hook
+import React, { useReducer, useState } from "react";
+
+// and now we are importing the initialState and counterReducer to use them in the componnet.
+import { InitialState, counterReducer } from "./counterReducer";
+const CounterUI = () => {
+  // now after importing we have to use the useReducer hook to start implement the logic.
+  // and destructure the state and dispatch function to upadte the state
+
+  // in the useReducer we are passing the counterReducer and initialState that we are imported.
+  const [state, dispatch] = useReducer(counterReducer, InitialState);
+
+  // now here is the state for the form, that being used in the to
+  const [inputValue, setinputValue] = useState(0);
+
+  // now those below two functions are responsible for the increment and decrement.
+  const handleIncrement = () => dispatch({ type: "increment" });
+
+  // now for the handle decrement function
+  const handleDecrement = () => dispatch({ type: "decrement" });
+
+  // now here is the function for the incrementByAmount functionality
+  // now here we are using +inputValue, to convert the the string to number and pass the user input to the payload.
+  const handleIncrementByAmount = () =>
+    dispatch({ type: "incrementByAmount", payload: +inputValue });
+
+  // now here is the function for the decrementByAmount functionality
+  // now here is one more way to convert the string to number and pass the user input to the payload.
+  const handleDecrementByAmount = () =>
+    dispatch({ type: "decrementByAmount", payload: Number(inputValue) });
+  return (
+    <div>
+      <h2>useReducer Excercise Counter : {state.count}</h2>
+
+      {/* first increment and decrement button to perform the operations with passing onClick functionality.*/}
+      <button onClick={handleIncrement}>Incremenent</button>
+      <button onClick={handleDecrement}>Decrement</button>
+
+      {/* now to perform the incrementByAmount and incrementByAmount part */}
+      {/* we will give the input part so that user can type the amout by which user 
+      want to incrementbyAmount and decrementByAmount
+      update  */}
+
+      <div>
+        <input
+          type="number"
+          value={inputValue}
+          placeholder="Enter By amount you want to update the count"
+          onChange={(e) => setinputValue(e.target.value)}
+        />
+
+        {/* buttons to submit the functionailty of the incrementByAmount and decrementByAmount */}
+        {/* with passing onClick functionality to call the respective function */}
+        <button onClick={handleIncrementByAmount}>IncrementByAmount</button>
+        <button onClick={handleDecrementByAmount}>DecrementByAmount</button>
+      </div>
+    </div>
+  );
+};
+
+export default CounterUI;
+```
+
+- for more better understanding read the file code that is `counterReducer.jsx` and `CounterUI.jsx`
