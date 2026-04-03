@@ -23,11 +23,15 @@ const CounterUI = () => {
   // now here we are using +inputValue, to convert the the string to number and pass the user input to the payload.
   const handleIncrementByAmount = () =>
     dispatch({ type: "incrementByAmount", payload: +inputValue });
+  // now we are gonna clear the input after dispatch
+  setinputValue(0);
 
   // now here is the function for the decrementByAmount functionality
   // now here is one more way to convert the string to number and pass the user input to the payload.
   const handleDecrementByAmount = () =>
     dispatch({ type: "decrementByAmount", payload: Number(inputValue) });
+  // now we are gonna clear the input after dispatch
+  setinputValue(0);
   return (
     <div>
       <h2>useReducer Excercise Counter : {state.count}</h2>
