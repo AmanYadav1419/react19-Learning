@@ -37,6 +37,8 @@ import { UserProvider } from "./components/11.ContextAPI/UserContext";
 import UpdateUserComponent from "./components/11.ContextAPI/UpdateUser";
 import ReducerHookExample from "./components/12.useReducer/ReducerHookExample";
 import CounterUI from "./components/12.useReducer/CounterUi";
+import FocusInput from "./components/13.useRef/FocusInput";
+import Timer from "./components/13.useRef/Timer";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -158,6 +160,12 @@ const App = () => {
         <h1>React useReducer Excercise :-</h1>
         <CounterUI />
       </div>
+
+      {/* importing FocusInput component to complete the excercise for the useRef Hook Step 1 */}
+      <FocusInput />
+
+      {/* importing Timer component to complete the excercise for the useRef Hook Step 2*/}
+      <Timer />
     </div>
   );
 };
