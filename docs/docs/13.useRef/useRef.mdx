@@ -2,7 +2,6 @@
 
 - useRef Hook provides a way to access and `interact with DOM` elements or to persist values across renders without causing re-render.
 
-
 - it accepts a initial value , it can be any value that will pass in the hook.
 - and then storing in a variable.
 
@@ -28,10 +27,9 @@ const UseRefHookExample = () => {
     // the .focus() is the method present in the dom.
     inputElement.current.focus();
 
-
     // and now we will prefilled some value in the input element with this below code.
-    inputElement.current.value = "use Ref Hook implementation."
-  }
+    inputElement.current.value = "use Ref Hook implementation.";
+  };
 
   return (
     <div>
@@ -50,8 +48,8 @@ export default UseRefHookExample;
 ## Excercise : Using `useRef` in React.
 
 - In this excercise, you will learn how to:
-    - Use `useRef` to reference DOM elements.
-    - Use `useRef` to store values that persist between renders without triggering re-renders.
+  - Use `useRef` to reference DOM elements.
+  - Use `useRef` to store values that persist between renders without triggering re-renders.
 
 ### Step 1 : Accessing a DOM Element with `useRef`.
 
@@ -62,3 +60,103 @@ export default UseRefHookExample;
 
 1. Create a new file called `Timer.jsx`.
 2. Inside this file, create a functional component that implements a simple timer, where the timer's interval is stored using `useRef`.
+
+### Answer :-
+
+- Step 1 Answer :-
+
+```jsx
+import React, { useRef } from "react";
+
+// step 1 : creating FocusInput functional component
+const FocusInput = () => {
+  // using useRef hook, storing into a variable.
+  const InputFocus = useRef(null);
+
+  // onclick function to shift the focus
+  const handleInputFocus = () => {
+    // when ever user click on it
+    // so first we will check if we have the input.current value is there
+    if (InputFocus.current) {
+      // the focus will shift to the input element
+      // the .focus() is the method present in the dom.
+      InputFocus.current.focus();
+    }
+  };
+  return (
+    <div>
+      <h1>FocusInput</h1>
+      {/* creating a input and passing ref as InputFocus */}
+      <input type="text" ref={InputFocus} />
+
+      {/* button to click and passing a onclick function */}
+      <button onClick={handleInputFocus()}>Shift To Input</button>
+    </div>
+  );
+};
+
+export default FocusInput;
+```
+
+- for more betterr understanding check the file `FocusInput.jsx` which is present in the `13.useRef` folder
+
+- Step 2 Answer :-
+
+```jsx
+// step 2 : For Timer component.
+
+// importing essential hooks
+import React, { useRef, useEffect, useState } from "react";
+
+const Timer = () => {
+  // creating useState variables for the timer, initial value set to 0.
+  const [time, setTime] = useState(0);
+
+  // second one is for the interval ref, initial value set to null
+  const intervalRef = useRef(null);
+
+  // function to reset the timer to zero
+  const ResetTimer = () => {
+    // first we have to stop the timer for that clear interval method we will use
+    clearInterval(intervalRef.current);
+
+    // and then we will make the time to zero (0).
+    setTime(0);
+  };
+
+  // now for creating a timer we will use useEffect , to run the side effects
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      // now we will set the time , update the count.
+      setTime((prevTime) => prevTime + 1);
+      // 1000 means -> 1 second
+    }, 1000);
+
+    // now after that we have to clear the interval also
+    return () => {
+      // and for the clearinterval pass the ref current value.
+      clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  return (
+    <div>
+      {/* now in the ui need to show the ui or the time */}
+      <h1>Time :- {time}</h1>
+
+      {/* creating a button to stop the timer functionality */}
+      {/* with that passing clear interval function to stop the timer */}
+      <button onClick={() => clearInterval(intervalRef.current)}>
+        Stop Timer
+      </button>
+
+      {/* now one more button to set the timer to zero (0). i.e Reset */}
+      <button onClick={() => ResetTimer()}>Reset</button>
+    </div>
+  );
+};
+
+export default Timer;
+```
+
+- for more betterr understanding check the file `Timer.jsx` which is present in the `13.useRef` folder
