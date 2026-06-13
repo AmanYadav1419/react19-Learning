@@ -1,0 +1,86 @@
+## Custom Hooks :-
+
+- Custom Hooks are javaScript function that start with the prefix `use` (e.g., useFetch, useForm) and can call other hooks within them.
+- They allow you to `extract and reuse logic` that involes state or side effects, making your component more readable and maintainable.
+
+- Example of Custom Hook :-
+  -- here first will see the component which is fetching the todos data and then rendering the data in the ui.
+
+```jsx
+const Home = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+
+  return (
+    <>
+      {data &&
+        data.map((item) => {
+          return <p key={item.id}>{item.title}</p>;
+        })}
+    </>
+  );
+};
+```
+
+- now will create a custom hook to fetch the data so that it will reuse it across react application.
+- here it is 👇
+
+```jsx
+import { useState, useEffect } from "react";
+
+// for the custom hoook function name will always start from `use` and then the hook method or the purpose of the hook.
+
+// and this hook will accept the url as parameter , so that it will reusable across all the application.
+const useFetch = (url) => {
+  // state to store the fetched data.
+  const [data, setData] = useState(null);
+
+  // useEffect to fetch the data from `url` and make the `dependency empty` so it will `run only once`.
+  // and it will handle the data conversion and updating to state too.
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+
+  // return whole api data
+  return [data];
+};
+
+// and then export the hook, so that it will used in whole application and code will be reusable.
+export default useFetch;
+```
+
+- and now to use the `useFetch` hook inside our component will be like this 👇
+
+```jsx
+// Importing our custom hook 👇.
+import { useFetch } from "./useFetch";
+
+const Home = () => {
+    // call the custom hook and pass the urln in the custom hook.
+    // and store the data
+    // using our custom hook 👇.
+    const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
+
+// then rendering the api data that is store in the `[data]` variable.
+return (
+    <>
+    {data &&
+      data.map((item) => (
+        return (
+            <ul key={item.id}>
+                <li>{item.title}</li>
+            </ul>
+            );
+          ))}
+    </>
+    );
+}
+//
+```
