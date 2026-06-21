@@ -62,25 +62,26 @@ export default useFetch;
 // Importing our custom hook 👇.
 import { useFetch } from "./useFetch";
 
-const Home = () => {
+// now this component is for the example to understand how to use custom hook.
+const customHookUsage = () => {
     // call the custom hook and pass the urln in the custom hook.
-    // and store the data
+    // and destructure the data 
     // using our custom hook 👇.
     const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
 
 // then rendering the api data that is store in the `[data]` variable.
-return (
+  return (
     <>
-    {data &&
-      data.map((item) => (
-        return (
-            <ul key={item.id}>
-                <li>{item.title}</li>
-            </ul>
-            );
-          ))}
+      {data &&
+        data.map((item) => {
+          return <p key={item.id}>{item.title}</p>;
+        })}
     </>
-    );
+  );
 }
-//
+// exporting this component too , so that we can use it in our application.
+export default customHookUsage;
 ```
+- For much Better understanding in the code you can check the files :-
+    - `useFetch.jsx` (implementation of the custom hook).
+    - `customHookUsage.jsx` (how to use the custom hook in the component for that example).
