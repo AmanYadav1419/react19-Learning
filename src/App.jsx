@@ -166,6 +166,8 @@ const App = () => {
 
       {/* importing Timer component to complete the excercise for the useRef Hook Step 2*/}
       <Timer />
+
+      {/* importing CustomHookUsage component to understand the custom hook implemeation */}
     </div>
   );
 };
