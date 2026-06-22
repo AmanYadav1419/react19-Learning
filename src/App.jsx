@@ -170,6 +170,8 @@ const App = () => {
 
       {/* importing CustomHookUsage component to understand the custom hook implemeation */}
       <CustomHookUsage />
+
+      {/* importing useIdHookImplementation component to understand the useId hook implementation */}
     </div>
   );
 };
