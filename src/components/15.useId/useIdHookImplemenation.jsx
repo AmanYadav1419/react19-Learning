@@ -1,6 +1,6 @@
 // now to use the uniqueid component in this component.
 import UniqueId from "./uniqueId";
-const useIdHookImplemenation = () => {
+const UseIdHookImplemenation = () => {
   return (
     <div>
       {/* importing the uniqueid component to use in the application*/}
@@ -20,4 +20,4 @@ const useIdHookImplemenation = () => {
 };
 
 // and then export the component to use in the application.
-export default useIdHookImplemenation;
+export default UseIdHookImplemenation;
