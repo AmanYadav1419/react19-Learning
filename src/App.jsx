@@ -39,6 +39,7 @@ import ReducerHookExample from "./components/12.useReducer/ReducerHookExample";
 import CounterUI from "./components/12.useReducer/CounterUi";
 import FocusInput from "./components/13.useRef/FocusInput";
 import Timer from "./components/13.useRef/Timer";
+import CustomHookUsage from "./components/14.CustomHook/customHookUsage";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -168,6 +169,7 @@ const App = () => {
       <Timer />
 
       {/* importing CustomHookUsage component to understand the custom hook implemeation */}
+      <CustomHookUsage />
     </div>
   );
 };

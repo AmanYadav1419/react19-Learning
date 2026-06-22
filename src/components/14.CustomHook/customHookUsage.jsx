@@ -2,7 +2,7 @@
 import { useFetch } from "./useFetch";
 
 // now this component is for the example to understand how to use custom hook.
-const customHookUsage = () => {
+const CustomHookUsage = () => {
   // call the custom hook and pass the urln in the custom hook.
   // and destructure the data
   // using our custom hook 👇.
@@ -19,4 +19,4 @@ const customHookUsage = () => {
   );
 };
 // exporting this component too , so that we can use it in our application.
-export default customHookUsage;
+export default CustomHookUsage;
