@@ -41,9 +41,9 @@ In this excercise, you will practice writing basic JSX code and rendering into R
 Step 1 : Create a new Component
     1. Create a new file called WelcomeMessage.jsx
     2. Inside this file write a functional component called WelcomeMessage.
-    3. The component should return a <div> that contains:
-        - A <h1> element that displays the message:  "Hello, World!"
-        - A <p> element that displays the message: "Welcome to learning JSX!!"
+    3. The component should return a `div` that contains:
+        - A `h1` element that displays the message:  "Hello, World!"
+        - A `p` element that displays the message: "Welcome to learning JSX!!"
 
 Step 2 : Render the component in App.jsx 
     1. Open the App.jsx file.
@@ -56,19 +56,21 @@ Step 3 : Run the Application
 
 
 ## Rules to Write JSX :-
-1. From a single component you are allowed to return only one Parent element e.g <div> or <section>.
+1. From a single component you are allowed to return only one Parent element e.g `div` or `section`.
     - and inside that Parent element you can create multiple child elements nested
 2. In JSX you have to close all of your HTML tags.
 3. You are not allowed to Provide class by using class keyword, instead of class you have to provide className.
 4. anytime you are working with the forms in some situation we also want to provide some label for our input feilds
-    - in <form> tag we are creating <label />,
-    - and in that label instead of write for="" property present in HTML
-    - we write like this :- htmlFor=""
+    - in `form` tag we are creating `label`,
+    - and in that label instead of write `for=""` property present in HTML
+    - we write like this :- `htmlFor=""`
     - so here is with example :- 
+    ```jsx
         <form>
             <label htmlFor="name">Name : </label>
             <input type="text" placeholder="Enter Your Name" />
         </form>
+    ```
 
 
 ## JSX Rules Excercise :- 
@@ -77,9 +79,9 @@ Step 1 : Create a new Component
     1. Create a new file called JSXRules.jsx
     2. Inside this file, write a functional component called JSXRules.
 
-    The component should return a <div> containing the following
-    - A <h1> element with the text "JSX Rules"
-    - A Paragraph (<p>) that lists at least three rules of JSX:
+    The component should return a `div` containing the following
+    - A `h1` element with the text "JSX Rules"
+    - A Paragraph (`p`) that lists at least three rules of JSX:
         - JSX must return a single parent element.
         - JSX element must be properly closed.
         - JSX attributes are written using camelCase (e.g. className instead of class). 
@@ -105,22 +107,22 @@ here is the example present in JSXexpression.jsx
 Step 1 : Create a Greeting Component
     1. Create a new file called Greeting.jsx 
     2. Inside this file, Create a functional component named Greeting.
-    3. The Greeting component should return a <div> containing:
-        - A <h1> element that dynamically displays a greeting message.
-        - A <p> element that dynamically displays current date.
-    4. Use Javascript expression inside {} to dynamically render the following:
+    3. The Greeting component should return a `div` containing:
+        - A `h1` element that dynamically displays a greeting message.
+        - A `p` element that dynamically displays current date.
+    4. Use Javascript expression inside `{}` to dynamically render the following:
         - A name variable containing a name, such as "John".
         - A new Date() object to displays current date.
 
 Step 2 : Create a ProductInfo Component
     1. Create a new file called ProductInfo.jsx.
     2. Inside this file, creaate a functional component named ProductInfo.
-    3. The ProductInfo component should return a <div> that dynamically displays Product details:
+    3. The ProductInfo component should return a `div` that dynamically displays Product details:
         - Use the Product object that contains following properties:
             - name:"Laptop",
             - price:"$1200",
             - availbility:"In Stock"
-    4. Display the Product name , price and availbility using {}.
+    4. Display the Product name , price and availbility using `{}`.
 
 Step 3 : Render Components in App.jsx 
     1. In your App.jsx file, import the Greeting and ProductInfo Components:

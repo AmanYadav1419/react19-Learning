@@ -49,73 +49,20 @@
         );
         ```
 
-        - here is the live code example of the ContextAPI code :- 👇
-            - first file i.e ParentComponent.jsx i.e for the creating context and sending Data to the reciver component.
-
-            ```jsx
-        import { createContext } from "react";
-        import ComponentA from "./ComponentA";
-
-        export const Data = createContext();
-
-            const ParentComponent = () => {
-            const name = "Aman Yadav From ContextAPI";
-
-                return (
-                    <Data.Provider value={name}>
-                        <ComponentA />
-                    </Data.Provider>
-                );
-            };
-
-        export default ParentComponent;
-        ```
-
-    - second file i.e ComponentA.jsx i.e for the reciving context to the component and rendering to the UI.
-
-    ```jsx
-    import { Data } from "./ParentComponent";
-
-    const ComponentA = () => {
-      return (
-        <Data.Consumer>
-          {(name) => {
-            return <h1>My name is :- {name}</h1>;
-          }}
-        </Data.Consumer>
-      );
-    };
-
-    export default ComponentA;
-    ```
-
-- so now what if we have more than one context present and more than one data to send
-- here is the previous code but with upgraded code for the more than one context and more than one data to send.
-
-- here is the code :- 👇
-  - ParentComponent.jsx
+- here is the live code example of the ContextAPI code :- 👇
+  - first file i.e ParentComponent.jsx i.e for the creating context and sending Data to the reciver component.
 
   ```jsx
   import { createContext } from "react";
   import ComponentA from "./ComponentA";
 
-  // this is for the name data context
   export const Data = createContext();
-
-  /** what if we had more than one context and data to send,
-   * here we are creating one more context to understand the concept. **/
-  export const Data1 = createContext();
 
   const ParentComponent = () => {
     const name = "Aman Yadav From ContextAPI";
-    const age = 22;
-
     return (
       <Data.Provider value={name}>
-        {/* here we have another Context nested to the Context */}
-        <Data1.Provider value={age}>
-          <ComponentA />
-        </Data1.Provider>
+        <ComponentA />
       </Data.Provider>
     );
   };
@@ -123,28 +70,16 @@
   export default ParentComponent;
   ```
 
-  - ComponentA.jsx
+  - second file i.e ComponentA.jsx i.e for the reciving context to the component and rendering to the UI.
 
   ```jsx
-  import { Data, Data1 } from "./ParentComponent";
+  import { Data } from "./ParentComponent";
+
   const ComponentA = () => {
     return (
-      // so to recive that data from ParentComponent we have to do like this.
       <Data.Consumer>
         {(name) => {
-          // return <h1>My name is :- {name}</h1>;
-          return (
-            <Data1.Consumer>
-              {/* now insie that we have to pass the callback function again */}
-              {(age) => {
-                return (
-                  <h1>
-                    My name is: {name} and I'm {age} years old.
-                  </h1>
-                );
-              }}
-            </Data1.Consumer>
-          );
+          return <h1>My name is :- {name}</h1>;
         }}
       </Data.Consumer>
     );
@@ -153,7 +88,7 @@
   export default ComponentA;
   ```
 
-`- note :- again this is not the good way, to pass the data , but ya better than prop drilling.`
+- note :- again this is not the good way, to pass the data , but ya better than prop drilling.
 
 - now here is the next part , as the above is not a good way to write the code, so for that we will start using `useContext` hook.
 
@@ -209,4 +144,3 @@ export default useContextHookCode;
 ### Step 3 :- Updating Context Data.
   1. Create a new file called `UpdateUser.tsx`.
   2. Inside this file, create a functional component called `UpdateUser` that allows the user to update their name.
-

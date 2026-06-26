@@ -70,8 +70,8 @@ Step 1 : Create a Person Component
 2. Inside this file, create a functional component called Person.
 3. This component should accept props and render:
 
-   - A <h2> element that displays the person's name.
-   - A <p> element that displays the person's age.
+   - A `h2` element that displays the person's name.
+   - A `p` element that displays the person's age.
 
 4. Use props.name and props.age to display the dynamic values passed from the parent component.
 
@@ -81,8 +81,8 @@ Step 2 : Create a Product Component
 2. Inside this file, create a functional component called Product.
 3. This component should accept props and render:
 
-   - A <h2> element that displays the product's name.
-   - A <p> element that displays the product's price.
+   - A `h2` element that displays the product's name.
+   - A `p` element that displays the product's price.
 
 4. Use props.name and props.price to display the dynamic values passed from the parent component.
 
@@ -121,7 +121,7 @@ const App = () => {
 export default App;
 ```
 
-- so in that we are passing the data from app to card component i.e passing <h1> and <p> data to Card component by closing them.
+- so in that we are passing the data from app to card component i.e passing `h1` and `p` data to Card component by closing them.
 - so the question is how we are gonna accessing this data.
 - so to access that data, there is something called `children` which will allows us to access that data from the parent component to child component.
 
@@ -147,4 +147,4 @@ const Card = ({ children }) => {
 export default Card;
 ```
 
-- it can use it for if multiple card components had present and multiple data like <h1> and <p> that passed , this children method can very efficient for this.
+- it can use it for if multiple card components had present and multiple data like `h1` and `p` that passed , this children method can very efficient for this.
