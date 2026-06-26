@@ -239,6 +239,40 @@ code {
   font-family: 'Courier New', monospace;
 }
 
+.docs-link-container {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  font-size: 0.95rem;
+}
+
+.docs-link-text {
+  color: #94a3b8;
+}
+
+.docs-link {
+  color: #a855f7;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.docs-link:hover {
+  color: #c084fc;
+  text-decoration: underline;
+}
+
+.docs-link-icon {
+  transition: transform 0.2s ease;
+}
+
+.docs-link:hover .docs-link-icon {
+  transform: translateX(2px);
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .container {

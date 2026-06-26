@@ -41,6 +41,8 @@ import FocusInput from "./components/13.useRef/FocusInput";
 import Timer from "./components/13.useRef/Timer";
 import CustomHookUsage from "./components/14.CustomHook/customHookUsage";
 import UseIdHookImplemenation from "./components/15.useId/useIdHookImplemenation";
+import DocumentationLink from "./components/DocumentationLink";
+import { docsMap } from "./docsMap";
 import BeginnerProjectsWrapper from "./01-BeginnerProjects/Index";
 
 const App = () => {
@@ -58,13 +60,14 @@ const App = () => {
         <h2 className="section-title">01. Components</h2>
         <div className="component-wrapper">
           <p className="component-label">Basic Components</p>
-          {/* importing Greet component for the Component Excercise task */}
+          {/* importing Greet component for the Component Excercise task  */}
           <Greet />
           {/* importing all the components for the Excercise task, in an correct order */}
           <Header />
           <MainContent />
           <Footer />
         </div>
+        <DocumentationLink docPath={docsMap["01.components"]} />
       </section>
 
       <section className="section-wrapper">
@@ -94,6 +97,7 @@ const App = () => {
           {/* importing JSXRules component for the JSX Rules Excercise task */}
           <ProductInfo />
         </div>
+        <DocumentationLink docPath={docsMap["02.jsx"]} />
       </section>
 
       <section className="section-wrapper">
@@ -108,6 +112,7 @@ const App = () => {
           {/* importing ProductList component for the Rendering a List Data with .map() Excercise task */}
           <ProductList />
         </div>
+        <DocumentationLink docPath={docsMap["03.lists"]} />
       </section>
 
       <section className="section-wrapper">
@@ -122,6 +127,7 @@ const App = () => {
           {/* importing Product component for the Using Props in React Components Excercise task */}
           <Product name="Iphone" price={1500} />
         </div>
+        <DocumentationLink docPath={docsMap["04.props"]} />
       </section>
 
       <section className="section-wrapper">
@@ -144,6 +150,7 @@ const App = () => {
           <ConditionalGreeting timeOfDay="morning" />
           <ConditionalGreeting timeOfDay="afternoon" />
         </div>
+        <DocumentationLink docPath={docsMap["05.conditionalRendering"]} />
       </section>
 
       <section className="section-wrapper">
@@ -163,6 +170,7 @@ const App = () => {
           {/* importing ProfileCard component for the Styling Components in React Excercise task Step 2 */}
           <ProfileCard />
         </div>
+        <DocumentationLink docPath={docsMap["06.stylingInReact"]} />
       </section>
 
       <section className="section-wrapper">
@@ -207,6 +215,7 @@ const App = () => {
           {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 4 */}
           <ShoppingList />
         </div>
+        <DocumentationLink docPath={docsMap["07.StateAndHooks"]} />
       </section>
 
       <section className="section-wrapper">
@@ -216,6 +225,7 @@ const App = () => {
           {/* importing CopyInput component for understanding Portal concept how it is working */}
           <CopyInput />
         </div>
+        <DocumentationLink docPath={docsMap["08.Portal"]} />
       </section>
 
       <section className="section-wrapper">
@@ -240,6 +250,7 @@ const App = () => {
           {/* importing FetchDataEffect component for Excercise :- Understanding useEffect in React task Step 3 */}
           <FetchDataEffect />
         </div>
+        <DocumentationLink docPath={docsMap["09.useEffect"]} />
       </section>
 
       <section className="section-wrapper">
@@ -249,6 +260,7 @@ const App = () => {
           {/* importing ComponentA component for understanding how the prop drilling works and passing name as prop to the component */}
           <ComponentA name={name} />
         </div>
+        <DocumentationLink docPath={docsMap["10.propDrilling"]} />
       </section>
 
       <section className="section-wrapper">
@@ -266,6 +278,7 @@ const App = () => {
             <UpdateUserComponent />
           </div>
         </UserProvider>
+        <DocumentationLink docPath={docsMap["11.ContextAPI"]} />
       </section>
 
       <section className="section-wrapper">
@@ -283,6 +296,7 @@ const App = () => {
             <CounterUI />
           </div>
         </div>
+        <DocumentationLink docPath={docsMap["12.useReducer"]} />
       </section>
 
       <section className="section-wrapper">
@@ -297,6 +311,7 @@ const App = () => {
           {/* importing Timer component to complete the excercise for the useRef Hook Step 2*/}
           <Timer />
         </div>
+        <DocumentationLink docPath={docsMap["13.useRef"]} />
       </section>
 
       <section className="section-wrapper">
@@ -306,6 +321,7 @@ const App = () => {
           {/* importing CustomHookUsage component to understand the custom hook implemenation */}
           <CustomHookUsage />
         </div>
+        <DocumentationLink docPath={docsMap["14.customHooks"]} />
       </section>
 
       <section className="section-wrapper">
@@ -315,6 +331,7 @@ const App = () => {
           {/* importing useIdHookImplementation component to understand the useId hook implementation */}
           <UseIdHookImplemenation />
         </div>
+        <DocumentationLink docPath={docsMap["15.useId"]} />
       </section>
 
       <section className="section-wrapper">
