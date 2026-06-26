@@ -36,11 +36,12 @@ import UserProfile from "./components/11.ContextAPI/UserProfile";
 import { UserProvider } from "./components/11.ContextAPI/UserContext";
 import UpdateUserComponent from "./components/11.ContextAPI/UpdateUser";
 import ReducerHookExample from "./components/12.useReducer/ReducerHookExample";
-import CounterUI from "./components/12.useReducer/CounterUi";
+import CounterUI from "./components/12.useReducer/CounterUI";
 import FocusInput from "./components/13.useRef/FocusInput";
 import Timer from "./components/13.useRef/Timer";
 import CustomHookUsage from "./components/14.CustomHook/customHookUsage";
 import UseIdHookImplemenation from "./components/15.useId/useIdHookImplemenation";
+import BeginnerProjectsWrapper from "./01-BeginnerProjects/Index";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
