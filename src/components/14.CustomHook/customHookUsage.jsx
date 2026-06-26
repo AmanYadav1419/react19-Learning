@@ -1,5 +1,5 @@
 // Importing our custom hook 👇.
-import { useFetch } from "./useFetch";
+import useFetch from "./useFetch.jsx";
 
 // now this component is for the example to understand how to use custom hook.
 const CustomHookUsage = () => {

@@ -7,13 +7,13 @@ const useFetch = (url) => {
   // state to store the fetched data.
   const [data, setData] = useState(null);
 
-  // useEffect to fetch the data from `url` and make the `dependency empty` so it will `run only once`.
+  // useEffect to fetch the data from `url` and make the `dependency array include the url`.
   // and it will handle the data conversion and updating to state too.
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, []);
+  }, [url]);
 
   // return whole api data
   return [data];
