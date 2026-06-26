@@ -48,133 +48,283 @@ const App = () => {
   const name = "AmanYadav";
 
   return (
-    <div>
-      {/* importing Greet component for the Component Excercise task
-      <Greet />
+    <div className="container">
+      <header className="app-header">
+        <h1>React 19 Learning Hub</h1>
+        <p>Master React fundamentals with hands‑through examples</p>
+      </header>
 
-      {/* importing all the components for the Excercise task, in an correct order */}
-      <Header />
-      <MainContent />
-      <Footer />
+      <section className="section-wrapper">
+        <h2 className="section-title">01. Components</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Basic Components</p>
+          {/* importing Greet component for the Component Excercise task */}
+          <Greet />
+          {/* importing all the components for the Excercise task, in an correct order */}
+          <Header />
+          <MainContent />
+          <Footer />
+        </div>
+      </section>
 
-      {/* importing WelcomeMessage component for the JSX Excercise task */}
-      <WelcomeMessage />
+      <section className="section-wrapper">
+        <h2 className="section-title">02. JSX</h2>
+        <div className="component-wrapper">
+          <p className="component-label">JSX Basics</p>
+          {/* importing WelcomeMessage component for the JSX Excercise task */}
+          <WelcomeMessage />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">JSX Rules</p>
+          {/* importing JSXRules component for the JSX Rules Excercise task */}
+          <JSXRules />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">JSX Expressions</p>
+          {/* importing JSXexpression component for the JSX Expression theory */}
+          <JSXexpression />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Greeting Component</p>
+          {/* importing JSXRules component for the JSX Rules Excercise task */}
+          <Greeting />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Product Info</p>
+          {/* importing JSXRules component for the JSX Rules Excercise task */}
+          <ProductInfo />
+        </div>
+      </section>
 
-      {/* importing JSXRules component for the JSX Rules Excercise task */}
-      <JSXRules />
+      <section className="section-wrapper">
+        <h2 className="section-title">03. Lists</h2>
+        <div className="component-wrapper">
+          <p className="component-label">User List</p>
+          {/* importing UserList component for the Rendering a List Data with .map() Excercise task */}
+          <UserList />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Product List</p>
+          {/* importing ProductList component for the Rendering a List Data with .map() Excercise task */}
+          <ProductList />
+        </div>
+      </section>
 
-      {/* importing JSXexpression component for the JSX Expression theory */}
-      <JSXexpression />
+      <section className="section-wrapper">
+        <h2 className="section-title">04. Props</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Person Component</p>
+          {/* importing Person component for the Using Props in React Components Excercise task */}
+          <Person name="Aman" age={21} />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Product Component</p>
+          {/* importing Product component for the Using Props in React Components Excercise task */}
+          <Product name="Iphone" price={1500} />
+        </div>
+      </section>
 
-      {/* importing JSXRules component for the JSX Rules Excercise task */}
-      <Greeting />
+      <section className="section-wrapper">
+        <h2 className="section-title">05. Conditional Rendering</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Weather Component</p>
+          {/* importing Weather component for the Conditional Rendering in React Excercise task Step 1 */}
+          <Weather temperature={10} />
+          <Weather temperature={20} />
+          <Weather temperature={30} />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">User Status</p>
+          {/* importing UserStatus component for the Conditional Rendering in React Excercise task Step 2 */}
+          <UserStatus loggedIn={true} isAdmin={false} />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Conditional Greeting</p>
+          {/* importing Greeting component for the Conditional Rendering in React Excercise task Step 3 */}
+          <ConditionalGreeting timeOfDay="morning" />
+          <ConditionalGreeting timeOfDay="afternoon" />
+        </div>
+      </section>
 
-      {/* importing JSXRules component for the JSX Rules Excercise task */}
-      <ProductInfo />
+      <section className="section-wrapper">
+        <h2 className="section-title">06. Styling in React</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Icon Component</p>
+          {/* importing IconComponent component for the Styling Components in React Excercise task Step 3 */}
+          <IconComponent />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Styled Card</p>
+          {/* importing StyledCard component for the Styling Components in React Excercise task Step 1 */}
+          <StyledCard />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Profile Card</p>
+          {/* importing ProfileCard component for the Styling Components in React Excercise task Step 2 */}
+          <ProfileCard />
+        </div>
+      </section>
 
-      {/* importing UserList component for the Rendering a List Data with .map() Excercise task */}
-      <UserList />
+      <section className="section-wrapper">
+        <h2 className="section-title">07. State and Hooks</h2>
+        <div className="component-wrapper">
+          <p className="component-label">State and Hooks Introduction</p>
+          {/* importing StateAndHooks component for understanding how usestate hook is working */}
+          <StateAndHooks />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Update Array with useState</p>
+          {/* importing  UpdateArrayWithUseState component for understanding how useState hook is working for array */}
+          <UpdateArrayWithUseState />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Update Object with useState</p>
+          {/* importing  UpdateArrayWithUseState component for understanding how useState hook is working for objects */}
+          <UpdateObjectWithUseState />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Update Array of Objects with useState</p>
+          {/* importing  UpdateArrayOfObjectsWithUseState component for understanding how useState hook is working for array of objects */}
+          <UpdateArrayOfObjectsWithUseState />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Counter</p>
+          {/* importing Counter component for the Mastering `useState` in React Excercise task Step 1 */}
+          <Counter />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Todo List</p>
+          {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 2 */}
+          <TodoList />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Profile</p>
+          {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 3 */}
+          <Profile />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Shopping List</p>
+          {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 4 */}
+          <ShoppingList />
+        </div>
+      </section>
 
-      {/* importing ProductList component for the Rendering a List Data with .map() Excercise task */}
-      <ProductList />
+      <section className="section-wrapper">
+        <h2 className="section-title">08. Portals</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Copy Input</p>
+          {/* importing CopyInput component for understanding Portal concept how it is working */}
+          <CopyInput />
+        </div>
+      </section>
 
-      {/* importing Person component for the Using Props in React Components Excercise task */}
-      <Person name="Aman" age={21} />
+      <section className="section-wrapper">
+        <h2 className="section-title">09. useEffect</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Data Fetching</p>
+          {/* importing DataFetching component for understanding how useEffect hook is working for fetching data i.e side effects */}
+          <DataFetching />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Basic Effect</p>
+          {/* importing BasicEffect component for Excercise :- Understanding useEffect in React task Step 1 */}
+          <BasicEffect />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Counter Effect</p>
+          {/* importing CounterEffect component for Excercise :- Understanding useEffect in React task Step 2 */}
+          <CounterEffect />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Fetch Data Effect</p>
+          {/* importing FetchDataEffect component for Excercise :- Understanding useEffect in React task Step 3 */}
+          <FetchDataEffect />
+        </div>
+      </section>
 
-      {/* importing Product component for the Using Props in React Components Excercise task */}
-      <Product name="Iphone" price={1500} />
+      <section className="section-wrapper">
+        <h2 className="section-title">10. Prop Drilling</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Prop Drilling Example</p>
+          {/* importing ComponentA component for understanding how the prop drilling works and passing name as prop to the component */}
+          <ComponentA name={name} />
+        </div>
+      </section>
 
-      {/* importing Weather component for the Conditional Rendering in React Excercise task Step 1 */}
-      <Weather temperature={10} />
-      <Weather temperature={20} />
-      <Weather temperature={30} />
+      <section className="section-wrapper">
+        <h2 className="section-title">11. Context API</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Parent Component</p>
+          {/* importing ParentComponent component for understanding how the ContextAPi works in React. */}
+          <ParentComponent />
+        </div>
+        <UserProvider>
+          <div className="component-wrapper">
+            <p className="component-label">User Profile & Update</p>
+            {/* importing UserProfile and UpdateUserComponent, component for the Mastering `useContext` in React Excercise */}
+            <UserProfile />
+            <UpdateUserComponent />
+          </div>
+        </UserProvider>
+      </section>
 
-      {/* importing UserStatus component for the Conditional Rendering in React Excercise task Step 2 */}
-      <UserStatus loggedIn={true} isAdmin={false} />
+      <section className="section-wrapper">
+        <h2 className="section-title">12. useReducer Hook</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Reducer Hook Example</p>
+          {/* imporitng ReducerHookExample, component to understand useReducer hook with example */}
+          <ReducerHookExample />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Counter UI (useReducer)</p>
+          {/* importing Counter, component to complete the excercise for the useReducer Hook */}
+          <div>
+            <h1>React useReducer Excercise :-</h1>
+            <CounterUI />
+          </div>
+        </div>
+      </section>
 
-      {/* importing Greeting component for the Conditional Rendering in React Excercise task Step 3 */}
-      <ConditionalGreeting timeOfDay="morning" />
-      <ConditionalGreeting timeOfDay="afternoon" />
+      <section className="section-wrapper">
+        <h2 className="section-title">13. useRef Hook</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Focus Input</p>
+          {/* importing FocusInput component to complete the excercise for the useRef Hook Step 1 */}
+          <FocusInput />
+        </div>
+        <div className="component-wrapper">
+          <p className="component-label">Timer</p>
+          {/* importing Timer component to complete the excercise for the useRef Hook Step 2*/}
+          <Timer />
+        </div>
+      </section>
 
-      {/* importing IconComponent component for the Styling Components in React Excercise task Step 3 */}
-      <IconComponent />
+      <section className="section-wrapper">
+        <h2 className="section-title">14. Custom Hooks</h2>
+        <div className="component-wrapper">
+          <p className="component-label">useFetch Custom Hook</p>
+          {/* importing CustomHookUsage component to understand the custom hook implemenation */}
+          <CustomHookUsage />
+        </div>
+      </section>
 
-      {/* importing StyledCard component for the Styling Components in React Excercise task Step 1 */}
-      <StyledCard />
-      {/* importing ProfileCard component for the Styling Components in React Excercise task Step 2 */}
-      <ProfileCard />
+      <section className="section-wrapper">
+        <h2 className="section-title">15. useId Hook</h2>
+        <div className="component-wrapper">
+          <p className="component-label">useId Hook Implementation</p>
+          {/* importing useIdHookImplementation component to understand the useId hook implementation */}
+          <UseIdHookImplemenation />
+        </div>
+      </section>
 
-      {/* importing StateAndHooks component for understanding how usestate hook is working */}
-      <StateAndHooks />
-
-      {/* importing  UpdateArrayWithUseState component for understanding how useState hook is working for array */}
-      <UpdateArrayWithUseState />
-
-      {/* importing  UpdateArrayWithUseState component for understanding how useState hook is working for objects */}
-      <UpdateObjectWithUseState />
-
-      {/* importing  UpdateArrayOfObjectsWithUseState component for understanding how useState hook is working for array of objects */}
-      <UpdateArrayOfObjectsWithUseState />
-
-      {/* importing Counter component for the Mastering `useState` in React Excercise task Step 1 */}
-      <Counter />
-
-      {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 2 */}
-      <TodoList />
-
-      {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 3 */}
-      <Profile />
-
-      {/* importing UserStatus component for the Mastering `useState` in React Excercise task Step 4 */}
-      <ShoppingList />
-
-      {/* importing CopyInput component for understanding Portal concept how it is working */}
-      <CopyInput />
-
-      {/* importing DataFetching component for understanding how useEffect hook is working for fetching data i.e side effects */}
-      <DataFetching />
-
-      {/* importing BasicEffect component for Excercise :- Understanding useEffect in React task Step 1 */}
-      <BasicEffect />
-
-      {/* importing CounterEffect component for Excercise :- Understanding useEffect in React task Step 2 */}
-      <CounterEffect />
-
-      {/* importing FetchDataEffect component for Excercise :- Understanding useEffect in React task Step 3 */}
-      <FetchDataEffect />
-
-      {/* importing ComponentA component for understanding how the prop drilling works and passing name as prop to the component */}
-      <ComponentA name={name} />
-
-      {/* importing ParentComponent component for understanding how the ContextAPi works in React. */}
-      <ParentComponent />
-
-      {/* importing UserProfile and UpdateUserComponent, component for the Mastering `useContext` in React Excercise */}
-      <UserProvider>
-        <UserProfile />
-        <UpdateUserComponent />
-      </UserProvider>
-
-      {/* imporitng ReducerHookExample, component to understand useReducer hook with example */}
-      <ReducerHookExample />
-
-      {/* importing Counter, component to complete the excercise for the useReducer Hook */}
-      <div>
-        <h1>React useReducer Excercise :-</h1>
-        <CounterUI />
-      </div>
-
-      {/* importing FocusInput component to complete the excercise for the useRef Hook Step 1 */}
-      <FocusInput />
-
-      {/* importing Timer component to complete the excercise for the useRef Hook Step 2*/}
-      <Timer />
-
-      {/* importing CustomHookUsage component to understand the custom hook implemeation */}
-      <CustomHookUsage />
-
-      {/* importing useIdHookImplementation component to understand the useId hook implementation */}
-      <UseIdHookImplemenation />
+      <section className="section-wrapper">
+        <h2 className="section-title">Beginner Projects</h2>
+        <div className="component-wrapper">
+          <p className="component-label">Counter Project</p>
+          {/* importing BeginnerProjectsWrapper component for the 01-BeginnerProjects  */}
+          <BeginnerProjectsWrapper />
+        </div>
+      </section>
     </div>
   );
 };
