@@ -2,3 +2,58 @@
 
 - note this projects are `ReactJS + JavaScript` only
 - first we will cover the ReactJS with JavaScript.
+
+- here is the code of the first beginner project that is `Counter Application` :-
+
+```jsx
+// 001 Counter Project.
+
+import { useState } from "react";
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount((prev) => prev + 1);
+  };
+
+  const handleDecrement = () => {
+    setCount((prev) => prev - 1);
+  };
+
+  const handleIncermentByAmount = (amount) => {
+    setCount((prev) => prev + amount);
+  };
+  return (
+    <>
+      <h1>Count : {count}</h1>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
+      <button onClick={() => handleIncermentByAmount(5)}>Incerment by 5</button>
+    </>
+  );
+};
+
+export default Counter;
+```
+
+- and then this will be used in the `index.jsx` file
+  here is the example code :-
+
+```jsx
+// this file is act like a wrapper for all the projects will be imported in this component.
+
+import Counter from "./001-CounterProject/Counter"
+
+// so that it is easy to manage at global level making the code more easy to understand.
+const BeginnerProjectsWrapper = () => {
+  return (
+    <div>
+        {/* importing our first project that is counter application */}
+        <Counter />
+    </div>
+  )
+}
+
+export default BeginnerProjectsWrapper
+```
+- Project 1 Completed.
