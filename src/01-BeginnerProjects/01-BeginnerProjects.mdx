@@ -4,6 +4,7 @@
 - first we will cover the ReactJS with JavaScript.
 
 ## Project 1 :- Counter Application.
+
 - here is the code of the first beginner project that is `Counter Application` :-
 
 ```jsx
@@ -43,23 +44,25 @@ export default Counter;
 ```jsx
 // this file is act like a wrapper for all the projects will be imported in this component.
 
-import Counter from "./001-CounterProject/Counter"
+import Counter from "./001-CounterProject/Counter";
 
 // so that it is easy to manage at global level making the code more easy to understand.
 const BeginnerProjectsWrapper = () => {
   return (
     <div>
-        {/* importing our first project that is counter application */}
-        <Counter />
+      {/* importing our first project that is counter application */}
+      <Counter />
     </div>
-  )
-}
+  );
+};
 
-export default BeginnerProjectsWrapper
+export default BeginnerProjectsWrapper;
 ```
+
 - Project 1 Completed.
 
 ## Project 2 : Todo Application
+
 - here is the code of the second beginner project that is `Todo Application` :-
 
 ```jsx
@@ -115,5 +118,30 @@ const Todo = () => {
 };
 
 export default Todo;
-
 ```
+
+- and then this will be used in the `index.jsx` file
+  here is the example code :-
+
+```jsx
+// this file is act like a wrapper for all the projects will be imported in this component.
+
+import Counter from "./001-CounterProject/Counter";
+
+// so that it is easy to manage at global level making the code more easy to understand.
+const BeginnerProjectsWrapper = () => {
+  return (
+    <div>
+      {/* importing our first project that is counter application */}
+      <Counter />
+
+      {/* importing our second project that is todo application */}
+      <Todo />
+    </div>
+  );
+};
+
+export default BeginnerProjectsWrapper;
+```
+
+- Project 2 Completed.
