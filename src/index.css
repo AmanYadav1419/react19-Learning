@@ -273,6 +273,29 @@ code {
   transform: translateX(2px);
 }
 
+/* Project Section Styles */
+.project-section {
+  width: 100%;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 0.75rem;
+}
+
+.project-description {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.project-content {
+  width: 100%;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .container {

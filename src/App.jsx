@@ -44,6 +44,8 @@ import UseIdHookImplemenation from "./components/15.useId/useIdHookImplemenation
 import DocumentationLink from "./components/DocumentationLink";
 import { docsMap } from "./docsMap";
 import BeginnerProjectsWrapper from "./01-BeginnerProjects/Index";
+import CounterProject from "./01-BeginnerProjects/001-CounterProject/Counter";
+import TodoProject from "./01-BeginnerProjects/002-TodoProject/Todo";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -191,7 +193,9 @@ const App = () => {
           <UpdateObjectWithUseState />
         </div>
         <div className="component-wrapper">
-          <p className="component-label">Update Array of Objects with useState</p>
+          <p className="component-label">
+            Update Array of Objects with useState
+          </p>
           {/* importing  UpdateArrayOfObjectsWithUseState component for understanding how useState hook is working for array of objects */}
           <UpdateArrayOfObjectsWithUseState />
         </div>
@@ -336,10 +340,25 @@ const App = () => {
 
       <section className="section-wrapper">
         <h2 className="section-title">Beginner Projects</h2>
+        
+        {/* Counter Project Section */}
         <div className="component-wrapper">
-          <p className="component-label">Counter Project</p>
-          {/* importing BeginnerProjectsWrapper component for the 01-BeginnerProjects  */}
-          <BeginnerProjectsWrapper />
+          <BeginnerProjectsWrapper 
+            title="Counter Project" 
+            description="A basic counter application to practice React state management using useState."
+          >
+            <CounterProject />
+          </BeginnerProjectsWrapper>
+        </div>
+
+        {/* Todo Project Section */}
+        <div className="component-wrapper">
+          <BeginnerProjectsWrapper 
+            title="Todo Project" 
+            description="A simple todo list application to practice state management, adding, and removing items."
+          >
+            <TodoProject />
+          </BeginnerProjectsWrapper>
         </div>
       </section>
     </div>

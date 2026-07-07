@@ -1,17 +1,18 @@
-// this file is act like a wrapper for all the projects will be imported in this component.
+// this file act like a reusable project section wrapper, so each project can be rendered in its own section.
 
-import Counter from "./001-CounterProject/Counter"
-import Todo from "./002-TodoProject/Todo"
-
-// so that it is easy to manage at global level making the code more easy to understand.
-const BeginnerProjectsWrapper = () => {
+const BeginnerProjectsWrapper = ({ title, children, description }) => {
   return (
-    <div>
-        {/* importing our first project that is counter application */}
-        <Counter />
-
-        {/* importing our second project that is todo application */}
-        <Todo />
+    <div className="project-section">
+      {/* Project Title */}
+      {title && <h3 className="project-title">{title}</h3>}
+      
+      {/* Project Description (optional) */}
+      {description && <p className="project-description">{description}</p>}
+      
+      {/* Project Content/Component */}
+      <div className="project-content">
+        {children}
+      </div>
     </div>
   )
 }

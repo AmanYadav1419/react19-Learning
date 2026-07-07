@@ -3,6 +3,65 @@
 - note this projects are `ReactJS + JavaScript` only
 - first we will cover the ReactJS with JavaScript.
 
+## How to Add a New Project
+
+To add a new project to the beginner projects section:
+
+1. Create a new folder for your project (like `003-YourProjectName/` inside `src/01-BeginnerProjects/`
+
+2. Create your project component inside that folder, for example `YourProject.jsx:
+
+```jsx
+// 003 YourProjectName Project.
+
+import { useState } from "react";
+
+const YourProject = () => {
+  // your project logic here
+  return (
+    <div>
+      Your project UI here
+    </div>
+  );
+};
+
+export default YourProject;
+```
+
+3. Import your project component in `App.jsx` using a unique name to avoid conflicts:
+
+```jsx
+// in App.jsx
+import YourProjectNameProject from "./01-BeginnerProjects/003-YourProjectName/YourProject";
+```
+
+4. Use the `BeginnerProjectsWrapper` in `App.jsx` to render your project:
+
+```jsx
+// in App.jsx
+<section className="section-wrapper">
+  <h2 className="section-title">Beginner Projects</h2>
+
+  {/* Your New Project Section */}
+  <div className="component-wrapper">
+    <BeginnerProjectsWrapper 
+      title="Your Project Title" 
+      description="A short description about your project!"
+    >
+      <YourProjectNameProject />
+    </BeginnerProjectsWrapper>
+  </div>
+</section>
+```
+
+## BeginnerProjectsWrapper Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `title` | string | No | The project title to display |
+| `description` | string | No | A short description of your project |
+| `children` | ReactNode | Yes | Your project component to render |
+
 ## Project 1 :- Counter Application.
 
 - here is the code of the first beginner project that is `Counter Application` :-
@@ -36,27 +95,6 @@ const Counter = () => {
 };
 
 export default Counter;
-```
-
-- and then this will be used in the `index.jsx` file
-  here is the example code :-
-
-```jsx
-// this file is act like a wrapper for all the projects will be imported in this component.
-
-import Counter from "./001-CounterProject/Counter";
-
-// so that it is easy to manage at global level making the code more easy to understand.
-const BeginnerProjectsWrapper = () => {
-  return (
-    <div>
-      {/* importing our first project that is counter application */}
-      <Counter />
-    </div>
-  );
-};
-
-export default BeginnerProjectsWrapper;
 ```
 
 - Project 1 Completed.
@@ -118,30 +156,6 @@ const Todo = () => {
 };
 
 export default Todo;
-```
-
-- and then this will be used in the `index.jsx` file
-  here is the example code :-
-
-```jsx
-// this file is act like a wrapper for all the projects will be imported in this component.
-
-import Counter from "./001-CounterProject/Counter";
-
-// so that it is easy to manage at global level making the code more easy to understand.
-const BeginnerProjectsWrapper = () => {
-  return (
-    <div>
-      {/* importing our first project that is counter application */}
-      <Counter />
-
-      {/* importing our second project that is todo application */}
-      <Todo />
-    </div>
-  );
-};
-
-export default BeginnerProjectsWrapper;
 ```
 
 - Project 2 Completed.
