@@ -46,6 +46,7 @@ import { docsMap } from "./docsMap";
 import BeginnerProjectsWrapper from "./01-BeginnerProjects/Index";
 import CounterProject from "./01-BeginnerProjects/001-CounterProject/Counter";
 import TodoProject from "./01-BeginnerProjects/002-TodoProject/Todo";
+import MealsProject from "./01-BeginnerProjects/003-Mealsproject/Meals";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -358,6 +359,16 @@ const App = () => {
             description="A simple todo list application to practice state management, adding, and removing items."
           >
             <TodoProject />
+          </BeginnerProjectsWrapper>
+        </div>
+        
+        {/* Meals API Project Section */}
+        <div className="component-wrapper">
+          <BeginnerProjectsWrapper 
+            title="Meals API Project" 
+            description="A simple Fetch api call with useEffect and rendering all the fetched data to the ui"
+          >
+            <MealsProject />
           </BeginnerProjectsWrapper>
         </div>
       </section>
