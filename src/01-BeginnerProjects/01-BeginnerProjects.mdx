@@ -18,11 +18,7 @@ import { useState } from "react";
 
 const YourProject = () => {
   // your project logic here
-  return (
-    <div>
-      Your project UI here
-    </div>
-  );
+  return <div>Your project UI here</div>;
 };
 
 export default YourProject;
@@ -44,8 +40,8 @@ import YourProjectNameProject from "./01-BeginnerProjects/003-YourProjectName/Yo
 
   {/* Your New Project Section */}
   <div className="component-wrapper">
-    <BeginnerProjectsWrapper 
-      title="Your Project Title" 
+    <BeginnerProjectsWrapper
+      title="Your Project Title"
       description="A short description about your project!"
     >
       <YourProjectNameProject />
@@ -56,11 +52,11 @@ import YourProjectNameProject from "./01-BeginnerProjects/003-YourProjectName/Yo
 
 ## BeginnerProjectsWrapper Props
 
-| Prop | Type | Required | Description |
-|------|------|----------|-------------|
-| `title` | string | No | The project title to display |
-| `description` | string | No | A short description of your project |
-| `children` | ReactNode | Yes | Your project component to render |
+| Prop          | Type      | Required | Description                         |
+| ------------- | --------- | -------- | ----------------------------------- |
+| `title`       | string    | No       | The project title to display        |
+| `description` | string    | No       | A short description of your project |
+| `children`    | ReactNode | Yes      | Your project component to render    |
 
 ## Project 1 :- Counter Application.
 
@@ -159,3 +155,46 @@ export default Todo;
 ```
 
 - Project 2 Completed.
+
+## Project 3 :- Meals API Fetch Application.
+
+- here is the code of the second beginner project that is `Meals API Fetch Application` :-
+
+```jsx
+// 003 Meals Project.
+
+// in this project we will fetch the data from meals db api with the help of useEffect.
+
+import { useState, useEffect } from "react";
+const Meals = () => {
+  const [items, seItems] = useState([]);
+
+  // we are using fetch and .then method for the api calls and for the error catching we are using .catch method
+  useEffect(() => {
+    fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
+      .then((res) => res.json())
+      .then((res) => seItems(res.data.meals))
+      .catch((err) => console.error(err));
+  }, []);
+
+  // itemsList function to render all the items in the ui.
+  const itemsList = items.map(({ strMeal, strMealThumb, idMeal }) => {
+    return (
+      <section key={idMeal}>
+        <img src={strMealThumb} alt={strMeal} />
+        <section>
+          <p>NAme :- {strMeal}</p>
+          <p>ID :- {idMeal}</p>
+        </section>
+      </section>
+    );
+  });
+
+  // we are rendering a function that will render the all the meals data in the ui.
+  return <div>{itemsList}</div>;
+};
+
+export default Meals;
+```
+
+- Project 3 Completed.
