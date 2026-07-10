@@ -48,6 +48,7 @@ import CounterProject from "./01-BeginnerProjects/001-CounterProject/Counter";
 import TodoProject from "./01-BeginnerProjects/002-TodoProject/Todo";
 import MealsProject from "./01-BeginnerProjects/003-Mealsproject/Meals";
 import CalculatorProject from "./01-BeginnerProjects/004-CalculatorProject/Calculator";
+import ToggleBackgroundColorProject from "./01-BeginnerProjects/005-ToggleBackgroundColorProject/ToggleBackgroundColor";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -380,6 +381,16 @@ const App = () => {
             description="A Simple Calculator Application performing add , multiply , subtract operations "
           >
             <CalculatorProject />
+          </BeginnerProjectsWrapper>
+        </div>
+
+        {/* ToggleBackgroundColor Project Section */}
+        <div className="component-wrapper">
+          <BeginnerProjectsWrapper 
+            title="Toggle Background Color Project" 
+            description="A Simple Application that will toggle the background styles, button styles and text styles."
+          >
+            <ToggleBackgroundColorProject />
           </BeginnerProjectsWrapper>
         </div>
       </section>
