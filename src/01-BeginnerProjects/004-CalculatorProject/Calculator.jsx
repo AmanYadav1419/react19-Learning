@@ -1,7 +1,7 @@
 // 004 Calculator Project.
 
 import { useState } from "react";
-
+import "./calculator.css"
 // in this project we will built a calculator application.
 
 const Calculator = () => {
