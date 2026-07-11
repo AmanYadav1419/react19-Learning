@@ -49,6 +49,7 @@ import TodoProject from "./01-BeginnerProjects/002-TodoProject/Todo";
 import MealsProject from "./01-BeginnerProjects/003-Mealsproject/Meals";
 import CalculatorProject from "./01-BeginnerProjects/004-CalculatorProject/Calculator";
 import ToggleBackgroundColorProject from "./01-BeginnerProjects/005-ToggleBackgroundColorProject/ToggleBackgroundColor";
+import HiddenSearchBarProject from "./01-BeginnerProjects/006-HiddenSearchBarProject/HiddenSearchBar";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -391,6 +392,16 @@ const App = () => {
             description="A Simple Application that will toggle the background styles, button styles and text styles."
           >
             <ToggleBackgroundColorProject />
+          </BeginnerProjectsWrapper>
+        </div>
+        
+        {/* Hidden Search Project Section */}
+        <div className="component-wrapper">
+          <BeginnerProjectsWrapper 
+            title="Hidden SearchBar Project" 
+            description="A Application that will toggle the background styles, button styles and text styles."
+          >
+            <HiddenSearchBarProject />
           </BeginnerProjectsWrapper>
         </div>
       </section>
