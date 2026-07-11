@@ -50,6 +50,7 @@ import MealsProject from "./01-BeginnerProjects/003-Mealsproject/Meals";
 import CalculatorProject from "./01-BeginnerProjects/004-CalculatorProject/Calculator";
 import ToggleBackgroundColorProject from "./01-BeginnerProjects/005-ToggleBackgroundColorProject/ToggleBackgroundColor";
 import HiddenSearchBarProject from "./01-BeginnerProjects/006-HiddenSearchBarProject/HiddenSearchBar";
+import TestimonialsProject from "./01-BeginnerProjects/007-TestimonialsProject/Testimonials";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -344,11 +345,11 @@ const App = () => {
 
       <section className="section-wrapper">
         <h2 className="section-title">Beginner Projects</h2>
-        
+
         {/* Counter Project Section */}
         <div className="component-wrapper">
-          <BeginnerProjectsWrapper 
-            title="Counter Project" 
+          <BeginnerProjectsWrapper
+            title="Counter Project"
             description="A basic counter application to practice React state management using useState."
           >
             <CounterProject />
@@ -357,28 +358,28 @@ const App = () => {
 
         {/* Todo Project Section */}
         <div className="component-wrapper">
-          <BeginnerProjectsWrapper 
-            title="Todo Project" 
+          <BeginnerProjectsWrapper
+            title="Todo Project"
             description="A simple todo list application to practice state management, adding, and removing items."
           >
             <TodoProject />
           </BeginnerProjectsWrapper>
         </div>
-        
+
         {/* Meals API Project Section */}
         <div className="component-wrapper">
-          <BeginnerProjectsWrapper 
-            title="Meals API Project" 
+          <BeginnerProjectsWrapper
+            title="Meals API Project"
             description="A simple Fetch api call with useEffect and rendering all the fetched data to the ui"
           >
             <MealsProject />
           </BeginnerProjectsWrapper>
         </div>
-        
+
         {/* Calculator Project Section */}
         <div className="component-wrapper">
-          <BeginnerProjectsWrapper 
-            title="Calculator Project" 
+          <BeginnerProjectsWrapper
+            title="Calculator Project"
             description="A Simple Calculator Application performing add , multiply , subtract operations "
           >
             <CalculatorProject />
@@ -387,21 +388,31 @@ const App = () => {
 
         {/* ToggleBackgroundColor Project Section */}
         <div className="component-wrapper">
-          <BeginnerProjectsWrapper 
-            title="Toggle Background Color Project" 
+          <BeginnerProjectsWrapper
+            title="Toggle Background Color Project"
             description="A Simple Application that will toggle the background styles, button styles and text styles."
           >
             <ToggleBackgroundColorProject />
           </BeginnerProjectsWrapper>
         </div>
-        
+
         {/* Hidden Search Project Section */}
         <div className="component-wrapper">
-          <BeginnerProjectsWrapper 
-            title="Hidden SearchBar Project" 
+          <BeginnerProjectsWrapper
+            title="Hidden SearchBar Project"
             description="A Application that will toggle the background styles, button styles and text styles."
           >
             <HiddenSearchBarProject />
+          </BeginnerProjectsWrapper>
+        </div>
+
+        {/* Testimonials Project Section */}
+        <div className="component-wrapper">
+          <BeginnerProjectsWrapper
+            title="Testimonials Project"
+            description="A Simple Testimonials Application that will display the testimonials."
+          >
+            <TestimonialsProject />
           </BeginnerProjectsWrapper>
         </div>
       </section>
