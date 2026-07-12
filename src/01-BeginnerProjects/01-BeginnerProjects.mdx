@@ -515,6 +515,7 @@ const Accordion = () => {
 
 export default Accordion;
 ```
+
 - Project 8 Completed.
 
 ## Project 9 :- Form Validation Application.
@@ -595,26 +596,26 @@ const FormValidation = () => {
     ) {
       alert("Form submitted successfully");
 
-        // additional print the form data to the console 
-        // so that you can see the form data that you submitted.
-        console.log({
-          username,
-          email,
-          password,
-          confirmpassword,
-        });
-    
-        // and then make the states empty for new entry
-        setUsername("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
+      // additional print the form data to the console
+      // so that you can see the form data that you submitted.
+      console.log({
+        username,
+        email,
+        password,
+        confirmpassword,
+      });
+
+      // and then make the states empty for new entry
+      setUsername("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
     }
   };
   return (
     <>
       <div className="formvalidation-card">
-        <div className="formvalidation-card-img"></div>
+        <div className="formvalidation-card-image"></div>
 
         {/* form */}
         <form className="formvalidation-form">
@@ -625,7 +626,7 @@ const FormValidation = () => {
             onChange={(e) => setUsername(e.target.value)}
             style={{ borderColor: userColor }}
             className="formvalidation-input"
-            />
+          />
           <p className="formvalidation-error">{errorUserName}</p>
 
           <input
@@ -675,6 +676,6 @@ const FormValidation = () => {
 };
 
 export default FormValidation;
-
 ```
+
 - Project 9 Completed.

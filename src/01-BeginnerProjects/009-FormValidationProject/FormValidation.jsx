@@ -90,7 +90,7 @@ const FormValidation = () => {
   return (
     <>
       <div className="formvalidation-card">
-        <div className="formvalidation-card-img"></div>
+        <div className="formvalidation-card-image"></div>
 
         {/* form */}
         <form className="formvalidation-form">
