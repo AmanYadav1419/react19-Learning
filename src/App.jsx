@@ -51,6 +51,7 @@ import CalculatorProject from "./01-BeginnerProjects/004-CalculatorProject/Calcu
 import ToggleBackgroundColorProject from "./01-BeginnerProjects/005-ToggleBackgroundColorProject/ToggleBackgroundColor";
 import HiddenSearchBarProject from "./01-BeginnerProjects/006-HiddenSearchBarProject/HiddenSearchBar";
 import TestimonialsProject from "./01-BeginnerProjects/007-TestimonialsProject/Testimonials";
+import AccordionProject from "./01-BeginnerProjects/008-AccordionProject/Accordion";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -413,6 +414,16 @@ const App = () => {
             description="A Simple Testimonials Application that will display the testimonials."
           >
             <TestimonialsProject />
+          </BeginnerProjectsWrapper>
+        </div>
+
+        {/* Accordion Project Section */}
+        <div className="component-wrapper">
+          <BeginnerProjectsWrapper
+            title="Accordion Project"
+            description="A Simple Accordion Application that will display the accordion."
+          >
+            <AccordionProject />
           </BeginnerProjectsWrapper>
         </div>
       </section>
