@@ -53,6 +53,7 @@ import HiddenSearchBarProject from "./01-BeginnerProjects/006-HiddenSearchBarPro
 import TestimonialsProject from "./01-BeginnerProjects/007-TestimonialsProject/Testimonials";
 import AccordionProject from "./01-BeginnerProjects/008-AccordionProject/Accordion";
 import FormValidationProject from "./01-BeginnerProjects/009-FormValidationProject/FormValidation";
+import ImageGalleryProject from "./01-BeginnerProjects/010-ImageGalleryProject/ImageGallery";
 
 const App = () => {
   // this variable is for to pass the data as prop to ComponentA, to understand how the prop drilling works.
@@ -435,6 +436,16 @@ const App = () => {
             description="A Simple Form Validation Project that will validate the form inputs."
           >
             <FormValidationProject />
+          </BeginnerProjectsWrapper>
+        </div>
+
+        {/* Beginner Friendly Form validation Project Section */}
+        <div className="component-wrapper">
+          <BeginnerProjectsWrapper
+            title="Beginner Friendly Image Gallery Project"
+            description="A Simple Image Gallery Project that will have the pervious and next image functionality."
+          >
+            <ImageGalleryProject />
           </BeginnerProjectsWrapper>
         </div>
       </section>
