@@ -10,9 +10,9 @@
 ```ts
 let myVar: type = Value;
 
-// myVar is a variable name
-// type is what Annotations or data type it will stores that is type
-// Value is the value that being stored to the variable myVar.
+// `myVar` is a variable name
+// `type` is what Annotations or data type it will stores that is type
+// `Value` is the value that being stored to the variable myVar.
 ```
 
 - Example :-
@@ -20,11 +20,60 @@ let myVar: type = Value;
 ```ts
 let myName: string = "Aman Yadav";
 
-myName = "Changed Name"
-console.log(myName) // answer will be ➡️ Changed Name
+myName = "Changed Name";
+console.log(myName); // answer will be ➡️ Changed Name
 
 // suppose if we try to store some different type value to the myName variable.
 // This below line will gives the error as we have annoted the type for that variable is `string`✅ not `number` ❎
-myName = 12
+myName = 12;
+```
 
+## Number Annotations 👇 :-
+
+- Syntax :-
+
+```ts
+let favNumber: type = Value;
+
+// `favNumber` is a variable name
+// `type` is what Annotations or data type it will stores that is type
+// `Value` is the value that being stored to the variable myVar.
+```
+
+- Example :-
+
+```ts
+let favNumber: number = 7;
+
+favNumber += 2;
+console.log(favNumber); // answer will be ➡️ 9
+
+// suppose if we try to store some different type value to the favNumber variable.
+// This below line will gives the error as we have annoted the type for that variable is `number` ✅ not `string` ❎
+favNumber = "nine";
+```
+
+## Boolean Annotations 👇 :-
+
+- Syntax :-
+
+```ts
+let isHard: type = Value;
+
+// `isHard` is a variable name
+// `type` is what Annotations or data type it will stores that is type
+// `Value` is the value that being stored to the variable myVar.
+```
+
+- Example :-
+
+```ts
+let isHard: boolean = false;
+
+console.log(isHard); // answer will be ➡️ false
+
+// suppose if we try to store some different type value to the favNumber variable.
+// This below lines will gives the error as we have annoted the type for that variable is `boolean` ✅ not `string` ❎, not `number` ❎
+isHard = 9;
+isHard = "No";
 ```
