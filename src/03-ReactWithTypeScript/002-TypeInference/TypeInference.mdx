@@ -15,7 +15,7 @@ let isHard = false;
 console.log(tech, favNumber, isHard);
 
 // now for an example, if we try to check the type of `tech` variable like this :-
-console.log(typeof tech); 
+console.log(typeof tech);
 // it will return us as `string` , as we are storing string value to the variable at first.
 
 // same we will check for the other variables too.
@@ -23,10 +23,8 @@ console.log(typeof tech);
 console.log(typeof favNumber);
 // it will return us as `number` , as we are storing number value to the variable at first.
 
-
-console.log(typeof isHard)
+console.log(typeof isHard);
 // it will return us as `boolean` , as we are storing boolean value to the variable at first.
-
 ```
 
 // now if we try to save different data type values to the variable then it will gives us ERROR :-
@@ -34,3 +32,31 @@ console.log(typeof isHard)
 // tech = false
 // favNumber = "Hello"
 // isHard = 8
+
+## Any Type :-
+
+- Typescript has a special any type that can be used to `represent any type`.
+- When a variable is annotated with the any type, Typescript will allow it to have `any value` and disable all type checking for that variable and its properties.
+
+## Any Type (WARNING) ⚠️
+
+- While the any type can be useful in certain situations, it should be used sparingly.
+- Overuse of any can be lead to `untyped code` and make it harder to catch type-related bugs during development.
+- It's generally better to use more specific types whenever possible to get the benifits of Typescript's type checking.
+
+- Here are some examples of it :-
+
+```ts
+let color: any = "orange";
+
+// this will not give errors, as this is type any
+// it will somewhat useful for some situations, but make sure that you should use type any very properly
+// and do not overuse it
+
+// here are some examples that we can literally pass any value to it.
+color = 12;
+color = true;
+color.toUpperCase();
+
+console.log(color);
+```
