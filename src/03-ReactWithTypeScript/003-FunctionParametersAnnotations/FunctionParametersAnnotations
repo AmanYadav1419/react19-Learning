@@ -27,16 +27,50 @@ const res = double(2, 10);
 console.log(res);
 ```
 
-- NOTE :- 
-    Also notice, Typescript will gives you warning if you provide more or less arguments,
-    then you specify in your parameters area
+- NOTE :-
+  Also notice, Typescript will gives you warning if you provide more or less arguments,
+  then you specify in your parameters area
 
-    for an example , from the above `double` code function 
+  for an example , from the above `double` code function
 
 ```ts
-
 double(2, 10, 20); // 👈 warning or error
 
 // error like :- expected 2 arguments , but got 3.
-
 ```
+
+## Default Params Value :-
+
+- here is the example code for it , how we assign the type to default value for the function.
+
+```ts
+function greet(person: string = "Anonymous") {
+  return `Hello ${person}`;
+}
+
+const res = greet();
+console.log(res);
+```
+
+- so this will give the output as `Hello Anonymous`
+- as the function have default value and we are not passing any arguments, so it will use the default value.
+- but that default value we have `annoted the type` as `string`.
+- so that any other data type passed will not work.
+
+- and if we want to override the default value passed in the function, we would do like this 👇
+
+```ts
+function greetByName(person: string = "Anonymous") {
+  return `Hello ${person}`;
+}
+
+// calling the function and storing to the variable,
+// string data type being passed to function call.
+const resByName = greetByName("Aman Yadav");
+console.log(resByName);
+```
+- so this will give the output as `Hello Aman Yadav`
+-  as the function have default value and we are now passing the arguments, so it will override the default value.
+- but that overriden value we have `annoted the type` as `string`.
+- so that any other data type passed will not work.
+- and it will gives us an error that type string is not assinable to type number, when we try to pass the number data type arguments.
