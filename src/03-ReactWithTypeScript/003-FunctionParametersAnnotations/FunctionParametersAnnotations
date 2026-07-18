@@ -1,0 +1,42 @@
+## Function Parameters Annotations :-
+
+- Function Parameters annotations in Typescript are used to specify the expected types of the paramters that function takes.
+
+- here is the example of the function paramters annotations
+
+```ts
+// Regular Function Annotations
+function addOne(num: number) {
+  return num + 1;
+}
+
+// calling the function and storing to the variable
+const result = addOne(3);
+
+console.log(result);
+
+// Arrow Function Annotations
+
+const double = (x: number, y: number) => {
+  return x * y;
+};
+
+// calling the function and storing to the variable with the number data type arguments passing :-
+const res = double(2, 10);
+
+console.log(res);
+```
+
+- NOTE :- 
+    Also notice, Typescript will gives you warning if you provide more or less arguments,
+    then you specify in your parameters area
+
+    for an example , from the above `double` code function 
+
+```ts
+
+double(2, 10, 20); // 👈 warning or error
+
+// error like :- expected 2 arguments , but got 3.
+
+```
