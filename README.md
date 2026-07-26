@@ -23,6 +23,9 @@ New concepts and examples are being added regularly. Make sure to **star ⭐** t
   - [Running the Documentation](#running-the-documentation)
 - [Learning Path](#learning-path)
 - [Concepts Covered](#concepts-covered)
+  - [React Fundamentals](#react-fundamentals)
+  - [Beginner Projects](#beginner-projects)
+  - [React with TypeScript](#react-with-typescript)
 - [Contributing](#contributing)
 - [Connect with Me](#connect-with-me)
 
@@ -51,7 +54,7 @@ This repository is designed to help you learn React 19 effectively by combining:
 ```
 react19-Learning/
 ├── src/                          # Main React application source code
-│   ├── components/               # Example components organized by concept
+│   ├── 01-Fundamentals/          # React fundamentals examples (concepts 1-15)
 │   │   ├── 01.components/        # Basic React components
 │   │   ├── 02.jsx/               # JSX syntax and expressions
 │   │   ├── 03.lists/             # Rendering lists in React
@@ -66,8 +69,28 @@ react19-Learning/
 │   │   ├── 12.useReducer/        # useReducer hook
 │   │   ├── 13.useRef/            # useRef hook
 │   │   ├── 14.CustomHook/        # Custom hooks
-│   │   └── 15.useId/             # useId hook for unique IDs
-│   ├── 01-BeginnerProjects/      # Beginner projects to practice concepts
+│   │   ├── 15.useId/             # useId hook for unique IDs
+│   │   └── DocumentationLink.jsx # Reusable documentation link component
+│   ├── 02-BeginnerProjects/      # Beginner projects to practice concepts
+│   │   ├── 001-CounterProject/   # Counter application
+│   │   ├── 002-TodoProject/      # Todo application
+│   │   ├── 003-Mealsproject/     # Meals app
+│   │   ├── 004-CalculatorProject/# Calculator app
+│   │   ├── 005-ToggleBackgroundColorProject/ # Background color toggle
+│   │   ├── 006-HiddenSearchBarProject/ # Hidden search bar
+│   │   ├── 007-TestimonialsProject/ # Testimonials component
+│   │   ├── 008-AccordionProject/ # Accordion FAQ
+│   │   ├── 009-FormValidationProject/ # Form validation
+│   │   ├── 010-ImageGalleryProject/ # Image gallery
+│   │   ├── Index.jsx             # Reusable project section wrapper
+│   │   └── 01-BeginnerProjects.mdx # Projects docs
+│   ├── 03-ReactWithTypeScript/   # React + TypeScript learning content
+│   │   ├── 001-Annotations/      # Type annotations
+│   │   ├── 002-TypeInference/    # Type inference
+│   │   ├── 003-FunctionParametersAnnotations/ # Function type annotations
+│   │   └── ReactWithTypeScript.mdx # React + TS intro
+│   ├── docsMap.js                # Section → doc URL mappings
+│   ├── frontendskill.md          # Frontend skill roadmap
 │   ├── App.jsx                   # Root application component
 │   ├── main.jsx                  # Application entry point
 │   └── index.css                 # Global styles
@@ -145,6 +168,8 @@ The documentation site will open at `http://localhost:3000`.
 
 Follow this step-by-step path to learn React effectively:
 
+### Phase 1: React Fundamentals
+
 1. **Components** - Start with the basics of React components
 2. **JSX** - Learn how JSX works and how to use expressions
 3. **Lists** - Master rendering lists of data
@@ -161,12 +186,81 @@ Follow this step-by-step path to learn React effectively:
 14. **Custom Hooks** — Create your own custom hooks
 15. **useId** — Generate unique IDs with the useId hook
 
+### Phase 2: Beginner Projects (Practice Phase)
+
+Practice what you learned by building these 10 beginner projects:
+1. Counter Project
+2. Todo Project
+3. Meals Project
+4. Calculator Project
+5. Toggle Background Color Project
+6. Hidden Search Bar Project
+7. Testimonials Project
+8. Accordion Project
+9. Form Validation Project
+10. Image Gallery Project
+
+### Phase 3: React with TypeScript
+
+Add TypeScript to your React skills:
+1. Introduction to TypeScript & React with TypeScript
+2. Type Annotations
+3. Type Inference & Any Type
+4. Function Parameters Annotations, Return Types, Void, & Never
+
 ## Concepts Covered
 
-Each concept includes:
-- Working code examples in `src/components/`
-- Detailed explanations in `docs/docs/`
-- Practical use cases and best practices
+### React Fundamentals
+
+Each concept includes working code examples in `src/01-Fundamentals/` and detailed explanations in `docs/docs/`:
+
+| # | Topic | Code Examples | Documentation |
+|---|-------|---------------|---------------|
+| 01 | Components | [01.components](src/01-Fundamentals/01.components/) | [components.mdx](docs/docs/01.components/components.mdx) |
+| 02 | JSX | [02.jsx](src/01-Fundamentals/02.jsx/) | [jsx.mdx](docs/docs/02.jsx/jsx.mdx) |
+| 03 | Lists | [03.lists](src/01-Fundamentals/03.lists/) | [lists.mdx](docs/docs/03.lists/lists.mdx) |
+| 04 | Props | [04.props](src/01-Fundamentals/04.props/) | [props.mdx](docs/docs/04.props/props.mdx) |
+| 05 | Conditional Rendering | [05.conditionalRendering](src/01-Fundamentals/05.conditionalRendering/) | - |
+| 06 | Styling in React | [06.stylingInReact](src/01-Fundamentals/06.stylingInReact/) | - |
+| 07 | State and Hooks (useState) | [07.StateAndHooks](src/01-Fundamentals/07.StateAndHooks/) | - |
+| 08 | Portals | [08.portals](src/01-Fundamentals/08.portals/) | - |
+| 09 | useEffect | [09.useEffect](src/01-Fundamentals/09.useEffect/) | - |
+| 10 | Prop Drilling | [10.propDrilling](src/01-Fundamentals/10.propDrilling/) | - |
+| 11 | Context API | [11.ContextAPI](src/01-Fundamentals/11.ContextAPI/) | [contextAPI.mdx](docs/docs/11.ContextAPI/contextAPI.mdx) |
+| 12 | useReducer | [12.useReducer](src/01-Fundamentals/12.useReducer/) | - |
+| 13 | useRef | [13.useRef](src/01-Fundamentals/13.useRef/) | - |
+| 14 | Custom Hooks | [14.CustomHook](src/01-Fundamentals/14.CustomHook/) | - |
+| 15 | useId | [15.useId](src/01-Fundamentals/15.useId/) | [useId.mdx](docs/docs/15.useId/useId.mdx) |
+
+### Beginner Projects
+
+All projects live in `src/02-BeginnerProjects/` and use the reusable [BeginnerProjectsWrapper](src/02-BeginnerProjects/Index.jsx) component:
+
+| # | Project | Files | Description |
+|---|---------|-------|-------------|
+| 001 | Counter Project | [Counter.jsx](src/02-BeginnerProjects/001-CounterProject/Counter.jsx) | Basic counter using useState |
+| 002 | Todo Project | [Todo.jsx](src/02-BeginnerProjects/002-TodoProject/Todo.jsx) | Todo list with add/remove |
+| 003 | Meals Project | [Meals.jsx](src/02-BeginnerProjects/003-Mealsproject/Meals.jsx) | Meals/recipe app |
+| 004 | Calculator Project | [Calculator.jsx](src/02-BeginnerProjects/004-CalculatorProject/Calculator.jsx) | Basic calculator |
+| 005 | Toggle Background Color | [ToggleBackgroundColor.jsx](src/02-BeginnerProjects/005-ToggleBackgroundColorProject/ToggleBackgroundColor.jsx) | Background switcher |
+| 006 | Hidden Search Bar | [HiddenSearchBar.jsx](src/02-BeginnerProjects/006-HiddenSearchBarProject/HiddenSearchBar.jsx) | Expandable search |
+| 007 | Testimonials | [Testimonials.jsx](src/02-BeginnerProjects/007-TestimonialsProject/Testimonials.jsx) | Testimonials carousel |
+| 008 | Accordion | [Accordion.jsx](src/02-BeginnerProjects/008-AccordionProject/Accordion.jsx) | FAQ accordion |
+| 009 | Form Validation | [FormValidation.jsx](src/02-BeginnerProjects/009-FormValidationProject/FormValidation.jsx) | Form with validation |
+| 010 | Image Gallery | [ImageGallery.jsx](src/02-BeginnerProjects/010-ImageGalleryProject/ImageGallery.jsx) | Image gallery app |
+
+Full guide: [01-BeginnerProjects.mdx](src/02-BeginnerProjects/01-BeginnerProjects.mdx)
+
+### React with TypeScript
+
+All TypeScript learning content is in `src/03-ReactWithTypeScript/`:
+
+| # | Topic | File | What You'll Learn |
+|---|-------|------|-------------------|
+| 000 | Introduction & Setup | [ReactWithTypeScript.mdx](src/03-ReactWithTypeScript/ReactWithTypeScript.mdx) | What is TypeScript, installation guide, setup, & .ts/.tsx files basics |
+| 001 | Type Annotations | [Annotations.mdx](src/03-ReactWithTypeScript/001-Annotations/Annotations.mdx) | Explicitly annotate types for variables: **String**, **Number**, **Boolean** annotations |
+| 002 | Type Inference & Any Type | [TypeInference.mdx](src/03-ReactWithTypeScript/002-TypeInference/TypeInference.mdx) | Auto type inference, **Any** type & its caveats/warnings |
+| 003 | Function Parameters & Return Types | [FunctionParametersAnnotations](src/03-ReactWithTypeScript/003-FunctionParametersAnnotations/FunctionParametersAnnotations) | Function param annotations, default params, return types (regular & arrow), **Void**, and **Never** types |
 
 ## Contributing
 

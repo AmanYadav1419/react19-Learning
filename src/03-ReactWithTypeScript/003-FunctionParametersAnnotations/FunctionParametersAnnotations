@@ -110,3 +110,89 @@ console.log(result2);
 ```
 
 - in that above function outside of the parameter area that is this -> `(y:number)` we will write `: number` to return a specific type of value.
+
+## Void In Typescript
+
+- `Void` is a type that represents the `absence of any value`.
+- it is often used as `return type` for a `functions that do not return any value`.
+
+- here is the example code to understand better 👇
+
+```ts
+function printMessage(message: string): void {
+  console.log(`This is my message :- ${message}`);
+
+  // ERROR 👇
+  return message;
+}
+
+printMessage("Hello How Are You ?");
+```
+
+- so for better clearity , what we are doing is that suppose for an example we are not defining any return type like `string`, `number` and not returning any value from the function
+- here is the above code without return statment and return annotations 👇
+
+```ts
+function printMessage1(message: string) {
+  console.log(`This is my message :- ${message}`);
+}
+
+printMessage1("Hii, How are you ?");
+```
+
+- so typescript will implicitly annoted the function return value as `void`.
+- as we are not returning any value from the function.
+
+- and if we provide a return statement to the function then it will automatically get the return type of the function that is for above example `printMessage` function is string.
+
+- and if still we have written `:void` for a function return annotations and we are returning then it will gives us an compile error that is `Type 'string' is not assignable to type 'void'.`
+- on the return statment line itself
+- u should `avoid to use void` as functions must return some value but for void case it can be used in some cases.
+- it may be run the code correctly but it is a bad practise to do.
+
+## Never
+
+- This is the keyword we can simply say as father, mother , grandfather or whatever you want to call of `any keyword`😅
+
+- The `never keyword` is used to indicate that a `function will not return anything`, or that `variable can never have a value`.
+- The never type is useful for `indicating that certain code paths should never be reached`, or that certain `values are impossible`.
+- It can help `catch errors at compile-time` instead of runtime.
+
+<strong>We are using Never keyword for following reasons 👇</strong>
+
+1. A function that always throws an error.
+2. A function that has an infinite loop.
+3. A variable that can never have a value.
+
+Examples of the never keyword 👇
+
+1. A function that always throws an error.
+
+```ts
+function throwErrorMsg(message: string): never {
+  throw new Error(message);
+}
+```
+
+2. A function that has an infinite loop.
+
+```ts
+function infiniteLoop(): never {
+  while (true) {}
+}
+```
+
+3. A variable that can never have a value.
+
+```ts
+
+// we are declearing variable x and annoted with never keyword
+let x: never;
+
+function neverReturns(): never {
+  while (true) {}
+}
+
+x = neverReturns();
+```
+- this `x = neverReturns()` line will cause a `compile time error` because the function never returns.
