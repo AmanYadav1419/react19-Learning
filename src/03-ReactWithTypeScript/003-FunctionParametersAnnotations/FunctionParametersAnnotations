@@ -92,4 +92,21 @@ const result = double1(5);
 console.log(result);
 ```
 
-- in that above function outside of the parameter area that is this -> `(x:number)` we will write `: number` to return a specific type of value ``
+- in that above function outside of the parameter area that is this -> `(x:number)` we will write `: number` to return a specific type of value.
+
+## Return Annotations (Arrow Function)
+
+- now here we will learn how to annotate the `return value` for `arrow functions` in typescript.
+
+- here is the example of it 👇
+
+```ts
+// Using Arrow Function
+const double2 = (y: number): number => y * y;
+
+// it will return only number and answer will be 9
+const result2 = double2(3);
+console.log(result2);
+```
+
+- in that above function outside of the parameter area that is this -> `(y:number)` we will write `: number` to return a specific type of value.
