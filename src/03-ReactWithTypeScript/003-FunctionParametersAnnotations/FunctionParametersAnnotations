@@ -69,8 +69,27 @@ function greetByName(person: string = "Anonymous") {
 const resByName = greetByName("Aman Yadav");
 console.log(resByName);
 ```
+
 - so this will give the output as `Hello Aman Yadav`
--  as the function have default value and we are now passing the arguments, so it will override the default value.
+- as the function have default value and we are now passing the arguments, so it will override the default value.
 - but that overriden value we have `annoted the type` as `string`.
 - so that any other data type passed will not work.
 - and it will gives us an error that type string is not assinable to type number, when we try to pass the number data type arguments.
+
+## Return Annotations (Regular Function)
+
+- now we will learn about `return value` for a `function annotations` in typescript.
+- here is the example of it 👇
+
+```ts
+// Regular function
+function double1(x: number): number {
+  return x * x;
+}
+
+const result = double1(5);
+// it will return only number and answer will be 25
+console.log(result);
+```
+
+- in that above function outside of the parameter area that is this -> `(x:number)` we will write `: number` to return a specific type of value ``
