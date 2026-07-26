@@ -149,3 +149,50 @@ printMessage1("Hii, How are you ?");
 - on the return statment line itself
 - u should `avoid to use void` as functions must return some value but for void case it can be used in some cases.
 - it may be run the code correctly but it is a bad practise to do.
+
+## Never
+
+- This is the keyword we can simply say as father, mother , grandfather or whatever you want to call of `any keyword`😅
+
+- The `never keyword` is used to indicate that a `function will not return anything`, or that `variable can never have a value`.
+- The never type is useful for `indicating that certain code paths should never be reached`, or that certain `values are impossible`.
+- It can help `catch errors at compile-time` instead of runtime.
+
+<strong>We are using Never keyword for following reasons 👇</strong>
+
+1. A function that always throws an error.
+2. A function that has an infinite loop.
+3. A variable that can never have a value.
+
+Examples of the never keyword 👇
+
+1. A function that always throws an error.
+
+```ts
+function throwErrorMsg(message: string): never {
+  throw new Error(message);
+}
+```
+
+2. A function that has an infinite loop.
+
+```ts
+function infiniteLoop(): never {
+  while (true) {}
+}
+```
+
+3. A variable that can never have a value.
+
+```ts
+
+// we are declearing variable x and annoted with never keyword
+let x: never;
+
+function neverReturns(): never {
+  while (true) {}
+}
+
+x = neverReturns();
+```
+- this `x = neverReturns()` line will cause a `compile time error` because the function never returns.
