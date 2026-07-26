@@ -110,3 +110,42 @@ console.log(result2);
 ```
 
 - in that above function outside of the parameter area that is this -> `(y:number)` we will write `: number` to return a specific type of value.
+
+## Void In Typescript
+
+- `Void` is a type that represents the `absence of any value`.
+- it is often used as `return type` for a `functions that do not return any value`.
+
+- here is the example code to understand better 👇
+
+```ts
+function printMessage(message: string): void {
+  console.log(`This is my message :- ${message}`);
+
+  // ERROR 👇
+  return message;
+}
+
+printMessage("Hello How Are You ?");
+```
+
+- so for better clearity , what we are doing is that suppose for an example we are not defining any return type like `string`, `number` and not returning any value from the function
+- here is the above code without return statment and return annotations 👇
+
+```ts
+function printMessage1(message: string) {
+  console.log(`This is my message :- ${message}`);
+}
+
+printMessage1("Hii, How are you ?");
+```
+
+- so typescript will implicitly annoted the function return value as `void`.
+- as we are not returning any value from the function.
+
+- and if we provide a return statement to the function then it will automatically get the return type of the function that is for above example `printMessage` function is string.
+
+- and if still we have written `:void` for a function return annotations and we are returning then it will gives us an compile error that is `Type 'string' is not assignable to type 'void'.`
+- on the return statment line itself
+- u should `avoid to use void` as functions must return some value but for void case it can be used in some cases.
+- it may be run the code correctly but it is a bad practise to do.
