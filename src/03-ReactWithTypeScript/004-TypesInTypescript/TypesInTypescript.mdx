@@ -1,0 +1,41 @@
+# Types in TypeScript
+
+## Array Types :-
+
+- Array are a type of object that can `store multiple` values of the `same data` type.
+- `Arrays in TypeScript are typed`, which means you can `specify the type of values` that an array can hold.
+
+- 2 Types of Arrays
+  - 1. Using the `square bracket notation` ➡️ `[]` to indicate an array of a specific type.
+  - 2. Using the generic `Array<type>` notation to indicate an array of a specific type.
+
+- Here is the first Type of Array i.e `[] Notation` 👇
+
+```ts
+// in this as you can see we are specifying that the array can only hold numbers.
+// by annotating :number and then []
+// we are telling TypeScript that the array can only hold numbers.
+const numbers: number[] = [1, 2, 3, 4, 5];
+
+// and if we are try to pass any other data type value to the array other than number it will gives us an compile error
+// const numbers: number[] = [1, 2, 3, 4, "5"];
+// Error: Type 'string' is not assignable to type 'number'.
+```
+
+- Here is the second Type of Array i.e `Array<type>` 👇
+
+```ts
+// in this as you can see we are specifying that the array can only hold strings.
+// by annotating :string and then Array<string>
+// we are telling TypeScript that the array can only hold strings.
+const names: Array<string> = ["Alice", "Bob", "John"];
+
+// and if we are try to pass any other data type value to the array other than string it will gives us an compile error
+// const names: Array<string> = ["Alice", "Bob", "John", 5];
+// Error: Type 'number' is not assignable to type 'string'.
+```
+
+## Multi Dimensional Array :-
+
+- A multi-dimensional array is an array that contains other arrays as its elements
+- Multi-dimensional arrays can be defined using the same notation as one dimensional arrays, but with `nested square brackets`.
