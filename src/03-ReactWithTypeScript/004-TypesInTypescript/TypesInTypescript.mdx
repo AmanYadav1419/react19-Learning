@@ -39,3 +39,87 @@ const names: Array<string> = ["Alice", "Bob", "John"];
 
 - A multi-dimensional array is an array that contains other arrays as its elements
 - Multi-dimensional arrays can be defined using the same notation as one dimensional arrays, but with `nested square brackets`.
+- You can call it as `Nested Arrays` , `Two Dimensional Array`or `Multi dimensional array` whatever you wants to call it.
+
+- Here is the example of it 👇
+
+```ts
+// before multi-dimensional array we will see the single dimensional array example.
+
+// single dimensional array example 👇
+const singleNumbers: number[] = [1, 2, 3, 4, 5];
+
+// multi dimensional array or Two Dimensional Array example 👇
+const numbers: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+// here after annotating :number that means it will only accept numbers
+// and then we are using [][] to define multi dimensional array or Two Dimensional Array,
+// then we are passing multi dimensional array to the numbers variable.
+
+// Three Dimensional Array example 👇
+const threeDimensionalArray: number[][][] = [
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+  ],
+];
+
+// in the above example we are using [][][] after :number annotation, to define Three Dimensional Array.
+```
+
+# Objects Type :-
+
+- An Object in Typescript is a `structured data type` that represents `a collection of properties`, each with `a key and an associated value`.
+- The properties of an object can have specific types, and the object itself can be annotated with a type, often defined using an interface or a type alias.
+- Typescript uses structural typing, meaning that shape of an object (its structure or properties) is what matters for type compatibility.
+
+- Here is the syntax of the Object Looks Like 👇
+
+```ts
+
+type varName (annotations/types) = { properties:value }
+
+```
+
+- i know it is bit confusing like what the heck is that 😅
+
+- so here is the example of it to understand better 👇
+
+```ts
+const person: { firstName: string; lastName: string; age: number } = {
+  firstName: "john",
+  lastName: "Doe",
+  age: 26,
+};
+
+// and to access the data here it is 👇
+console.log(
+  `Name: ${person.firstName} ${person.lastName}, Age: ${person.age}, `,
+);
+
+// so we have created object name as person
+// in that object there are three properties, that properties we have annoted with some specific types
+// like string and number types , so only that data type value will be accepted and passed
+// and then in the object we are passing the value of that properties
+```
+
+- now here is one more example `Objects as function return value` 👇.
+
+```ts
+// Using objects as function return value
+function printUser(): { name: string; age: number; location: string } {
+  return {
+    name: "Alex",
+    age: 20,
+    location: "USA",
+  };
+}
+
+// okay if you don't know here is the advance or bonus tip 👇
+// this above function is an example of factory function.
+
+// and to access the data here it is 👇
+console.log(printUser());
+```
