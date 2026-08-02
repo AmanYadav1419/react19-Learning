@@ -1,0 +1,67 @@
+# Type Aliases :-
+
+- A type aliases is a way to create a new name for an exisiting type.
+- It allows you to define a `custom type` that referes to another type and give it to more meaningful name or descripitve name.
+- Type aliases are defined using the `type keyword` `followed by the name of the alias`, an `equal sign (=)`, and the `type it referes to`.
+
+- here is the syntax version example 👇
+
+```ts
+type MyString = string;
+```
+
+- The convention is to write the `custom type name` in `Uppercase` e.g `User`, `Person`, `ApiData`.
+
+- and how we are gonna write this in real world example 👇
+
+```ts
+// we are creating a Person object , that is custom object , in that object creating multiple types or properties
+type Person = {
+  name: string;
+  age: number;
+  isWorking: boolean;
+};
+
+// passing the type alaise created for the Person
+
+// receving function parameter with the annoted type :Person
+function printPerson(person: Person) {
+  console.log(
+    `Name: ${person.name}, Age: ${person.age}, isWorking: ${person.isWorking}`,
+  );
+}
+
+// here we are creating all the data that :Person type has
+// so that we will pass that myPerson to the function call
+const myPerson: Person = { name: "Trion", age: 22, isWorking: true };
+
+// so that we will pass that myPerson to the function call
+printPerson(myPerson);
+
+// it will print like this 👇
+// Name: Trion, Age: 22, isWorking: true
+```
+
+- here is the another real world code example of type aliase (arrow function example) 👇
+- in the below example we will use some different method or many more cases to coverd to write code
+
+```ts
+type User = {
+  firstName: string;
+  age: number;
+  isMarried: boolean;
+};
+
+const printUser = (user: User) => {
+  // print all the user data that being recived to the function.
+  return `Name: ${user.firstName}, Age: ${user.age}, IsMarried: ${user.isMarried}`;
+};
+
+// call the function and pass the object to it, in a different way
+// and saving to another variable.
+const res = printUser({ firstName: "Aman", age: 23, isMarried: false });
+console.log(res);
+
+// the function call will return like this data 👇
+// Name: Aman, Age: 23, IsMarried: false
+```
