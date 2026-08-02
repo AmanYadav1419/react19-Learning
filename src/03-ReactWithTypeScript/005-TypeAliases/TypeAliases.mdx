@@ -65,3 +65,36 @@ console.log(res);
 // the function call will return like this data 👇
 // Name: Aman, Age: 23, IsMarried: false
 ```
+
+## Optional Properties
+
+- You can make a certain property optional in an object type by `adding a question mark (?) after property name`.
+
+- For example, let's say you have an object type for a person with name, age, and email properties, but you want to make the email property optional.
+- You can do this by adding a question mark (?) after the email property.
+
+- here is the example code 👇
+
+```ts
+type Person = {
+  name: string;
+  age: number;
+  // here if we want to make the property optional just add question mark(?) after the property name.
+  email?: string;
+};
+```
+
+- Now, when you create an object of type Person,
+  choose whether or not to include the email property.
+
+- here is the example contnueing with the `type Person` 👇
+
+```ts
+const alice: Person = { name: "Alice", age: 30 };
+const bob: Person = { name: "Bob", age: 20, email: "bob@example.com" };
+```
+
+- In this example, the `alice object does not include the email property`, while the `bob object does`.
+- Because the `email property is marked as optional` in the `Person type defination`, it is `valid to create a object with email or without it`.
+- It's totally on you if you want to provide the email property you can , and if you don't to provide email property you can.
+- It will not gives us an any error as `email` property marked as optional :- `email?: string`
