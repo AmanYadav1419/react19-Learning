@@ -1,0 +1,68 @@
+# Intersection Types
+
+- An intersection type is a way to `combine multiple types` into a single type,
+- that includes all the `properties and methods of each constituent type`.
+- An intersection type is denoted by the `& symbol`.
+
+## Here is the example how we will use that :-
+
+- 1st defining two different types having some data types defined.
+
+```ts
+type Person = {
+  name: string;
+  age: number;
+};
+
+type Empolyee = {
+  id: number;
+  title: string;
+};
+```
+
+- 2nd now here we will intersect those types and then saved to a type variable to use the intersected type.
+
+```ts
+type PersonAndEmployee = Person & Empolyee;
+```
+
+- 3rd point now we will use that intersected type
+
+```ts
+const alice: PersonAndEmployee = {
+  name: "Alice",
+  age: 27,
+  id: 149,
+  title: "Manager",
+};
+```
+
+- here is the another example to understand and practise.
+
+```ts
+// first created two different types
+type UserInfo = {
+  firstName: string;
+  lastName: string;
+  age: number;
+};
+
+type AccountDetails = {
+  uid: number;
+  email: string;
+  password: string;
+};
+
+// second now to intersect those two types
+type User = UserInfo & AccountDetails;
+
+// third now to use the intersected type
+const Trion: User = {
+  firstName: "Alpha",
+  lastName: "Trion",
+  age: 40,
+  uid: 12356,
+  email: "alphatrion@gmail.com",
+  password: "Alpha159",
+};
+```
