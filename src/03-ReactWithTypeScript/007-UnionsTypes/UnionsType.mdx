@@ -37,3 +37,39 @@ interface MyInterface {
 ```
 
 - but as of now we didn't discuss about the interface type in Typescript, but yes we would defintely discuss later on it until make sure keep in mind
+
+- Here are some more real world examples for the `Union Type`.
+
+```ts
+// first type is of UserInfo type
+type UserInfo = {
+  first: string;
+  last: string;
+  age: number;
+};
+
+// second is for the AccountDetails type
+type AccountDetails = {
+  email: string;
+  password: string;
+};
+
+// now here we will use the union type to state the `user variable will accept either UserInfo or AccountDetails`.
+
+// now for here example i am prefering  to `AccountDetails type`.
+let user: UserInfo | AccountDetails = {
+  email: "xyz@gmail.com",
+  password: "password@12",
+};
+```
+
+- now here is the second example of union type working in the array
+
+```ts
+const items: (number | string)[] = [1, 4, 7, "9", "5", "hello"];
+console.log(items);
+```
+
+- so in the above array example , we are creating an array , that will accept the `number or string` as values in the array.
+- other than this other data type will not accept in the array like `Boolean values we cannot pass in the array`,
+- as this `items` array can only accept number or string
