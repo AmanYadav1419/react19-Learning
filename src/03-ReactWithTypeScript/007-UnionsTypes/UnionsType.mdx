@@ -4,3 +4,36 @@
 - Unions are useful when we want to allow a variable or parameter to `accept multiple types`.
 - The syntax for defining a union type in Typescript uses the `pipe symbol (|)`.
 
+- So how we are gonna using this
+- here is the example of it :-
+
+- for example, if we want to define a variable that can be `either a number or string`, we would write 👇
+
+```ts
+let myVar: number | string;
+```
+
+- so the above `myVar` variable will accpet the number type or string type , but not other than those two types.
+- if we try to pass bolean value in the variable it will gives us an error.
+
+- we can also use unions with function parameters.
+- For example, if we have a function that accepts either a string or an array of strings, we could define it's parameter like this 👇
+
+```ts
+function acceptUnion(param: string | string[]) {
+  // function code logic
+}
+```
+
+- in the above example we are accepting parameter in the function it can be `string` or array of string i.e `string[]`.
+
+- Unions can also be combined with other types in Typescript, such as `interfaces and classes`.
+- For example, we could define an interface that has property that can be either a `string or number`.
+
+```ts
+interface MyInterface {
+  myProp: string | number;
+}
+```
+
+- but as of now we didn't discuss about the interface type in Typescript, but yes we would defintely discuss later on it until make sure keep in mind
