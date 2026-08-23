@@ -1,0 +1,75 @@
+# Unions Type
+
+- Unions are used to declare a type that can have one of serveral possible types.
+- Unions are useful when we want to allow a variable or parameter to `accept multiple types`.
+- The syntax for defining a union type in Typescript uses the `pipe symbol (|)`.
+
+- So how we are gonna using this
+- here is the example of it :-
+
+- for example, if we want to define a variable that can be `either a number or string`, we would write 👇
+
+```ts
+let myVar: number | string;
+```
+
+- so the above `myVar` variable will accpet the number type or string type , but not other than those two types.
+- if we try to pass bolean value in the variable it will gives us an error.
+
+- we can also use unions with function parameters.
+- For example, if we have a function that accepts either a string or an array of strings, we could define it's parameter like this 👇
+
+```ts
+function acceptUnion(param: string | string[]) {
+  // function code logic
+}
+```
+
+- in the above example we are accepting parameter in the function it can be `string` or array of string i.e `string[]`.
+
+- Unions can also be combined with other types in Typescript, such as `interfaces and classes`.
+- For example, we could define an interface that has property that can be either a `string or number`.
+
+```ts
+interface MyInterface {
+  myProp: string | number;
+}
+```
+
+- but as of now we didn't discuss about the interface type in Typescript, but yes we would defintely discuss later on it until make sure keep in mind
+
+- Here are some more real world examples for the `Union Type`.
+
+```ts
+// first type is of UserInfo type
+type UserInfo = {
+  first: string;
+  last: string;
+  age: number;
+};
+
+// second is for the AccountDetails type
+type AccountDetails = {
+  email: string;
+  password: string;
+};
+
+// now here we will use the union type to state the `user variable will accept either UserInfo or AccountDetails`.
+
+// now for here example i am prefering  to `AccountDetails type`.
+let user: UserInfo | AccountDetails = {
+  email: "xyz@gmail.com",
+  password: "password@12",
+};
+```
+
+- now here is the second example of union type working in the array
+
+```ts
+const items: (number | string)[] = [1, 4, 7, "9", "5", "hello"];
+console.log(items);
+```
+
+- so in the above array example , we are creating an array , that will accept the `number or string` as values in the array.
+- other than this other data type will not accept in the array like `Boolean values we cannot pass in the array`,
+- as this `items` array can only accept number or string
