@@ -73,3 +73,34 @@ console.log(items);
 - so in the above array example , we are creating an array , that will accept the `number or string` as values in the array.
 - other than this other data type will not accept in the array like `Boolean values we cannot pass in the array`,
 - as this `items` array can only accept number or string
+
+## Literal Types
+
+- `Literal types` allow you to specify a value that can only be `one specific literal value`.
+- This means that a variable with a literal type can only have a one specific value and no other.
+
+- Here is the syntax looks like , will explain with some examples for different types 👇
+
+```ts
+// String Literal Type
+let color: "red" | "blue" | "green";
+color = "red"; // valid
+color = "yellow"; //invalid as this is not having in types defines
+```
+
+```ts
+// Boolean Literal Type
+let isTrue: true;
+isTrue = true; // valid
+isTrue = false; // invalid as this is not having in types defines
+```
+
+```ts
+// Numerical Literal Type
+let number: 1 | 2 | 3;
+number = 1; // valid
+number = 4; // invalid as this is not having in types defines
+```
+
+- so in the above examples we can see that , whatever type values we will provide that values will only accept for that variable
+- and if the variable value is not present in the available type values then it will gives us an error.
