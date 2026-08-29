@@ -60,45 +60,51 @@ react19-Learning/
 │   │   ├── 03.lists/             # Rendering lists in React
 │   │   ├── 04.props/             # Props and component communication
 │   │   ├── 05.conditionalRendering/ # Conditional rendering techniques
-│   │   ├── 06.stylingInReact/    # Various styling approaches
-│   │   ├── 07.StateAndHooks/     # State management with useState
-│   │   ├── 08.portals/           # React Portals
+│   │   ├── 06.stylingInReact/    # Various styling approaches (inline, CSS, objects)
+│   │   ├── 07.StateAndHooks/     # State management with useState (arrays, objects, etc.)
+│   │   ├── 08.portals/           # React Portals (popups)
 │   │   ├── 09.useEffect/         # Side effects with useEffect
-│   │   ├── 10.propDrilling/      # Prop drilling concept
+│   │   ├── 10.propDrilling/      # Prop drilling concept (A → B → C)
 │   │   ├── 11.ContextAPI/        # Context API for state management
-│   │   ├── 12.useReducer/        # useReducer hook
-│   │   ├── 13.useRef/            # useRef hook
-│   │   ├── 14.CustomHook/        # Custom hooks
+│   │   ├── 12.useReducer/        # useReducer hook with separate reducer file
+│   │   ├── 13.useRef/            # useRef hook (DOM refs, timers, examples)
+│   │   ├── 14.CustomHook/        # Custom hooks (useFetch example)
 │   │   ├── 15.useId/             # useId hook for unique IDs
 │   │   └── DocumentationLink.jsx # Reusable documentation link component
 │   ├── 02-BeginnerProjects/      # Beginner projects to practice concepts
 │   │   ├── 001-CounterProject/   # Counter application
 │   │   ├── 002-TodoProject/      # Todo application
-│   │   ├── 003-Mealsproject/     # Meals app
-│   │   ├── 004-CalculatorProject/# Calculator app
+│   │   ├── 003-Mealsproject/     # Meals app (with CSS)
+│   │   ├── 004-CalculatorProject/# Calculator app (with CSS)
 │   │   ├── 005-ToggleBackgroundColorProject/ # Background color toggle
-│   │   ├── 006-HiddenSearchBarProject/ # Hidden search bar
-│   │   ├── 007-TestimonialsProject/ # Testimonials component
-│   │   ├── 008-AccordionProject/ # Accordion FAQ
-│   │   ├── 009-FormValidationProject/ # Form validation
+│   │   ├── 006-HiddenSearchBarProject/ # Hidden search bar (with CSS)
+│   │   ├── 007-TestimonialsProject/ # Testimonials carousel (with CSS)
+│   │   ├── 008-AccordionProject/ # Accordion FAQ (with CSS + data file)
+│   │   ├── 009-FormValidationProject/ # Form validation (with CSS)
 │   │   ├── 010-ImageGalleryProject/ # Image gallery
-│   │   ├── Index.jsx             # Reusable project section wrapper
-│   │   └── 01-BeginnerProjects.mdx # Projects docs
+│   │   ├── Index.jsx             # Reusable project section wrapper (title, desc, children)
+│   │   └── 01-BeginnerProjects.mdx # Projects docs (how to add new projects)
 │   ├── 03-ReactWithTypeScript/   # React + TypeScript learning content
-│   │   ├── 001-Annotations/      # Type annotations
-│   │   ├── 002-TypeInference/    # Type inference
-│   │   ├── 003-FunctionParametersAnnotations/ # Function type annotations
-│   │   └── ReactWithTypeScript.mdx # React + TS intro
-│   ├── docsMap.js                # Section → doc URL mappings
-│   ├── frontendskill.md          # Frontend skill roadmap
+│   │   ├── 001-Annotations/      # Type annotations (string/number/boolean)
+│   │   ├── 002-TypeInference/    # Type inference + Any type
+│   │   ├── 003-FunctionParametersAnnotations/ # Function params, return types, Void, Never
+│   │   ├── 004-TypesInTypescript/# Array types + Multi-dim arrays + Object types
+│   │   ├── 005-TypeAliases/      # Type aliases + Optional properties (?)
+│   │   ├── 006-IntersectionTypes/# Intersection types (& operator)
+│   │   ├── 007-UnionsTypes/      # Union types (| operator) + Literal types + Tuples
+│   │   └── ReactWithTypeScript.mdx # React + TS intro & installation
+│   ├── docsMap.js                # Section → doc URL mappings for DocumentationLink
 │   ├── App.jsx                   # Root application component
 │   ├── main.jsx                  # Application entry point
-│   └── index.css                 # Global styles
+│   └── index.css                 # Global styles (dark gradient, glassmorphism, responsive)
 ├── docs/                         # Documentation site (Docusaurus)
-│   ├── docs/                     # Documentation content
+│   ├── docs/                     # Documentation content (MDX files)
 │   │   ├── 01.components/        # Components documentation
 │   │   ├── 02.jsx/               # JSX documentation
-│   │   ├── ...                   # (All concept folders mirror the main app)
+│   │   ├── 03.lists/             # Lists documentation
+│   │   ├── 04.props/             # Props documentation
+│   │   ├── 11.ContextAPI/        # Context API documentation
+│   │   ├── 15.useId/             # useId documentation
 │   │   └── intro.md              # Introduction page
 │   ├── src/                      # Docusaurus source code
 │   ├── static/                   # Static assets for docs
@@ -203,10 +209,14 @@ Practice what you learned by building these 10 beginner projects:
 ### Phase 3: React with TypeScript
 
 Add TypeScript to your React skills:
-1. Introduction to TypeScript & React with TypeScript
-2. Type Annotations
-3. Type Inference & Any Type
-4. Function Parameters Annotations, Return Types, Void, & Never
+1. Introduction to TypeScript & React with TypeScript (Setup & Install)
+2. Type Annotations (String, Number, Boolean)
+3. Type Inference & Any Type (with warnings)
+4. Function Parameters Annotations, Default Params, Return Types (Regular & Arrow), Void, & Never
+5. Types in TypeScript — Arrays, Multi-dimensional Arrays, & Object Types
+6. Type Aliases — Custom types + Optional Properties (?)
+7. Intersection Types — Combine types with `&` operator
+8. Union Types — OR types with `|` + Literal Types + Tuples
 
 ## Concepts Covered
 
@@ -257,10 +267,14 @@ All TypeScript learning content is in `src/03-ReactWithTypeScript/`:
 
 | # | Topic | File | What You'll Learn |
 |---|-------|------|-------------------|
-| 000 | Introduction & Setup | [ReactWithTypeScript.mdx](src/03-ReactWithTypeScript/ReactWithTypeScript.mdx) | What is TypeScript, installation guide, setup, & .ts/.tsx files basics |
-| 001 | Type Annotations | [Annotations.mdx](src/03-ReactWithTypeScript/001-Annotations/Annotations.mdx) | Explicitly annotate types for variables: **String**, **Number**, **Boolean** annotations |
-| 002 | Type Inference & Any Type | [TypeInference.mdx](src/03-ReactWithTypeScript/002-TypeInference/TypeInference.mdx) | Auto type inference, **Any** type & its caveats/warnings |
-| 003 | Function Parameters & Return Types | [FunctionParametersAnnotations](src/03-ReactWithTypeScript/003-FunctionParametersAnnotations/FunctionParametersAnnotations) | Function param annotations, default params, return types (regular & arrow), **Void**, and **Never** types |
+| 000 | Introduction & Setup | [ReactWithTypeScript.mdx](src/03-ReactWithTypeScript/ReactWithTypeScript.mdx) | What is TypeScript, installation guide (global + project-level), setup, & .ts/.tsx files basics |
+| 001 | Type Annotations | [Annotations.mdx](src/03-ReactWithTypeScript/001-Annotations/Annotations.mdx) | Explicitly annotate types for variables: **String**, **Number**, **Boolean** annotations + syntax |
+| 002 | Type Inference & Any Type | [TypeInference.mdx](src/03-ReactWithTypeScript/002-TypeInference/TypeInference.mdx) | Auto type inference, **Any** type, & its caveats/warnings (best practices: avoid overusing any) |
+| 003 | Function Parameters & Return Types | [FunctionParametersAnnotations](src/03-ReactWithTypeScript/003-FunctionParametersAnnotations/FunctionParametersAnnotations) | Function param annotations, default params, return types (regular & arrow), **Void**, & **Never** types (with use cases) |
+| 004 | Types in TypeScript — Arrays & Objects | [TypesInTypescript.mdx](src/03-ReactWithTypeScript/004-TypesInTypescript/TypesInTypescript.mdx) | **Array types** (`[]` + `Array<type>`), **Multi-dimensional arrays**, **Object types**, & objects as function return values (factory functions) |
+| 005 | Type Aliases + Optional Properties | [TypeAliases.mdx](src/03-ReactWithTypeScript/005-TypeAliases/TypeAliases.mdx) | **Type keyword** for custom types (PascalCase convention), **Optional properties** with `?` (mark fields as non-required) |
+| 006 | Intersection Types | [IntersectionType.mdx](src/03-ReactWithTypeScript/006-IntersectionTypes/IntersectionType.mdx) | Combine multiple types into one with **`&`** operator (e.g. Person & Employee → all properties required) |
+| 007 | Union Types, Literal Types, & Tuples | [UnionsType.mdx](src/03-ReactWithTypeScript/007-UnionsTypes/UnionsType.mdx) | **Union types** with **`|`** (OR), **Literal types** (exact allowed values: "red" \| "blue" etc.), & **Tuples** |
 
 ## Contributing
 
