@@ -1,0 +1,55 @@
+# Enums Type :-
+
+- Enums is a way to define a set of `named constants`.
+- Enums allows you to `define a collection of related values` that can be `used interchangeably in your code`.
+
+- For Example, let's say you're building a weather app and you want to define set of possible weather conditions like "sunny", "cloudy", "rainy" and "snowy",
+- You could define an `enum` like this 👇
+
+```ts
+enum WeatherConditions {
+  Sunny,
+  Cloudy,
+  Rainy,
+  Snowy,
+}
+```
+
+- in this example, `WeatherConditions is the name of the enum` and each of the values (e.g Sunny, Cloudy, etc) is assigned an `automatic numerical value starting from 0`.
+
+- here is an example `if we not assign any value to it will gives us the index or the position value of that`
+
+```ts
+enum WeatherConditions {
+  Sunny,
+  Cloudy,
+  Rainy,
+  Snowy,
+}
+
+console.log(WeatherConditions.Sunny); // Output :- 0
+console.log(WeatherConditions.Rainy); // Output :- 2
+```
+
+- and you can also assign specific values to each enum member like this 👇
+
+```ts
+enum WeatherConditions {
+  Sunny = "sunny",
+  Cloudy = "cloudy",
+  Rainy = "rainy",
+  Snowy = "snowy",
+}
+```
+
+- now here comes how we will use the enum 👇
+
+```ts
+const currentWeather = WeatherConditions.Sunny;
+console.log(`The current weather is ${currentWeather}`);
+
+// Output :- The current weather is sunny
+```
+
+- so here we are accessing the enum first adding the enum name that is `WeatherConditions` and then adding `dot(.)` and then `specifiying which enum will be select or add`.
+- in this case we are passing `.Sunny`, so the output will be `sunny` as that `Sunny` value we have assigned in the enum as `sunny`.
