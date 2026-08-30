@@ -87,11 +87,12 @@ react19-Learning/
 │   ├── 03-ReactWithTypeScript/   # React + TypeScript learning content
 │   │   ├── 001-Annotations/      # Type annotations (string/number/boolean)
 │   │   ├── 002-TypeInference/    # Type inference + Any type
-│   │   ├── 003-FunctionParametersAnnotations/ # Function params, return types, Void, Never
+│   │   ├── 003-FunctionParametersAnnotations/ # Function params, default params, return types, Void, Never
 │   │   ├── 004-TypesInTypescript/# Array types + Multi-dim arrays + Object types
-│   │   ├── 005-TypeAliases/      # Type aliases + Optional properties (?)
+│   │   ├── 005-TypeAliases/      # Type aliases (type keyword) + Optional properties (?)
 │   │   ├── 006-IntersectionTypes/# Intersection types (& operator)
-│   │   ├── 007-UnionsTypes/      # Union types (| operator) + Literal types + Tuples
+│   │   ├── 007-UnionsTypes/      # Union types (|) + Literal types (string/bool/num) + Tuples (fixed-length typed arrays)
+│   │   ├── 008-EnumsTypes/       # Enums — named constants (numeric + string values)
 │   │   └── ReactWithTypeScript.mdx # React + TS intro & installation
 │   ├── docsMap.js                # Section → doc URL mappings for DocumentationLink
 │   ├── App.jsx                   # Root application component
@@ -216,7 +217,8 @@ Add TypeScript to your React skills:
 5. Types in TypeScript — Arrays, Multi-dimensional Arrays, & Object Types
 6. Type Aliases — Custom types + Optional Properties (?)
 7. Intersection Types — Combine types with `&` operator
-8. Union Types — OR types with `|` + Literal Types + Tuples
+8. Union Types — OR types with `|` + Literal Types + Tuples (fixed-length typed arrays with destructuring)
+9. Enums — Named constants (numeric auto-indexing + custom string values)
 
 ## Concepts Covered
 
@@ -274,7 +276,8 @@ All TypeScript learning content is in `src/03-ReactWithTypeScript/`:
 | 004 | Types in TypeScript — Arrays & Objects | [TypesInTypescript.mdx](src/03-ReactWithTypeScript/004-TypesInTypescript/TypesInTypescript.mdx) | **Array types** (`[]` + `Array<type>`), **Multi-dimensional arrays**, **Object types**, & objects as function return values (factory functions) |
 | 005 | Type Aliases + Optional Properties | [TypeAliases.mdx](src/03-ReactWithTypeScript/005-TypeAliases/TypeAliases.mdx) | **Type keyword** for custom types (PascalCase convention), **Optional properties** with `?` (mark fields as non-required) |
 | 006 | Intersection Types | [IntersectionType.mdx](src/03-ReactWithTypeScript/006-IntersectionTypes/IntersectionType.mdx) | Combine multiple types into one with **`&`** operator (e.g. Person & Employee → all properties required) |
-| 007 | Union Types, Literal Types, & Tuples | [UnionsType.mdx](src/03-ReactWithTypeScript/007-UnionsTypes/UnionsType.mdx) | **Union types** with **`|`** (OR), **Literal types** (exact allowed values: "red" \| "blue" etc.), & **Tuples** |
+| 007 | Union Types, Literal Types, & Tuples | [UnionsType.mdx](src/03-ReactWithTypeScript/007-UnionsTypes/UnionsType.mdx) | **Union types** with `|` (accept multiple types: variables, function params, interface properties, type aliases, arrays), **Literal types** (exact allowed string/boolean/numeric values), & **Tuples** (fixed-length typed arrays + destructuring individual elements) |
+| 008 | Enums — Named Constants | [EnumsTypes.mdx](src/03-ReactWithTypeScript/008-EnumsTypes/EnumsTypes.mdx) | **Enums** — define a collection of named constants. Auto numeric indexing (starts at 0) + custom string value assignment + accessing via dot notation |
 
 ## Contributing
 
