@@ -104,3 +104,29 @@ number = 4; // invalid as this is not having in types defines
 
 - so in the above examples we can see that , whatever type values we will provide that values will only accept for that variable
 - and if the variable value is not present in the available type values then it will gives us an error.
+
+## Tuples :-
+
+- Tuple is a type that represents an array with a `fixed number of elements`, where `each element can have a different type`.
+- The order of the types in the tuple definition corresponds to the order of the values in the actual array.
+- `Tuples are similar to arrays, but they have specific structure` and can be used to model finite sequences with known lengths.
+
+- Here is the syntax and example of Tuple in Typescript 👇
+
+```ts
+let myTuple: [string, number] = ["hello", 22];
+console.log(myTuple[0]); // "hello"
+console.log(myTuple[1]); // 22
+```
+
+- Now here the Destructuring Individual Element in Tuples 👇
+
+```ts
+let myTuple: [string, number] = ["hello", 22];
+
+// destrcuture the tuple data
+const [firstData, secondData] = myTuple;
+
+console.log(firstData); // "hello"
+console.log(secondData); // 22
+```
