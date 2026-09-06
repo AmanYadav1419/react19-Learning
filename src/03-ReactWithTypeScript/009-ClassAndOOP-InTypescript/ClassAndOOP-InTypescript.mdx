@@ -1,0 +1,50 @@
+# Class and OOP Concepts in Typescript
+
+- `Note :- if you don't know class or OOP based concepts in javascript or if you don't want to learn this you can skip it.`
+  `but if you do care about this and want to learn about the class or OOP based topic then you are welcome `
+
+`Note :- I assume that you already have the idea about the classes but if not then i will try to explain much more for better.`
+
+## Class Properties Annotations
+
+- You can annotate class properties with a type.
+- This allows you to define the data type of the property and ensure that it is always consistent.
+
+- here is the example :-
+
+```ts
+class Person {
+  // we can create the types in the class itself.
+  name: string;
+  age: number;
+
+  // and then specify this types in the constructor too.
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+// now we will create an instance of the class
+// and passing the name and age parameter to it.
+const person = new Person("John", 24);
+console.log(person);
+
+// the console will gives us the result like this :-
+// Person { name: "John", age: 24 }
+```
+
+## Access Modifiers
+
+- JavaScript class members are generally public and accessible, but modern JavaScript also supports `#private` fields and methods.
+- The `this` keyword refers to the current receiver and is unrelated to access modifiers; closures are not required to use it.
+
+- but anyways we will talk about typescript , so what are access modifiers or simply modifiers
+
+- In Typescript, you can use access modifiers to control the visibility of class members (properties and methods).
+- Access modifiers determine the ways in which class members can be accessed from within and outside the class.
+
+- so we have `three types of access modifiers in Typescript`.
+  - Public
+  - Private
+  - Protected
