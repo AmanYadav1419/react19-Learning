@@ -57,3 +57,61 @@ console.log(person);
 
 - Protected Access Modifier :-
 - Members marked as `protected can be accessed from within the class they are defined in, as well as any subclasses that extended the class`.
+
+```ts
+class Animal {
+  // defining types for the variables with the access modifiers
+  public name: string;
+  private age: number;
+  protected specifes: string;
+
+  // constructor function and accepting the parameters with its types
+  constructor(name: string, age: number, specifes: string) {
+    this.name = name;
+    this.age = age;
+    this.specifes = specifes;
+  }
+
+  // now we will create some functions or methods to read the values
+
+  // to get the name
+  public getName(): string {
+    return this.name;
+  }
+
+  // to get the age
+  // we have made the function protected so that the age parameter will be accesible in other classes.
+  // via this function
+  protected getAge(): number {
+    return this.age;
+  }
+
+  // to get the species
+  protected getSpecifes(): string {
+    return this.specifes;
+  }
+}
+
+// now here is the another class that extends the Animal class
+// this is specially for the Dog Category
+class Dog extends Animal {
+  constructor(name: string, age: number) {
+    // The super() call invokes the Animal constructor,
+    // so in Animal constructor specifes is also there , we are passing as "Dog".
+    super(name, age, "Dog");
+  }
+
+  // so here as you can see that we are accessing the Animal class functions in the different class
+  // which is actually extending the Animal class so that's why we can access the data
+  public getInfo(): string {
+    return `${this.getName()} is a ${this.getSpecifes()} and age is ${this.getAge()} Years old.`;
+  }
+}
+
+// to use the class Dog
+const shepard = new Dog("German Shepard", 10);
+console.log(shepard);
+
+// output :- Dog { name: 'German Shepard', age: 10, specifes: 'Dog' }
+
+```
