@@ -113,5 +113,46 @@ const shepard = new Dog("German Shepard", 10);
 console.log(shepard);
 
 // output :- Dog { name: 'German Shepard', age: 10, specifes: 'Dog' }
-
 ```
+
+## Getters and Setters :-
+
+- Getters and Setters are used to access and modify class properties.
+- Getters and Setters allow you to define a property in a class that looks like a simple variable from the outside but internally has additional logic for getting and setting the value.
+- so how this will look like , here is an example 👇
+
+```ts
+class MyClass {
+  // define a private variable , initial value will be zero annoted type will be number only.
+  private _myProperty: number = 0;
+
+  // now to get the value of the private variable we will use `get` keyword before function/method.
+  // this will be getter as we are
+  get myProperty(): number {
+    return this._myProperty;
+  }
+
+  // to set the value , we will use `set` keyword before function/method.
+  set myProperty(value: number) {
+    if (value < 0) {
+      throw new Error("Value cannot be negative");
+    }
+    // now passing/storing the value in the private variable
+    this._myProperty = value;
+  }
+}
+
+// instance of the class
+const myInstance = new MyClass();
+
+// so to use the `myInstance`
+console.log(`Current Value: ${myInstance.myProperty}`);
+// output of the console, when run's first time :- Current Value: 0
+
+// so the above code console is for to get the value
+// but what if we want to set the value , here is the code of it 👇
+myInstance.myProperty = 10;
+console.log(`after setting value : ${myInstance.myProperty}`);
+// output of the console, after setting value : 10
+```
+- so yeah this is all about Class and OOP section in Typescript, now next section is `Interfaces`. 
