@@ -24,3 +24,28 @@ const John:person = {
 
 - While interfaces are commonly used to define the structure ob objects, they `are not limited to just objects`.
 - Interfaces in Typescript can also be used to `describe the shape` of function and classes.
+
+
+- here is the details and examples
+
+## Interface for Functions
+
+- here is the example of interface for functions 👇.
+
+```ts
+// Interface for a function
+interface MathOperation {
+  // so a function accepts to parameter both are type annoted as number ,
+  // and the return value of the function is also type annoted as number
+  (x: number, y: number): number;
+}
+
+// Usage of the Interface
+
+// in here we are annoted the functions with the interface MathOperation
+const add: MathOperation = (a, b) => a + b;
+const subtract: MathOperation = (a, b) => a - b;
+
+console.log(add(6, 4)); // output :- 10
+console.log(subtract(5, 2)); //output :- 3
+```
