@@ -25,7 +25,6 @@ const John:person = {
 - While interfaces are commonly used to define the structure ob objects, they `are not limited to just objects`.
 - Interfaces in Typescript can also be used to `describe the shape` of function and classes.
 
-
 - here is the details and examples
 
 ## Interface for Functions
@@ -48,4 +47,38 @@ const subtract: MathOperation = (a, b) => a - b;
 
 console.log(add(6, 4)); // output :- 10
 console.log(subtract(5, 2)); //output :- 3
+```
+
+## Interface for Classes
+
+- here is the example of interface for classes 👇.
+
+```ts
+// Interface for a class
+interface Vehicle {
+  // as we are not returning any value from the function that is why void is annoted for the function.
+  start(): void;
+  stop(): void;
+}
+
+// Class Implementing the Interface
+
+// and here we are using keyword `implements` not extends.
+// to implement/define the function call.
+class Car implements Vehicle {
+  // start function
+  start() {
+    console.log("Car Started ");
+  }
+
+  // stop function
+  stop() {
+    console.log("Car Stopped");
+  }
+}
+
+// Usage
+const myCar = new Car();
+myCar.start();
+myCar.stop();
 ```
