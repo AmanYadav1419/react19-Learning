@@ -89,6 +89,57 @@ console.log(add(6, 4)); // output :- 10
 console.log(subtract(5, 2)); //output :- 3
 ```
 
+- next example of the function with Interfaces 👇
+
+```ts
+// Defining Interface 
+interface Person {
+  firstName: string;
+  lastName: string;
+  age?: number; // this is optional parameter added (?) after the key.
+  sayHello(): void;
+}
+
+// using interface in the function
+function greet(person: Person) {
+  console.log(
+    `Hello I am ${person.firstName} ${person.lastName}, I am ${person.age} Years Old`,
+  );
+  person.sayHello();
+}
+
+// using interface defining some values
+const Jhon: Person = {
+  firstName: "Jhon",
+  lastName: "Doe",
+  age: 30,
+  sayHello() {
+    console.log("Hii There");
+  },
+};
+
+// one more person instance with different values
+const Michel: Person = {
+  firstName: "Michel",
+  lastName: "Kickson",
+  age: 33,
+  sayHello() {
+    console.log("How Are you doing?");
+  },
+};
+
+// call the function and pass the person object
+greet(Jhon)
+greet(Michel)
+
+// output :- 
+// Hello I am Jhon Doe, I am 30 Years Old
+// Hii There
+// Hello I am Michel Kickson, I am 33 Years Old
+// How Are you doing?
+
+```
+
 ## Interface for Classes
 
 - here is the example of interface for classes 👇.
