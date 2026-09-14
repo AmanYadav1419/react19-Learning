@@ -22,6 +22,46 @@ const John:person = {
 }
 ```
 
+### More Examples of Interfaces, as Interfaces are supremly important 👇
+
+```ts
+interface Computer {
+  processor: string;
+  ram: number;
+  hdd: number;
+}
+
+const ComputerExample: Computer = {
+  processor: "i7",
+  ram: 16,
+  hdd: 512,
+};
+
+console.log(ComputerExample.processor); // Output:- i7
+console.log(ComputerExample.ram); // Output:- 16
+console.log(ComputerExample.hdd); // Output:- 512
+```
+
+- Next example 👇
+
+```ts
+interface Movie {
+  name: string;
+  ratings: number;
+  isHit: boolean;
+}
+
+const SpidermanMovie: Movie = {
+  name: "Spiderman Brand New Day",
+  ratings: 9.2,
+  isHit: true,
+};
+
+console.log(SpidermanMovie.name); // Output :- Spiderman Brand New Day
+console.log(SpidermanMovie.ratings); // Output :- 9.2
+console.log(SpidermanMovie.isHit); // Output :- true
+```
+
 - While interfaces are commonly used to define the structure ob objects, they `are not limited to just objects`.
 - Interfaces in Typescript can also be used to `describe the shape` of function and classes.
 
