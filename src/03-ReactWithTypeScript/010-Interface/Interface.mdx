@@ -92,7 +92,7 @@ console.log(subtract(5, 2)); //output :- 3
 - next example of the function with Interfaces 👇
 
 ```ts
-// Defining Interface 
+// Defining Interface
 interface Person {
   firstName: string;
   lastName: string;
@@ -129,15 +129,14 @@ const Michel: Person = {
 };
 
 // call the function and pass the person object
-greet(Jhon)
-greet(Michel)
+greet(Jhon);
+greet(Michel);
 
-// output :- 
+// output :-
 // Hello I am Jhon Doe, I am 30 Years Old
 // Hii There
 // Hello I am Michel Kickson, I am 33 Years Old
 // How Are you doing?
-
 ```
 
 ## Interface for Classes
@@ -172,4 +171,46 @@ class Car implements Vehicle {
 const myCar = new Car();
 myCar.start();
 myCar.stop();
+```
+
+## Declaration Merging :-
+
+- Once an Interface is declared, it cannot be directly modified.
+- However, Typescript allows what is informally referred to as `declaration merging` or `interface extension`, which is often misconstructed as `re-opening`.
+
+- Declaration merging in Typescript refers to the ability to extend or agument an existing declaration, including interfaces.
+- This can be useful when you want to add new properties or methods to an existing interface without modifying the original declaration.
+
+- Here is the example of it 👇
+
+```ts
+// Original Interface
+interface Car {
+  brand: string;
+  start(): void;
+}
+
+// Declaration merging (interface extension)
+interface Car {
+  model: string;
+  stop(): void;
+}
+
+// Usage of the extended interface
+const myCar: Car = {
+  brand: "Tata",
+  model: "Siera",
+  start() {
+    console.log("Car Started");
+  },
+  stop() {
+    console.log("Car Stopped");
+  },
+};
+myCar.start();
+myCar.stop();
+
+// output :-
+// Car Started
+// Car Stopped
 ```
