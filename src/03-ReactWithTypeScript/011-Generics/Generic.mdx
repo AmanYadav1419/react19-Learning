@@ -3,3 +3,43 @@
 - This is one of the best feature in Typescript.
 - In Typescript, `generics allow you to create reusable components that can work with variety of types`.
 - Generics make it possible for you to define `functions, classes and interfaces that can work with different data types without having duplicate code`.
+
+- so first here is the code `Regular Functions` without having generics function and types 👇
+
+```ts
+const printString = (x: string) => console.log(x);
+const printNumber = (x: number) => console.log(x);
+const printBoolean = (x: boolean) => console.log(x);
+
+// first function will take the string value as we have annoted the type as string.
+console.log(printString("hello"));
+
+// first function will take the number value as we have annoted the type as number.
+console.log(printNumber(10));
+
+// first function will take the boolean value as we have annoted the type as boolean.
+console.log(printBoolean(true));
+
+```
+
+- now here is the code and way how to create the generics and how to use it 👇
+
+```ts
+function printInfo<T>(x: T) {
+  return x;
+}
+
+const str = printInfo<string>("Hii"); // Hii
+const num = printInfo<number>(20); // 20
+const bool = printInfo<boolean>(true); // true
+
+```
+
+- so the `(x:number)` or `(x: string)` or the (x:boolean) this are called as function parameter area,
+- now on the other hand this `<T>` , this is called as `type parameter`
+- anytime we want to create a generic function , we can use `<T>`, which kind of type will be defined and passed in function.
+- for the `<T>` area we have to specificy some value like string, boolean or number whatever type you want.
+- like here if we want to pass only string , then after function name we are passing the type i.e :- 
+    - `printInfo<number>(20)` // here after function name , we are passing the type like this `<number>` and then parameter value i.e (20) that is number        
+    - same for the other function parameter too , like `printInfo<string>("Hii")`
+- now this `(x:T)` is called as function parameter area and the value of the parameter passed type annoted is `<T>`
