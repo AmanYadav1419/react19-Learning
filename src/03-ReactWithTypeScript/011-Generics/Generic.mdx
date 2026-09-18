@@ -19,7 +19,6 @@ console.log(printNumber(10));
 
 // first function will take the boolean value as we have annoted the type as boolean.
 console.log(printBoolean(true));
-
 ```
 
 - now here is the code and way how to create the generics and how to use it 👇
@@ -32,14 +31,38 @@ function printInfo<T>(x: T) {
 const str = printInfo<string>("Hii"); // Hii
 const num = printInfo<number>(20); // 20
 const bool = printInfo<boolean>(true); // true
-
 ```
 
 - so the `(x:number)` or `(x: string)` or the (x:boolean) this are called as function parameter area,
 - now on the other hand this `<T>` , this is called as `type parameter`
 - anytime we want to create a generic function , we can use `<T>`, which kind of type will be defined and passed in function.
 - for the `<T>` area we have to specificy some value like string, boolean or number whatever type you want.
-- like here if we want to pass only string , then after function name we are passing the type i.e :- 
-    - `printInfo<number>(20)` // here after function name , we are passing the type like this `<number>` and then parameter value i.e (20) that is number        
-    - same for the other function parameter too , like `printInfo<string>("Hii")`
+- like here if we want to pass only string , then after function name we are passing the type i.e :-
+  - `printInfo<number>(20)` // here after function name , we are passing the type like this `<number>` and then parameter value i.e (20) that is number
+  - same for the other function parameter too , like `printInfo<string>("Hii")`
 - now this `(x:T)` is called as function parameter area and the value of the parameter passed type annoted is `<T>`
+
+- Here is one more example but this time returning more than one value 👇
+
+```ts
+function uniqueDataTypesFunc<Type>(
+  item: Type,
+  defaultValue: Type,
+): [Type, Type] {
+  return [item, defaultValue];
+}
+
+// now to use the function
+const uniqueNum = uniqueDataTypesFunc<number>(10, 20);
+const uniqueStr = uniqueDataTypesFunc<string>("Hello", "World");
+const uniqueBool = uniqueDataTypesFunc<boolean>(true, false);
+
+console.log("uniqueNum:", uniqueNum);
+console.log("uniqueStr:", uniqueStr);
+console.log("uniqueBool:", uniqueBool);
+
+// output of the code
+// uniqueNum: [ 10, 20 ]
+// uniqueStr: [ 'Hello', 'World' ]
+// uniqueBool: [ true, false ]
+```
