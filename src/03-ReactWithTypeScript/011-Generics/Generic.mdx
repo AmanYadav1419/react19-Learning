@@ -66,3 +66,40 @@ console.log("uniqueBool:", uniqueBool);
 // uniqueStr: [ 'Hello', 'World' ]
 // uniqueBool: [ true, false ]
 ```
+
+- Adding one more example of Generic function to generate random key value pair 👇
+
+```ts
+function getRandomKeyValuePair<T>(obj: { [key: string]: T }): {
+  key: string;
+  value: T;
+} {
+  const keys = Object.keys(obj);
+  const randomKeys = keys[Math.floor(Math.random() * keys.length)];
+  return { key: randomKeys, value: obj[randomKeys] };
+}
+
+// now we  a string object
+const stringObject = { a: "apple", b: "banana", c: "cherry" };
+
+// now to use the generic function
+// and store to the variable
+const Stringresult = getRandomKeyValuePair<string>(stringObject);
+console.log(Stringresult);
+
+// output will be random key value pair from the stringObject :-
+// { key: 'a', value: 'apple' }
+// { key: 'b', value: 'banana' }
+
+// now will test for the number Object
+const numberObject = { a: 1, b: 2, c: 3 };
+
+// now to use the generic function
+// and store to the variable
+const numberResult = getRandomKeyValuePair<number>(numberObject);
+console.log(numberResult);
+
+// output will be random key value pair from the numberObject :-
+// { key: 'b', value: 2 }
+// { key: 'a', value: 1 }
+```
