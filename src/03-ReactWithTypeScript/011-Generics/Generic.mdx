@@ -103,3 +103,65 @@ console.log(numberResult);
 // { key: 'b', value: 2 }
 // { key: 'a', value: 1 }
 ```
+
+// Next example create a function that filters based on the condition.
+
+```ts
+// so we have created a function
+// and then the first parameter it will accept is array of the data type is the provided type of array
+// second parameter is the condition function by which the array will be filter and we have defiend the type as
+// T so given and the value given is boolean
+// witht that the function return type is T of array T[]
+function filterArray<T>(array: T[], condition: (item: T) => boolean): T[] {
+  return array.filter((item) => condition(item));
+}
+
+// the array that will be passed as input
+const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// so now use that function to get the even numbers from the numberArray as an input
+// passing T type as number
+// first parameter is the numberArray as the input,
+// second parameter is the condition function that being created and passed in the function.
+// condition parameter is (num) => num % 2 === 0 , that is the code to get the even numbersonly.
+const evenNumber = filterArray<number>(numberArray, (num) => num % 2 === 0);
+console.log(evenNumber);
+// output :- [ 2, 4, 6, 8, 10 ]
+
+// next function example for oddNumber
+const oddNumber = filterArray<number>(numberArray, (num) => num % 2 !== 0);
+console.log(oddNumber);
+// output :- [ 1, 3, 5, 7, 9 ]
+
+// next function for the strings
+const stringArray = ["apple", "banana", "cherry", "date"];
+
+// now this time we are passing string for the T type.
+// as the type of the input is also array of strings
+const shortWords = filterArray<string>(stringArray, (word) => word.length < 6);
+console.log(shortWords);
+// output :- [ 'apple', 'date' ]
+
+// now let's try with the interface
+
+// defining the interface with the key's of the interface types.
+interface Fruit {
+  name: string;
+  color: string;
+}
+
+// use that inteface as for the type annotation, and defining the fruitArray data.
+const FruitArray: Fruit[] = [
+  { name: "Apple", color: "Red" },
+  { name: "Banana", color: "Yellow" },
+  { name: "Cherry", color: "Red" },
+];
+
+// now we will use the function to get the only red color fruit that is our condition 
+const redFruits = filterArray<Fruit>(FruitArray, (fruit) => fruit.color === "Red" || fruit.color === "red")
+
+console.log(redFruits)
+
+// output :- 
+// [ { name: 'Apple', color: 'Red' }, { name: 'Cherry', color: 'Red' } ]
+```
