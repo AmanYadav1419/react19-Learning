@@ -165,3 +165,24 @@ console.log(redFruits)
 // output :- 
 // [ { name: 'Apple', color: 'Red' }, { name: 'Cherry', color: 'Red' } ]
 ```
+
+- Now we have completed generic function having single types 
+- but now we will write code and understand `generic function` with `multiple types`.
+
+```ts
+// we will write a function to reverse order of two values.
+// example :- 1,2 => 2,1
+
+// now in this function we will define two types of parameter , abbrevate by T and U.
+// or you can abbrevate with anything you want but ,there are two types.
+
+// and then for the first value the annoted by T , and second value annoted by U.
+// then in return we have reverse or alter the order of the values.
+function reversePair<T, U>(value1:T, value2:U):[U, T]{
+  return [value2, value1]
+}
+
+const resultReversedPair = reversePair("hello", 30);
+console.log(resultReversedPair)
+// output :- [ 30, 'hello' ]
+```
