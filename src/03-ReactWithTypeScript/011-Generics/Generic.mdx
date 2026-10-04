@@ -157,11 +157,99 @@ const FruitArray: Fruit[] = [
   { name: "Cherry", color: "Red" },
 ];
 
-// now we will use the function to get the only red color fruit that is our condition 
-const redFruits = filterArray<Fruit>(FruitArray, (fruit) => fruit.color === "Red" || fruit.color === "red")
+// now we will use the function to get the only red color fruit that is our condition
+const redFruits = filterArray<Fruit>(
+  FruitArray,
+  (fruit) => fruit.color === "Red" || fruit.color === "red",
+);
 
-console.log(redFruits)
+console.log(redFruits);
 
-// output :- 
+// output :-
 // [ { name: 'Apple', color: 'Red' }, { name: 'Cherry', color: 'Red' } ]
+```
+
+- Now we have completed generic function having single types
+- but now we will write code and understand `generic function` with `multiple types`.
+
+```ts
+// we will write a function to reverse order of two values.
+// example :- 1,2 => 2,1
+
+// now in this function we will define two types of parameter , abbrevate by T and U.
+// or you can abbrevate with anything you want but ,there are two types.
+
+// and then for the first value the annoted by T , and second value annoted by U.
+// then in return we have reverse or alter the order of the values.
+function reversePair<T, U>(value1: T, value2: U): [U, T] {
+  return [value2, value1];
+}
+
+const resultReversedPair = reversePair("hello", 30);
+console.log(resultReversedPair);
+// output :- [ 30, 'hello' ]
+```
+
+- So the final thing we have to learn about generics is `Generic Classes`.
+
+```ts
+// we are creating a class and then defining the type or the type parameter.
+class Box<T> {
+  // then defining a private variable and annotating the type as parameter type that is T.
+  private content: T;
+
+  constructor(initalContent: T) {
+    // and we are defining the content with initialContetnt.
+    this.content = initalContent;
+  }
+
+  // then we are defining two methods
+
+  // first getContent will not take any parameter , only returns this.content,
+  // the return type is annoted by T.
+  getContent(): T {
+    return this.content;
+  }
+
+  // to update the old content with new content.
+  // second setContent will take parameter , parameter type will be T
+  // now we are not returning anything from the function that's why used void here.
+  setContent(newContent: T): void {
+    this.content = newContent;
+  }
+}
+
+// now to create the instance of the class
+const stringBox = new Box<string>("Hello, stringBox");
+
+// now we are excuting getContent method that is present in the instance of the class `stringBox`.
+console.log(stringBox.getContent());
+// output :- Hello, stringBox
+
+// now we will use the second method that is present that is `setContent` in the instance of the class `stringBox`.
+stringBox.setContent("New Content Addedby SetContent");
+
+// now as the data is being set but we are not returning the updated content,
+// for that we have defined `getContent` method in the class.
+console.log(stringBox.getContent());
+// output  :- New Content Addedby SetContent
+
+// whole output of the code block is like this :-
+// Hello, stringBox
+// New Content Addedby SetContent
+
+// now we will create the instance of the class for the numbers as well
+const numberBox = new Box<number>(100);
+
+// now to get the current value of the numberBox
+console.log(numberBox.getContent());
+// output :- 100
+
+// now we will set the new value in the numberBox instance for the number type.
+numberBox.setContent(200);
+
+// now value is being , to get the value we have to call the getContent method.
+console.log(numberBox.getContent());
+// ouptut :- 200
+
 ```
