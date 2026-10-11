@@ -78,3 +78,39 @@ const myCat = new Cat();
 animalSound(myDog); // Output :- Woo! Bhoo!
 animalSound(myCat); // Output :- Meoww!
 ```
+
+## Intersection types 👇
+
+- Intersection types in Typescript `allow you to combine multiple types into a single type`.
+- The `resulting type will have all the properties of each individual type`.
+- You create intersection types using the `& operator`.
+- how the code is gonna look like , here is the code 👇
+
+```ts
+// Define two types
+type Empolyee = {
+  id: number;
+  name: string;
+};
+
+type Manager = {
+  department: string;
+  role: string;
+};
+
+// create an intersection type
+type ManagerWithEmpolyeeInfo = Empolyee & Manager;
+
+// Example Usage
+const manager: ManagerWithEmpolyeeInfo = {
+  id: 1,
+  name: "Jhon Doe",
+  department: "Enginerring",
+  role: "Team Lead",
+};
+
+console.log(manager.id); // Output :- 1
+console.log(manager.name); // Output :- Jhon Doe
+console.log(manager.department); // Output :- Enginerring
+console.log(manager.role); // Output :- Team Lead
+```
