@@ -1,16 +1,15 @@
-# Type Narrowing :- 
+# Type Narrowing :-
 
 - Type narrowing is the process of refining a variable's type within a conditional block of code.
 - This allows you to write more precise and type-safe code.
 
 - How will achieve the type narrowing 👇
 - `Typescript` provides serveral mechanisms for narrowing types.
-    - Type guards
-    - The instance operator
-    - intersection types
-    - Discrimiated unions
+  - Type guards
+  - The instance operator
+  - intersection types
+  - Discrimiated unions
 - Note :- in this specific sections we are learning about , `Type guards`, `The instance operator` and `intersection types` only.
-
 
 ## Type guards 👇
 
@@ -39,5 +38,43 @@ function ExampleFunction(value: myType): void {
 // Example usage
 ExampleFunction("hello"); //output :- HELLO
 ExampleFunction(10); //output :- 10.00
+```
 
+## instanceof operator 👇
+
+- The instanceof operator is another type guard in Typescript.
+- That allows you `to check whether an object is an instance of particular class or constructor function`.
+- how the code is gonna look like , here is the code 👇
+
+```ts
+// creates two class , to pass as the union type in the function parameter.
+class Dog {
+  bark(): void {
+    console.log("Woo! Bhoo!");
+  }
+}
+
+class Cat {
+  meow(): void {
+    console.log("Meoww!");
+  }
+}
+
+// Example function with instanceof type guard
+function animalSound(animal: Dog | Cat): void {
+  if (animal instanceof Dog) {
+    // Within this block, Typescript knows that 'animal' is an instanceof `Dog`.
+    animal.bark();
+  } else {
+    // Within this block, Typescript knows that 'animal' is an instance of `Cat`.
+    animal.meow();
+  }
+}
+
+// Example usage
+const myDog = new Dog();
+const myCat = new Cat();
+
+animalSound(myDog); // Output :- Woo! Bhoo!
+animalSound(myCat); // Output :- Meoww!
 ```
