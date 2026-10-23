@@ -31,3 +31,25 @@
         - memo
         - useEffect
         - useCallback
+
+
+## 5) USE (use) :-
+
+- The `use() hook` lets you `read and load resources asynchronously`, such as `promises or context`.
+-  Unlike other hooks, `it can be utilized in loops and conditionals`.
+- In certain situations, it can `serve as a replacement for useEffect(), when fetching data`,
+    and it streamlines context usage by `allowing you to use, use(context) instead of useContext(context)`.
+
+## ACTIONS :-
+
+- React 19 introduces Actions, which are `asynchronous functions designed to simplify form submissions`.
+- Actions can be utilized on both the `client` and `server` sides.
+
+## useFormStatus :-
+
+- useFormStatus is a Hook that `gives you status information of the last form submission`.
+- syntax 👇
+
+```ts
+const {pending, data, method, action} = useFormStatus();
+```
