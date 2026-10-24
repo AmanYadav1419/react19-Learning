@@ -1,0 +1,148 @@
+## Use Hook
+
+- so before understanding what is the `use()` hook and why it is being replacement for the `useEffect()` hook
+
+- let's understand by the example 👇
+  - some code written with `useEffect()` hook logic.
+
+```ts
+// first let we create a basic application with the useState and useEffect
+// fetching the api and managing the code flow
+import { useState, useEffect } from "react";
+
+interface Todo {
+  title: string;
+}
+const FetchTodods = () => {
+  // defining states for the application.
+  const [todo, setTodo] = useState<Todo | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // useEffect to fetch the data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetch(
+          "https://jsonplaceholder.typicode.com/todos/1",
+        );
+
+        if (!result.ok) {
+          throw new Error("Network response is not good, please try again!");
+        }
+
+        // converting data to the json format
+        const finaldata: Todo = await result.json();
+        // and then setting to the state to render in the ui.
+        setTodo(finaldata);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    // calling the function
+    fetchData();
+  }, []);
+
+  // if loading is true then show this loader
+  if (loading) return <div>Loading....</div>;
+
+  return (
+    <div>
+      <h1>UseEffect Todos code </h1>
+      <h2>{todo?.title}</h2>
+    </div>
+  );
+};
+
+export default FetchTodods;
+
+
+```
+
+- now to use the that component import the component in your App component like this 👇
+- import statements totally on your folder structure so it may varries.
+
+```ts
+import FetchTodods from "./FetchTodods";
+const App = () => {
+  return (
+    <div>
+      <FetchTodods />
+    </div>
+  );
+};
+
+```
+
+- the import of the component is totally depends on your folder structure how u setup ur project
+
+- so now here comes the code example that is implemented logic of `use()` hook.
+- surpriasingly it will reduce so much amount of code
+- here is the example of the code using `use()` hook 👇.
+
+```ts
+// now if we use the use() hook , we no longer to manage all the states and if else statements.
+
+// so now to use the use() hook, first import it.
+import { use } from "react";
+
+const FetchTododsByUse = () => {
+  // now here we will define the function that will passed in the use Hook.
+  // this function will be the async function
+  const fetchData = async () => {
+    // need to fetch from the api and store to the res variable.
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+
+    // and then return the data in the json format directly
+    return res.json();
+  };
+
+  // now to use that use Hook here is the code
+  // now inside this use , we have to specificy our promise/async function.
+  // we can directly create our function in it , or call the function just i do like this.
+  const data = use(fetchData());
+
+  return (
+    <div>
+      {/* now to render in the ui (data) */}
+      <h1>use Hook Todos code </h1>
+      <h2>{data.title}</h2>
+    </div>
+  );
+};
+export default FetchTododsByUse;
+
+```
+
+- now we have used the `use` Hook but it will still not shows the data in the ui.
+- as to use that hook working properly for that component specific , we have to `wrap that component in Suspense boundary`.
+- here is the implementation of it in the App.tsx file , `App component`.
+- now to use the that component import the component in your App component like this 👇
+- import statements totally on your folder structure so it may varries.
+
+```ts
+// for the Suspense part , we will discuss it on later in the learning.
+import { Suspense } from "react";
+const App = () => {
+  return (
+    // to work the fetch todos by use , we have to wrap the component in Suspense Boundary.
+    // and the it accept a prop as fallback , that is just kind of loading state in api fetching to render in the ui.
+    <Suspense fallback={<div>Loading...</div>}>
+        {/* in that we have renderd our use hook component. */}
+      <FetchTododsByUse />
+    </Suspense>
+  );
+};
+
+export default App;
+```
+
+
+### Advantage of use() Hook over useEffect() Hook :-
+
+- first is that `we no longer needed to manage the states of loading , error ,and states data`
+- second thing we no longer have to write the complex if and else logic statements 
+- no longer need to manually updates the states of loading , errors states and data state.
+- less code complexity and easier code flow.
