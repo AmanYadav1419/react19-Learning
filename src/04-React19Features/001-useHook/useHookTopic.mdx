@@ -1,0 +1,78 @@
+## Use Hook
+
+- so before understanding what is the `use()` hook and why it is being replacement for the `useEffect()` hook
+
+- let's understand by the example 👇
+  - some code written with `useEffect()` hook logic.
+
+```ts
+// first let we create a basic application with the useState and useEffect
+// fetching the api and managing the code flow
+import { useState, useEffect } from "react";
+
+interface Todo {
+  title: string;
+}
+const FetchTodods = () => {
+  // defining states for the application.
+  const [todo, setTodo] = useState<Todo | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // useEffect to fetch the data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetch(
+          "https://jsonplaceholder.typicode.com/todos/1",
+        );
+
+        if (!result.ok) {
+          throw new Error("Network response is not good, please try again!");
+        }
+
+        // converting data to the json format
+        const finaldata: Todo = await result.json();
+        // and then setting to the state to render in the ui.
+        setTodo(finaldata);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    // calling the function
+    fetchData();
+  }, []);
+
+  // if loading is true then show this loader
+  if (loading) return <div>Loading....</div>;
+
+  return (
+    <div>
+      <h1>UseEffect Todos code </h1>
+      <h2>{todo?.title}</h2>
+    </div>
+  );
+};
+
+export default FetchTodods;
+
+
+```
+
+- now to use the that component import the component in your App component like this 👇
+
+```ts
+import FetchTodods from "./FetchTodods";
+const App = () => {
+  return (
+    <div>
+      <FetchTodods />
+    </div>
+  );
+};
+
+```
+
+- the import of the component is totally depends on your folder structure how u setup ur project 
