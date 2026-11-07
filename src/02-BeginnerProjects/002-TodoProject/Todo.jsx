@@ -1,10 +1,12 @@
 // 002 Todo Project.
 import { useState } from "react";
+import "./todo.css";
+
 const Todo = () => {
   // two states for the todo application.
   // one is for todos and second one is for inputs
   const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
 
   const handleAddTodo = () => {
     if (!input) {
@@ -25,26 +27,40 @@ const Todo = () => {
   const removeTodo = (id) =>
     setTodos((todos) => todos.filter((t) => t.id !== id));
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") handleAddTodo();
+  };
+
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="enter your todo"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
+    <div className="todo-wrapper">
+      <div className="todo-card">
+        <h2>My To-Do List</h2>
+        <div className="todo-input-row">
+          <input
+            type="text"
+            placeholder="Enter your todo..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            className="todo-input"
+          />
+          <button onClick={handleAddTodo} className="todo-add-btn">Add</button>
+        </div>
 
-      <button onClick={handleAddTodo}>Add Todo</button>
-
-      {/* to render all the todos  */}
-      <ul>
-        {todos.map(({ text, id }) => (
-          <li key={id}>
-            <span>{text}</span>
-            <button onClick={() => removeTodo(id)}>delete</button>
-          </li>
-        ))}
-      </ul>
+        {/* to render all the todos  */}
+        {todos.length === 0 ? (
+          <p className="todo-empty">No todos yet. Add one above!</p>
+        ) : (
+          <ul className="todo-list">
+            {todos.map(({ text, id }) => (
+              <li key={id} className="todo-item">
+                <span>{text}</span>
+                <button onClick={() => removeTodo(id)} className="todo-delete-btn">Delete</button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };

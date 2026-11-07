@@ -1,34 +1,70 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Hidden Search Bar Project Styles */
 .hiddenSearchcontainer {
-  height: 50vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: 0.7s ease;
-  color: black;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 12px;
+  padding: 2rem;
+  gap: 1rem;
 }
 
-.hiddenSearchButton {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background: transparent;
+.search-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 50%;
   cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #c7d2fe;
+  font-size: 1.3rem;
+}
+
+.search-icon-wrapper:hover {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: #6366f1;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.search-hint {
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  color: #64748b;
 }
 
 .hiddenSearchInput {
-  padding: 13px 12px;
-  background: transparent;
+  padding: 0.75rem 1.2rem;
+  background: rgba(15, 23, 42, 0.8);
   outline: none;
-  border: 1px solid #fff;
-  color: #fff;
-  border-radius: 2px;
-  box-shadow: 2px 2px 2px 1px rgb(35, 35, 35);
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  color: #f1f5f9;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: sans-serif;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hiddenSearchInput::placeholder {
+  color: #64748b;
+}
+
+.hiddenSearchInput:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25);
+}
+
+.search-close-hint {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  color: #475569;
 }

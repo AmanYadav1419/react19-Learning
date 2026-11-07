@@ -1,60 +1,87 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Testimonials Project Styles */
 .testimonial-body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40vh;
-  background-color: #e8faff;
+  min-height: 60vh;
+  padding: 2rem 1rem;
 }
 
 .testimonials {
-  margin: 0 auto;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  max-width: 540px;
+  width: 100%;
   text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   font-family: sans-serif;
-  border-radius: 10px;
-  padding: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #f0fdfe;
+}
+
+.testimonials-index {
+  font-size: 0.8rem;
+  color: #6366f1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.testimonials-quote-mark {
+  font-size: 3rem;
+  line-height: 1;
+  color: rgba(99, 102, 241, 0.4);
+  margin-bottom: 0.25rem;
 }
 
 .testimonials-quote {
-  font-size: 22px;
+  font-size: 1.15rem;
   font-style: italic;
-  margin-bottom: 10px;
-  color: #666;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  color: #cbd5e1;
 }
 
 .testimonials-author {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.testimonials-author::before {
+  content: "\2014\0020";
+  color: #6366f1;
 }
 
 .testimonials-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .testimonials-nav .testimonial-button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #82e5ee;
-  color: #fff;
-  font-size: 16px;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.15);
+  color: #c7d2fe;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .testimonials-nav .testimonial-button:hover {
-  background-color: #037680;
+  background: rgba(99, 102, 241, 0.35);
+  border-color: #6366f1;
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .testimonials-nav .testimonial-button:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
 }

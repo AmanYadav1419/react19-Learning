@@ -5,6 +5,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./meals.css";
+
 const Meals = () => {
   const [items, seItems] = useState([]);
 
@@ -26,8 +27,8 @@ const Meals = () => {
       <section className="meals-card" key={idMeal}>
         <img className="meals-img" src={strMealThumb} alt={strMeal} />
         <section className="meals-content">
-          <p className="meals-p">Name :- {strMeal}</p>
-          <p className="meals-p">ID :- #{idMeal}</p>
+          <p className="meals-name">{strMeal}</p>
+          <p className="meals-id">ID: #{idMeal}</p>
         </section>
       </section>
     );
