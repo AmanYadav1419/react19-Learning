@@ -1,49 +1,80 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.accordion-body {
-  background: rgb(36, 36, 36);
-  color: #fff;
+/* Accordion Project Styles */
+.accordion-wrapper {
+  padding: 2rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
   font-family: sans-serif;
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  border: 2px solid white;
 }
 
 .accordion-card {
-  margin: 20px;
-  padding: 20px;
-  background: rgb(73, 73, 73);
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.accordion-card.is-open {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
 }
 
 .accordion-header {
   display: flex;
   justify-content: space-between;
-  width: 40rem;
+  align-items: center;
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+  color: #f1f5f9;
+  font-size: 1rem;
+  font-weight: 600;
+  user-select: none;
+  transition: background 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card-title {
-  display: flex;
-  justify-content: space-between;
-  width: 50rem;
+.accordion-header:hover {
+  background: rgba(99, 102, 241, 0.08);
 }
 
 .accordion-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
+  font-size: 1.3rem;
+  color: #6366f1;
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+  margin: 0;
+}
+
+.accordion-icon.open {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease;
+  opacity: 0;
+}
+
+.accordion-content.open {
+  max-height: 400px;
+  opacity: 1;
 }
 
 .accordion-card-info {
-  width: 30rem;
-  padding: 20px 0;
-  line-height: 1.3;
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  padding-top: 1rem;
 }

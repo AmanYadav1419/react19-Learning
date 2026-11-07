@@ -71,7 +71,7 @@ const FormValidation = () => {
     ) {
       alert("Form submitted successfully");
 
-        // additional print the form data to the console 
+        // additional print the form data to the console
         // so that you can see the form data that you submitted.
         console.log({
           username,
@@ -79,7 +79,7 @@ const FormValidation = () => {
           password,
           confirmpassword,
         });
-    
+
         // and then make the states empty for new entry
         setUsername("");
         setEmail("");
@@ -87,66 +87,81 @@ const FormValidation = () => {
         setConfirmPassword("");
     }
   };
+
   return (
-    <>
+    <div className="formvalidation-wrapper">
       <div className="formvalidation-card">
-        <div className="formvalidation-card-image"></div>
+        <h2 className="formvalidation-title">Create Account</h2>
+        <p className="formvalidation-subtitle">Fill in the details below to register</p>
 
         {/* form */}
-        <form className="formvalidation-form">
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            style={{ borderColor: userColor }}
-            className="formvalidation-input"
+        <form className="formvalidation-form" onSubmit={handleFormSubmitValidate}>
+          <div className="form-field">
+            <label className="form-label" htmlFor="fv-username">Username</label>
+            <input
+              id="fv-username"
+              type="text"
+              placeholder="At least 6 characters"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              style={{ borderColor: userColor || undefined }}
+              className="formvalidation-input"
             />
-          <p className="formvalidation-error">{errorUserName}</p>
+            <p className="formvalidation-error">{errorUserName}</p>
+          </div>
 
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            style={{ borderColor: emailColor }}
-            className="formvalidation-input"
-          />
+          <div className="form-field">
+            <label className="form-label" htmlFor="fv-email">Email</label>
+            <input
+              id="fv-email"
+              type="email"
+              placeholder="you@gmail.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ borderColor: emailColor || undefined }}
+              className="formvalidation-input"
+            />
+            <p className="formvalidation-error">{errorEmail}</p>
+          </div>
 
-          <p className="formvalidation-error">{errorEmail}</p>
+          <div className="form-field">
+            <label className="form-label" htmlFor="fv-password">Password</label>
+            <input
+              id="fv-password"
+              type="password"
+              placeholder="At least 6 characters"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ borderColor: passwordColor || undefined }}
+              className="formvalidation-input"
+            />
+            <p className="formvalidation-error">{errorPassword}</p>
+          </div>
 
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={{ borderColor: passwordColor }}
-            className="formvalidation-input"
-          />
-
-          <p className="formvalidation-error">{errorPassword}</p>
-
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmpassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            style={{ borderColor: confirmPasswordColor }}
-            className="formvalidation-input"
-          />
-
-          <p className="formvalidation-error">{errorConfrimPassword}</p>
+          <div className="form-field">
+            <label className="form-label" htmlFor="fv-confirm">Confirm Password</label>
+            <input
+              id="fv-confirm"
+              type="password"
+              placeholder="Repeat your password"
+              value={confirmpassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              style={{ borderColor: confirmPasswordColor || undefined }}
+              className="formvalidation-input"
+            />
+            <p className="formvalidation-error">{errorConfrimPassword}</p>
+          </div>
 
           {/* sumbit button */}
           <button
             className="formvalidation-submit-btn"
-            onClick={handleFormSubmitValidate}
+            type="submit"
           >
-            Sumbit
+            Submit
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -37,6 +37,14 @@ const Testimonials = () => {
   return (
     <div className="testimonial-body">
       <div className="testimonials">
+        {/* index indicator */}
+        <div className="testimonials-index">
+          {currentIndex + 1} / {testimonialdata.length}
+        </div>
+
+        {/* decorative quote mark */}
+        <div className="testimonials-quote-mark">&ldquo;</div>
+
         {/* this div is just for the quote part */}
         <div className="testimonials-quote">
           {/* get the quote from the testimonialdata array  */}
@@ -46,23 +54,23 @@ const Testimonials = () => {
 
         {/* this div is just for the author part */}
         <div className="testimonials-author">
-          - {testimonialdata[currentIndex].author}
+          {testimonialdata[currentIndex].author}
         </div>
 
         {/* now the two buttons to show the testimonals next and previous testimonial part */}
         {/* and onClick event to change the currentIndex so that it will show the updated testimonials in the ui. */}
         <div className="testimonials-nav">
           <button
-            onClick={handleNextTestimonial}
-            className="testimonial-button"
-          >
-            Next
-          </button>
-          <button
             onClick={handlePreviousTestimonial}
             className="testimonial-button"
           >
             Previous
+          </button>
+          <button
+            onClick={handleNextTestimonial}
+            className="testimonial-button"
+          >
+            Next
           </button>
         </div>
       </div>

@@ -1,7 +1,7 @@
 // 004 Calculator Project.
 
 import { useState } from "react";
-import "./calculator.css"
+import "./Calculator.css"
 // in this project we will built a calculator application.
 
 const Calculator = () => {
@@ -30,39 +30,41 @@ const Calculator = () => {
   };
 
   return (
-    <form className="calculator" name="calc">
-      <input className="value" type="text" value={inputValue} />
+    <div className="calculator-wrapper">
+      <form className="calculator" name="calc">
+        <input className="value" type="text" value={inputValue} readOnly />
 
-      <span className="num clear" onClick={() => clear()}>
-        c
-      </span>
+        <span className="num clear" onClick={() => clear()}>
+          C
+        </span>
 
-      {/* spans to show the numbers and operands , and onclick of individual section,
-       we are passing that specific element in the display function  */}
-      <span onClick={() => display("/")}>/</span>
-      <span onClick={() => display("*")}>*</span>
-      <span onClick={() => display("7")}>7</span>
-      <span onClick={() => display("8")}>8</span>
-      <span onClick={() => display("9")}>9</span>
-      <span onClick={() => display("-")}>-</span>
-      <span onClick={() => display("4")}>4</span>
-      <span onClick={() => display("5")}>5</span>
-      <span onClick={() => display("6")}>6</span>
-      <span className="plus" onClick={() => display("+")}>
-        +
-      </span>
+        {/* spans to show the numbers and operands , and onclick of individual section,
+         we are passing that specific element in the display function  */}
+        <span className="operator" onClick={() => display("/")}>&#47;</span>
+        <span className="operator" onClick={() => display("*")}>&#42;</span>
+        <span onClick={() => display("7")}>7</span>
+        <span onClick={() => display("8")}>8</span>
+        <span onClick={() => display("9")}>9</span>
+        <span className="operator" onClick={() => display("-")}>&#8722;</span>
+        <span onClick={() => display("4")}>4</span>
+        <span onClick={() => display("5")}>5</span>
+        <span onClick={() => display("6")}>6</span>
+        <span className="operator plus" onClick={() => display("+")}>
+          &#43;
+        </span>
 
-      {/* remaining elements for the calculator with that onclick display function with passing that character*/}
-      <span onClick={() => display("1")}>1</span>
-      <span onClick={() => display("2")}>2</span>
-      <span onClick={() => display("3")}>3</span>
-      <span onClick={() => display("0")}>0</span>
-      <span onClick={() => display("00")}>00</span>
-      <span onClick={() => display(".")}>.</span>
-      <span className="num equal" onClick={() => calculate()}>
-        =
-      </span>
-    </form>
+        {/* remaining elements for the calculator with that onclick display function with passing that character*/}
+        <span onClick={() => display("1")}>1</span>
+        <span onClick={() => display("2")}>2</span>
+        <span onClick={() => display("3")}>3</span>
+        <span onClick={() => display("0")}>0</span>
+        <span onClick={() => display("00")}>00</span>
+        <span onClick={() => display(".")}>.</span>
+        <span className="num equal" onClick={() => calculate()}>
+          =
+        </span>
+      </form>
+    </div>
   );
 };
 

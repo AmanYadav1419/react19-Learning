@@ -1,66 +1,112 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.formvalidation-body {
-  height: 100vh;
-  background-image: linear-gradient(to right, #fff7c8 0%, #fa709a 100%);
+/* Form Validation Project Styles */
+.formvalidation-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  min-height: 60vh;
+  padding: 2rem 1rem;
 }
 
 .formvalidation-card {
-  background: #f3fffe;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 50rem;
-  height: 30rem;
-  box-shadow: 0.5px 0.5px 1px 1px rgb(255, 255, 223);
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.formvalidation-card-image {
-  /* background: url("../public/rohit-tandon-9wg5jCEPBsw-unsplash.jpg"); */
+.formvalidation-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  font-family: sans-serif;
+  margin-bottom: 0.4rem;
+}
 
-  background: url("https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
-  background-position: center;
-  background-size: cover;
+.formvalidation-subtitle {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  font-family: sans-serif;
+  margin-bottom: 2rem;
 }
 
 .formvalidation-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 0.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  font-family: sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .formvalidation-input {
-  padding: 10px 10px;
-  margin: 5px;
-  width: 20rem;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #ccc;
+  padding: 0.7rem 1rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-size: 0.95rem;
+  font-family: sans-serif;
   outline: none;
-  color: black;
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.formvalidation-input::placeholder {
+  color: #475569;
+}
+
+.formvalidation-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
 .formvalidation-error {
   font-family: sans-serif;
-  color: red;
+  font-size: 0.78rem;
+  color: #f87171;
+  min-height: 1rem;
+  line-height: 1.4;
 }
 
 .formvalidation-submit-btn {
-  width: 80%;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: transparent;
-  background: rgb(255, 90, 123);
-  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: #6366f1;
   border: none;
+  border-radius: 8px;
+  cursor: pointer;
   color: #fff;
-  font-weight: bold;
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.formvalidation-submit-btn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+}
+
+.formvalidation-submit-btn:active {
+  transform: translateY(0);
 }

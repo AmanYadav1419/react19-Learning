@@ -1,6 +1,7 @@
 // in this project we will create a carousel image gallery with using useReducer Hook.
 
 import { useReducer } from "react";
+import "./imagegallery.css";
 
 const ImageGallery = () => {
   // images array that we will use to display the images in the ui.
@@ -54,26 +55,41 @@ const ImageGallery = () => {
   let currentImage = images[state.currentImageIndex];
 
   return (
-    <>
-      <h1>Image Gallery Project</h1>
+    <div className="gallery-wrapper">
+      <div className="gallery-card">
+        <h2 className="gallery-title">Image Gallery</h2>
 
-      {/* image container */}
-      <div>
-        <img src={currentImage} alt="thor-loveandthunder" />
-      </div>
+        {/* image container */}
+        <div className="gallery-image-container">
+          <img src={currentImage} alt={`Gallery image ${state.currentImageIndex + 1}`} className="gallery-image" />
+        </div>
 
-      {/* previous and next buttons container */}
-      <div>
-        {/* onclick of the specific button we will fire the callabck dispatch function and the case so that it will work */}
-        {/* it will pass in the type key's value  */}
-        <button onClick={() => dispatch({ type: "PREVIOUS_IMAGE" })}>
-          Prev ⏮️
-        </button>
-        <button onClick={() => dispatch({ type: "NEXT_IMAGE" })}>
-          Next ⏭️
-        </button>
+        {/* counter */}
+        <p className="gallery-counter">
+          Image {state.currentImageIndex + 1} of {images.length}
+        </p>
+
+        {/* previous and next buttons container */}
+        <div className="gallery-nav">
+          {/* onclick of the specific button we will fire the callabck dispatch function and the case so that it will work */}
+          {/* it will pass in the type key's value  */}
+          <button
+            className="gallery-btn"
+            onClick={() => dispatch({ type: "PREVIOUS_IMAGE" })}
+            disabled={state.currentImageIndex === 0}
+          >
+            Prev
+          </button>
+          <button
+            className="gallery-btn"
+            onClick={() => dispatch({ type: "NEXT_IMAGE" })}
+            disabled={state.currentImageIndex === images.length - 1}
+          >
+            Next
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
