@@ -291,3 +291,64 @@ const Card = () => {
 
 export default Card;
 ```
+
+
+### now here below code is an example of how to use `use()` hook for context purpose 👇
+
+- so the change is that instead of using `useContext hook` for the context purpose 
+  , replace it with the `use hook` and that's it.
+  - only change in the `Card.tsx` file replace `useContext` hook with the `use` hook.
+  - here is the code of it 👇 (only the `Card.tsx` file code is there other is same.)
+
+```tsx
+// importing essentials imports from the react and the files created.
+import { use } from "react";
+import { ThemeContext } from "./Theme";
+
+const Card = () => {
+  // get the context first
+  // Note :- Here we are using `use Hook` not `useContext Hook`.
+  const context = use(ThemeContext);
+
+  // if not found then throw the error
+  if (!context) {
+    throw new Error("Card must be used within a ThemeProvider");
+  }
+
+  // desctructure the data from the context
+  const { theme, toggleTheme } = context;
+
+  return (
+    // applying conditional css based on the theme to parent div.
+    // near about everywhere in this component will apply conditional css based on the theme to work out.
+    <div
+      className={`w-[20rem] p-[2rem] ${theme === "light" ? "bg-white" : "bg-teal-900"}`}
+    >
+      <h1
+        className={`text-teal-300 ${theme === "light" ? "text-black" : "text-white"}`}
+      >
+        Theme Card
+      </h1>
+
+      <p className={`${theme === "light" ? "text-black" : "text-white"}`}>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem
+        dignissimos ipsam fuga iusto, eveniet at fugit ad aperiam itaque nulla.
+      </p>
+
+      {/* now there will be a button to toggle theme by passing toggleTheme function from context on onClick event listener  */}
+      <button
+        className="bg-teal-300 p-2 rounded-full text-white mt-[2rem]"
+        onClick={toggleTheme}
+      >
+        {/* rendering the button text dyanmically too based on the theme for better ui/ux */}
+        {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+      </button>
+    </div>
+  );
+};
+
+export default Card;
+
+```
+- that's the only change that will replace the useContext with the use hook.
+- and it will work the same.
