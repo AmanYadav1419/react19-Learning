@@ -1,8 +1,29 @@
 // 004 Calculator Project.
 
 import { useState } from "react";
-import "./Calculator.css"
+import "./Calculator.css";
 // in this project we will built a calculator application.
+
+// Safe math evaluator — replaces eval() to prevent code injection attacks.
+// Only permits digits, arithmetic operators (+, -, *, /), decimals, and parentheses.
+// Rejects any expression containing letters or other unexpected characters.
+const safeMath = (expression) => {
+  if (!expression || expression.trim() === "") return "";
+  // Whitelist: only allow numbers, basic operators, dots, and parentheses
+  if (!/^[0-9+\-*/.()\s]+$/.test(expression)) {
+    return "Error";
+  }
+  try {
+    // Use Function constructor with no access to outer scope instead of eval()
+    // eslint-disable-next-line no-new-func
+    const result = new Function("return " + expression)();
+    if (!isFinite(result) || isNaN(result)) return "Error";
+    // Avoid floating-point noise (e.g. 0.1+0.2 → 0.30000000000000004)
+    return String(parseFloat(result.toPrecision(10)));
+  } catch {
+    return "Error";
+  }
+};
 
 const Calculator = () => {
   const [inputValue, setInputValue] = useState("");
@@ -12,21 +33,12 @@ const Calculator = () => {
 
   // display function to display the values in the ui with having specific character passing in function.
   const display = (value) => {
-    setInputValue(inputValue + value);
+    setInputValue((prev) => prev + value);
   };
 
   // calculate function for the calculation that will trigger on "=" equal operator.
-
-  // eval function is doing all the stuff of calculating stuff
-
-  // but remeber that eval() method, malicious code can run inside your application without permission.
-  // Executing javascript from a string is an BIG Security risk.
-  // with eval(), third party code can see the scope of application, which can lead to possible attacks.
-
-  // as this is just a beginner friendly project and that's why for better and easy to use we are using eval() method.
-
   const calculate = () => {
-    setInputValue(eval(inputValue));
+    setInputValue(safeMath(inputValue));
   };
 
   return (
